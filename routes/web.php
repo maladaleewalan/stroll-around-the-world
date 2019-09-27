@@ -16,8 +16,8 @@
 // });
 
 Route::get('/','HomeController@index');
-Route::get('/guide','HomeController@guide');
-Route::get('/galleries','HomeController@gallery');
+Route::get('/guide','ShowsController@guide');
+Route::get('/galleries','ShowsController@gallery');
 
 // Route::get('/about-us',function() {
 //     return view('about');

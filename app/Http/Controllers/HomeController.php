@@ -10,11 +10,5 @@ class HomeController extends Controller
         return view('home.index');
     }
 
-    public function guide() {
-        return view('home.guide');
-    }
-
-    public function gallery(){
-        return view('home.gallery');
-    }
+   
 }

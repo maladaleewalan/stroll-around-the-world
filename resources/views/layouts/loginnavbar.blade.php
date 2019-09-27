@@ -31,11 +31,8 @@
       </li></ul>
       <ul class="navbar-nav  ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#"><span class="fontnav right">Sign in</span></a>
+        <a class="nav-link" href="#"><span class="fontnav right">Profile</span></a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#"><span class="fontnav">Sign up</span></a>
-        </li>
       </ul>
   </div>
 </nav>
