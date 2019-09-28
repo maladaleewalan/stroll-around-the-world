@@ -10,5 +10,11 @@ class HomeController extends Controller
         return view('home.index');
     }
 
-   
+    public function first() {
+        return view('home.first');
+    }
+
+    public function signup() {
+        return view('home.signup');
+    }
 }

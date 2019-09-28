@@ -33,6 +33,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#"><span class="fontnav right">Profile</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><span class="fontnav right">Logout</span></a>
+      </li>
       </ul>
   </div>
 </nav>

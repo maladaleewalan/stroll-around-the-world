@@ -18,6 +18,9 @@
 Route::get('/','HomeController@index');
 Route::get('/guide','ShowsController@guide');
 Route::get('/galleries','ShowsController@gallery');
+Route::get('/home','HomeController@first'); 
+Route::get('/signup','HomeController@signup'); 
+
 
 // Route::get('/about-us',function() {
 //     return view('about');

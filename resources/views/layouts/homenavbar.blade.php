@@ -1,3 +1,4 @@
+
 <nav class="navhome navbar navbar-expand-lg">
   <i class="fas fa-globe-asia icon"></i>
   <span class="fonttitle ml-2">Stroll_around_the_World</span>
@@ -6,7 +7,10 @@
   </button>
   <div class="collapse navbar-collapse navhome" id="navbarNav">
     <ul class="navbar-nav  mr-auto">
-      <li class="nav-item active ">
+    <li class="nav-item">
+        <a class="nav-link" href="{{action('HomeController@first')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#"><i class="fas fa-circle blue mr-1"></i><span class="fontnav">Thai</span><span class="sr-only"></span></a>
       </li>
       <li class="nav-item dropdown">
@@ -29,13 +33,47 @@
       <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-circle ml-2 mr-1 red"></i><span class="fontnav">News</span></a>
       </li></ul>
+
+      <!-- right -->
       <ul class="navbar-nav  ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#"><span class="fontnav right">Sign in</span></a>
+        <a class="nav-link" onclick="document.getElementById('id01').style.display='block'"><span class="fontnav right">Sign in</span></a>
+       
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#"><span class="fontnav">Sign up</span></a>
+          <a class="nav-link" href="{{action('HomeController@signup')}}"><span class="fontnav">Sign up</span></a>
         </li>
       </ul>
   </div>
 </nav>
+
+ <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;background-color:#F2D7D5">
+
+      <div class="w3-center "><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        <p><i class="fas fa-user-circle iconlogin"></i></p>
+      </div>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <label><b class="fontlogin">Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b class="fontlogin">Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+          <button class="btn btn-success" type="submit">Sign up</button>
+          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16" style="background-color:F2D7D5">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="btn btn-danger">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
