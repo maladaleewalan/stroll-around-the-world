@@ -218,9 +218,16 @@ body {
     font-family: 'Dancing Script', cursive;
     font-weight:bold;
 }
-.button {
+.buttonsignup {
     font-size:20px;
 }
 a:hover{
     text-decoration:none;
+}
+.Anav:hover{
+    font-weight:bold;
+    background-color:#F1948A;
+}
+.boxnews{
+    margin-left:20%;
 }

@@ -47,7 +47,7 @@
                     <p class="card-text" style="color: #FADBD8;">This content is crawled on Culture,Recommended foods and the major attraction of this country.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary navview">View</button>
+                        <button onclick="window.location.href='{{action('ShowsController@guide')}}'" type="button" class="w3-button w3-black">View</button>
                       </div>
                     </div>
                   </div>
@@ -62,7 +62,7 @@
                           <p class="card-text" style="color: #FADBD8;">This content will gather photos on tourist guides and review image by other user or by admin...</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-sm btn-outline-secondary navview">View</button>
+                              <button onclick="window.location.href='{{action('ShowsController@gallery')}}'" type="button" class="w3-button w3-black">View</button>
                             </div>
                           </div>
                         </div>

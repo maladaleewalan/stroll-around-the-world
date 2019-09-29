@@ -10,8 +10,8 @@
 <div class="">
   <div class="row">
     <div class="col">
-    <div class="formsignup">
-<form>
+        <div class="formsignup">
+        <form>
         <div class="form-group">
             <label>Username</label>
             <input style="height:50px;font-size:20px" type="text" class="form-control" placeholder="Enter username">
@@ -32,28 +32,28 @@
             <label >Email</label>
             <input style="height:50px;font-size:20px" type="email" class="form-control" placeholder="Enter Email">
         </div>
-        
-</form>
-</div>
+        </form>
+        </div>
     </div>
     <div class="col">
-    <div class="formsignup">
-      <form>
-  <div class="form-group" style="font-size:20px">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" >
-    <br>
-    <image src=""width="400px" height="400px"/>
-  </div>
-  </div>
-</form>
+        <div class="formsignup">
+            <form>
+            <div class="form-group" style="font-size:20px">
+            <label>Choose Profile picture</label>
+            <input type="file" class="form-control-file" >
+            <br>
+            <image src=""width="400px" height="400px"/>
+            </div>
+            </form>
+        </div>        
     </div>
+
   </div>
 </div>
 
 <div class="center">
-        <button class="btn btn-success button" type="submit">Submit</button>
-        </div>
+        <button class="btn btn-success buttonsignup" type="submit">Submit</button>
+</div>
   
 
 
