@@ -20,6 +20,7 @@ Route::get('/guide','ShowsController@guide');
 Route::get('/galleries','ShowsController@gallery');
 Route::get('/home','HomeController@first'); 
 Route::get('/signup','HomeController@signup'); 
+Route::get('/profile','UsersController@profile');
 
 
 // Route::get('/about-us',function() {
