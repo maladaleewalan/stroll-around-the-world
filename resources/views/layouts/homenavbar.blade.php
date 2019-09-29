@@ -37,7 +37,7 @@
       <!-- right -->
       <ul class="navbar-nav  ml-auto">
       <li class="nav-item">
-        <a class="nav-link" onclick="document.getElementById('id01').style.display='block'"><span class="fontnav right">Sign in</span></a>
+        <a class="nav-link" onclick="document.getElementById('id02').style.display='block'"><span class="fontnav">Sign in</span></a>
        
       </li>
       <li class="nav-item">
@@ -47,11 +47,11 @@
   </div>
 </nav>
 
- <div id="id01" class="w3-modal">
+ <div id="id02" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;background-color:#F2D7D5">
 
       <div class="w3-center "><br>
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
         <p><i class="fas fa-user-circle iconlogin"></i></p>
       </div>
 
@@ -67,7 +67,7 @@
       </form>
 
       <div class="w3-container w3-border-top w3-padding-16" style="background-color:F2D7D5">
-        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="btn btn-danger">Cancel</button>
+        <button onclick="document.getElementById('id02').style.display='none'" type="button" class="btn btn-danger">Cancel</button>
         <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
       </div>
 
