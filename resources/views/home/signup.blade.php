@@ -3,7 +3,7 @@
 @section('content')
 <div class="center">
 <div class="divsignup">
-<span class="titlepage center">SIGN UP</span>&nbsp;<i class="fas fa-user-plus iconsignup"></i><br>
+<span class="titlepage center mr-2">SIGN UP</span>&nbsp;<i class="fas fa-user-plus iconsignup"></i><br>
 <br>
 </div>
 
