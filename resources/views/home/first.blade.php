@@ -141,21 +141,23 @@
           class="w3-button w3-display-topright">&times;</span>
           <h2 class="fontmodal">Promotion</h2>
         </header>
-        <div class="container">
-            <a href="https://www.royalorchidholidays.com/travel/arc.cfm?nav=b2cth">
-            <img src="gallery/NjpUs24nCQKx5e1EZ2yesNrLtorAXDHTPZA34037MCe.jpg" alt="Thai Airways" title="Thai Airways" height="50px" width="80px">
+        <div class="container center">
+            <a class="ml-3" href="https://www.airasiago.com.my/g/dd/dailydeals2?utm_campaign=ablabeltest&utm_medium=referral&utm_source=aahomepage&utm_content=holidaypackage|original"/>
+            <img src="gallery/AirAsiaCom_WhiteBG-650x260.jpg" title="Air Asia" height="80px">
             </a>
-            <a href="https://www.thaitravelcenter.com/airticket/bangkokairways/?gclid=EAIaIQobChMIk4qv5c_m5AIVVAwrCh17DQd0EAAYASAAEgLXGvD_BwE">
-            <img src="gallery/5079487.jpg" alt="Thai Airways" title="Bangkok Airways" height="70px" width="150px">
+            <a class="ml-3" href="https://www.royalorchidholidays.com/travel/arc.cfm?nav=b2cth">
+            <img src="gallery/Thai-Airways-Logo.jpg" title="Thai Airways" height="80px"/>
             </a>
         </div>
-        <div class="container">
-            <a href="https://www.royalorchidholidays.com/travel/arc.cfm?nav=b2cth">
-            <img src="gallery/NjpUs24nCQKx5e1EZ2yesNrLtorAXDHTPZA34037MCe.jpg" alt="Thai Airways" title="Thai Airways" height="50px" width="80px">
+        <div class="container center">
+        <a  class="ml-3" href="https://www.thaitravelcenter.com/airticket/bangkokairways/?gclid=EAIaIQobChMIk4qv5c_m5AIVVAwrCh17DQd0EAAYASAAEgLXGvD_BwE"/>
+            <img src="gallery/xpg_logo.gif.pagespeed.ic.gnyATXkHWs.png" title="Bangkok Airways" height="80px">
             </a>
-            <a href="https://www.thaitravelcenter.com/airticket/bangkokairways/?gclid=EAIaIQobChMIk4qv5c_m5AIVVAwrCh17DQd0EAAYASAAEgLXGvD_BwE">
-            <img src="gallery/5079487.jpg" alt="Thai Airways" title="Bangkok Airways" height="70px" width="150px">
+            <a class="ml-3" href="https://www.tigerairtw.com/en/ready-to-go/special-offers"/>
+            <img src="gallery/1123.jpg" title="tigerair" height="80px">
             </a>
+
+
         </div>
       </div>
     </div>
@@ -163,7 +165,7 @@
 
   <script>
   // Get the modal
-  var modal = document.getElementById('id01');
+  var modal = document.getElementById('promotion');
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
