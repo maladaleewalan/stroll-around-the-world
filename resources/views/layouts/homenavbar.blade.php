@@ -37,7 +37,7 @@
       <!-- right -->
       <ul class="navbar-nav  ml-auto">
       <li class="nav-item">
-        <a class="nav-link" onclick="document.getElementById('id02').style.display='block'"><span class="fontnav">Sign in</span></a>
+        <a class="nav-link" onclick="document.getElementById('login').style.display='block'"><span class="fontnav">Sign in</span></a>
 
        
       </li>
