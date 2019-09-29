@@ -178,6 +178,10 @@ body {
     font-size: 20px;
     font-family: 'Dancing Script', cursive;
 }
+
+.buttonlogin {
+    font-size:15px;
+}
 .profile{
     font-size: 30px;
     font-family: 'Manjari', sans-serif;
@@ -188,13 +192,13 @@ body {
 }
 .divsignup {
     text-shadow:3px 3px white;
-    margin-top:50px;
+    margin-top:30px;
     width:100%;
     background-color:#F1948A;
     text-align:center;
+    padding-bottom:5px;
 }
 .fontsignup {
-    
     font-size: 30px;
     font-weight:bold;
     font-family: 'Dancing Script', cursive;
@@ -204,4 +208,19 @@ body {
     font-size:70px;
     padding-top:70px;
     color:#1C2833;
+}
+.formsignup {
+    width:800px;
+    /* border:1px solid black; */
+    margin-top:30px;
+    margin-left:10%;
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-weight:bold;
+}
+.button {
+    font-size:20px;
+}
+a:hover{
+    text-decoration:none;
 }
