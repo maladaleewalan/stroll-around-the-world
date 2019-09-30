@@ -10,12 +10,10 @@
     <li class="nav-item">
         <a class="nav-link Anav" href="{{action('HomeController@first')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link Anav" href="#"><i class="fas fa-circle blue mr-1"></i><span class="fontnav">Thai</span><span class="sr-only"></span></a>
-      </li>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown Anav" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle ml-2 mr-1 yellow"></i><span class="fontnav">Abroad</span></a>
+          <a class="nav-link dropdown Anav" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle ml-2 mr-1 yellow"></i><span class="fontnav">Country</span></a>
           <div class="dropdown-menu">
+            <a class="dropdown-item Anav" href="{{action('ShowsController@guide')}}">Thailand</a>
             <a class="dropdown-item Anav" href="#">Korea</a>
             <a class="dropdown-item Anav" href="#">Japan</a>
             <a class="dropdown-item Anav" href="#">Italy</a>
@@ -56,7 +54,7 @@
         <p><i class="fas fa-user-circle iconlogin"></i></p>
       </div>
 
-      <form class="w3-container" >
+      <form class="w3-container">
         <div class="w3-section">
           <label><b class="fontlogin">Username</b></label>
           <input style="font-size:20px" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>

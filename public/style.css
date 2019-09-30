@@ -231,3 +231,17 @@ a:hover{
 .boxnews{
     margin-left:20%;
 }
+.newstimeline{
+    padding:30px;
+    width:70%;
+    margin-top:50px;
+    border:1px white groove;
+    border-radius:25px;
+    background-color:#ffebee;
+    box-shadow:2px 2px gray;
+}
+.star {
+    color:yellow;
+    font-size:40px;
+    text-shadow: black 2px 2px;
+}

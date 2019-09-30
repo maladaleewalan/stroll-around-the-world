@@ -7,8 +7,20 @@
       <li data-target="#myCarousel" data-slide-to="1" class=""></li>
       <li data-target="#myCarousel" data-slide-to="2" class=""></li>
     </ol>
+
     <div class="carousel-inner">
-      <div class="carousel-item active">
+    
+    <div class="carousel-item active">
+        <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption center mr-5">
+              <a href="{{action('ShowsController@guide')}}">
+              <img style="height: 450px; width:1000px" class="first-slide" src="gallery/maxresdefault.jpg" alt="First slide"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
         <svg width="100%" height="510"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-3">
@@ -24,6 +36,7 @@
           </div>
         </div>
       </div>
+      
 
       </div>
     </div>
@@ -88,6 +101,9 @@
 
 
 <div data-scroll="1" class="aboutme-section sec-p100-bg-bs mb-30 clearfix blue " id="about">
+<div class="titlepage mt-2 ml-3" style="display:inline;background-color:#8E44AD">NEWS</div>
+       <button onclick="window.location.href='{{action('ShowsController@news')}}'" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
+      
     <div class="personal-details-area secion-p100 mt-1 color">
             <div class="container">
                 <div class="row round2">
@@ -131,7 +147,10 @@
                 </div>
             </div>
         </div>
+       <div>
+      
         </div>
+
 
         
     <div id="id01" class="w3-modal">

@@ -18,7 +18,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="personal-details-right">
                     <h1 class="profile mt-5">USERNAME: Thanapass</h1>
-                    <h1 class="profile mt-5" >LEVEL: 3 POINT: 45000</h1>
+                    <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: 45000</h1>
                     <h1 class="profile mt-5">STATUS: ^[F].\{3\}[k]$</h1>
                     <h1 class="profile mt-5">POST: 1520</h1>                                    
                 </div>

@@ -17,4 +17,8 @@ class ShowsController extends Controller
     public function news(){
         return view('shows.news');
     }
+
+    public function feednews() {
+        return view('shows.feednews');
+    }
 }
