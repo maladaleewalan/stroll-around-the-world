@@ -102,7 +102,7 @@
 
 <div data-scroll="1" class="aboutme-section sec-p100-bg-bs mb-30 clearfix blue " id="about">
 <div class="titlepage mt-2 ml-3" style="display:inline;background-color:#8E44AD">NEWS</div>
-       <button onclick="window.location.href='{{action('ShowsController@news')}}'" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
+       <button onclick="" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
       
     <div class="personal-details-area secion-p100 mt-1 color">
             <div class="container">

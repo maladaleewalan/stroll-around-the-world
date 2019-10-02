@@ -21,19 +21,18 @@ Route::get('/galleries','ShowsController@gallery');
 Route::get('/home','HomeController@first'); 
 Route::get('/signup','HomeController@signup'); 
 Route::get('/profile','UsersController@profile');
-Route::get('/news','ShowsController@news');
 Route::get('/timeline','ShowsController@feednews');
 
 
-// Route::get('/about-us',function() {
-//     return view('about');
-// });
+Route::get('/about-us',function() {
+    return view('about');
+});
 
 Route::get('/master',function() {
     return view('layouts.master');
 });
 
-Route::get('/posts','PostsController@index');
-Route::get('/posts/{id}','PostsController@show')->where('id','[0-9]+')->name('posts.show');
+Route::resource('/news','StoriesController');
+
 
 

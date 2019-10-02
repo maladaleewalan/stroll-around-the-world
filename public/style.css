@@ -245,3 +245,11 @@ a:hover{
     font-size:40px;
     text-shadow: black 2px 2px;
 }
+.divcenter {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+.readmore {
+    float:right;
+}
