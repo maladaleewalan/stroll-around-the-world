@@ -32,7 +32,7 @@ Route::get('/master',function() {
     return view('layouts.master');
 });
 
-Route::resource('/news','StoriesController');
+Route::resource('/stories','StoriesController');
 
 
 

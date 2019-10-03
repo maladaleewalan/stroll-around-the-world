@@ -17,6 +17,6 @@ class StoriesTableSeeder extends Seeder
         // $story->detail = "detailll";
         // $story->save();
 
-        factory(Story::class,20)->create();
+        factory(Story::class,20)->create();   //เพิ่มใน tinker -> $story = factory(App\Story::class,20)->create()
     }
 }

@@ -14,7 +14,7 @@ class StoriesController extends Controller
      */
     public function index()
     {
-        $stories = Story::get();
+        $stories = Story::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         return view('stories.index',['stories'=>$stories]);
     }
 
@@ -45,9 +45,9 @@ class StoriesController extends Controller
      * @param  \App\Story  $story
      * @return \Illuminate\Http\Response
      */
-    public function show(Story $story)
+    public function show(Story $story)     // URL: 127.0.0.1:8000/stories/{id}
     {
-        //
+        return view('stories.show',['story' => $story]);   //$story คือ parameter ที่ส่งมา
     }
 
     /**
