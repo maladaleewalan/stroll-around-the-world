@@ -36,7 +36,7 @@
       <!-- right -->
       <ul class="navbar-nav  ml-auto">
       <li class="nav-item">
-          <a class="nav-link Anav" href="{{action('UsersController@profile')}}"><span class="fontnav">Profile</span></a>
+          <a class="nav-link Anav" href='{{ route('users.show', ['user' => 3 ]) }}'><span class="fontnav">Profile</span></a>
         </li>
       <li class="nav-item">
           <a class="nav-link Anav" href="{{action('HomeController@first')}}"><span class="fontnav">Logout</span></a>

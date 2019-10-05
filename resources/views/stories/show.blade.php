@@ -9,7 +9,7 @@
 </div>
 <div class="divcenter">
     <p class="newscontentshow">{{$story->detail}}</p>
-    <span>{{$story->created_at}}</span> 
+    <span><i class="far fa-clock"></i> {{$story->created_at}}</span> 
 </div>
 <div class="divcenter">
 

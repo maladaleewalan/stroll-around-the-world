@@ -33,6 +33,7 @@ Route::get('/master',function() {
 });
 
 Route::resource('/stories','StoriesController');
+Route::resource('/users','UsersController');
 
 
 

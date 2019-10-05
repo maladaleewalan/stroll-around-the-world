@@ -60,7 +60,7 @@
           <input style="font-size:20px" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
           <label><b class="fontlogin">Password</b></label>
           <input style="font-size:20px" class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
-          <button onclick="window.location.href='{{action('UsersController@profile')}}'" class="btn btn-success buttonlogin" type="submit">Sign in</button>
+          <button onclick="window.location.href='{{ route('users.show', ['user' => 3 ]) }}'" class="btn btn-success buttonlogin" type="submit">Sign in</button>
           <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
         </div>
       </form>
