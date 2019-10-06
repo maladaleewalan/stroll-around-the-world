@@ -2,9 +2,9 @@ body {
     background-color:#F2D7D5;
 }
 .button {
-    bottom: 0;
+    /* bottom: 0px;
     position: fixed;
-    float: right;
+    float: right; */
     border-radius: 10%;
     background-color: #f4511e;
     border: none;
@@ -16,6 +16,9 @@ body {
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
   }
   
   .button span {
@@ -109,6 +112,7 @@ body {
     color: #F0F3F4;
     font-family: 'Dancing Script', cursive;
 }
+
 .blue{
     color: #2980B9 ;
     font-size: 17px;
@@ -164,10 +168,14 @@ body {
     color:#F1948A;
     font-weight:bold;
 }
+.fontnavinfo{
+    font-size: 20px;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+}
 .navpromotion {
       background-color:#F1948A;
 }
-
 .iconprofile{
     color: #1C2833;
     font-size: 20px;
@@ -288,9 +296,28 @@ a:hover{
     color:#1C2833;
     margin:10px;
     font-family: 'Dancing Script', cursive;
-
-
+    
 }
 .like{
     margin-top:10px;
+}
+.divgalleryshow {
+    margin-top:50px;
+}
+.buttonleft {
+    font-size:50px;
+    position: fixed;
+    bottom: 40%;
+    left: 10%;
+    color:#e91e63 ;
+    text-shadow:3px 3px black;
+}
+.buttonright {
+    font-size:50px;
+    position: fixed;
+    bottom: 40%;
+    right: 10%;
+    color:#e91e63;
+    text-shadow:3px 3px black;
+
 }

@@ -45,9 +45,9 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Post $post)  // URL: 127.0.0.1:8000/posts/{id}
     {
-        //
+        return view('posts.show',['post'=> $post]);   //$post คือ parameter ที่ส่งมา
     }
 
     /**

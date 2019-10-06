@@ -19,17 +19,19 @@
   <button onclick="document.getElementById('id03').style.display='block'" class="button ml-5"><span>POST</span></button>
 
 
+<div class="center">
   @foreach($posts as $post)
   <div class="divgallery"> 
-  <p class="usernamepost"><i class="fas fa-user"></i> USERNAME</p>
-    <p>{{$post->detail}}</p>
-    <img src="gallery/thailand-40155070-1508147260-ImageGalleryLightboxLarge.jpg" width="500px">
+  <p class="usernamepost"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>3])}}">USERNAME</a></p>
+    <!-- <p>{{$post->detail}}</p> -->
+    <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="{{url('gallery/thailand-40155070-1508147260-ImageGalleryLightboxLarge.jpg')}}" width="500px"></a>
     <div class="like">
       <button type="button" class="btn btn-light"><i class="fab fa-gratipay pink"></i> Like</button>
       <span> <i class="fas fa-thumbs-up blue">: {{$post->like}}</i> </span>
     </div>
   </div>
   @endforeach
+  </div>
 
     <div id="id03" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;background-color:#F2D7D5">

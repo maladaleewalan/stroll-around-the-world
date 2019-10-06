@@ -54,11 +54,11 @@
 
       <div class="row mt-5">
               <div class="col-md-4">
-                <div class="card mb-4 shadow-sm"  style="background-color: #ec407a ">
+                <div class="card mb-4 shadow-sm"  style="background-color: #f48fb1">
                   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/ΠΕΤΡΑ-9.jpg" y="0%" x="0%" width="400px"></image></svg>
                   <div class="card-body">
-                          <strong class="d-inline-block mb-2 text-success "><span class="fontnav"><i class="fas fa-flag green"></i><span class="ml-2 "></span>TOURISTGUIDE</span></strong>
-                    <p class="card-text" style="color: #FADBD8;">This content is crawled on Culture,Recommended foods and the major attraction of this country.</p>
+                          <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-flag "></i><span class="ml-2 "></span>TOURISTGUIDE</span></strong>
+                    <p class="card-text" style="color: black;">This content is crawled on Culture,Recommended foods and the major attraction of this country.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button onclick="window.location.href='{{action('ShowsController@guide')}}'" type="button" class="w3-button w3-black">View</button>
@@ -69,25 +69,25 @@
               </div>
               
       <div class="col-md-4">
-              <div class="card mb-4 shadow-sm" style="background-color: #ec407a ">
+              <div class="card mb-4 shadow-sm" style="background-color: #f48fb1">
                   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/envira-gallery.jpg" y="-5%" x="-8%" width="400px"></image></svg>
                         <div class="card-body">
-                              <strong class="d-inline-block mb-2 text-success "><span class="fontnav"><i class="fas fa-images greens"></i><span class="ml-2"></span>GALLERRY</span></strong>
-                          <p class="card-text" style="color: #FADBD8;">This content will gather photos on tourist guides and review image by other user or by admin...</p>
+                              <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-images "></i><span class="ml-2"></span>GALLERRY</span></strong>
+                          <p class="card-text" style="color: black;">This content will gather photos on tourist guides and review image by other user or by admin...</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button onclick="window.location.href='{{action('ShowsController@gallery')}}'" type="button" class="w3-button w3-black">View</button>
+                              <button onclick="window.location.href='{{route('posts.index')}}'" type="button" class="w3-button w3-black">View</button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-4">
-                          <div class="card mb-4 shadow-sm" style="background-color: #ec407a ">
+                          <div class="card mb-4 shadow-sm" style="background-color: #f48fb1">
                             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect  fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/155.jpg" y="0%" x="-17%" width="460px"></image></svg>
                             <div class="card-body">
-                                  <strong class="d-inline-block mb-2 text-success "><span class="fontnav"><i class="fas fa-percentage greens"></i><span class="ml-2"></span>PROMOTION</span></strong>
-                              <p class="card-text" style="color: #FADBD8;"> This content will gather information about the promotion of the airline. Or festivals of this country.</p>
+                                  <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-percentage"></i><span class="ml-2"></span>PROMOTION</span></strong>
+                              <p class="card-text" style="color: black;"> This content will gather information about the promotion of the airline. Or festivals of this country.</p>
                               <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                       <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">view</button>
@@ -111,7 +111,7 @@
 @for($i = 0;$i<2;$i++) 
 
 <div data-scroll="1" style="" class="aboutme-section sec-p100-bg-bs mb-30 clearfix " id="about">
-    <div class="personal-details-area secion-p100 mt-1 color" style="background-color:#f06292">
+    <div class="personal-details-area secion-p100 mt-1 color" style="background-color:#f48fb1">
             <div class="container">
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
