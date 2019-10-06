@@ -16,7 +16,6 @@
   </div>
 </div>
 
-
   <button onclick="document.getElementById('id03').style.display='block'" class="button ml-5"><span>POST</span></button>
 
 
@@ -31,23 +30,6 @@
     </div>
   </div>
   @endforeach
-
-
-
-
-
-
-
-
-=======
-<div class="row center"> 
-@foreach($posts as $post)
-<p>{{$post->detail}}</p>
-    <img src="gallery/thailand-40155070-1508147260-ImageGalleryLightboxLarge.jpg"  class="ml-5 mt-2" style="width:30%">
-@endforeach
-  </div>
-  <button onclick="document.getElementById('id03').style.display='block'" class="button ml-5"><span>POST</span></button>
->>>>>>> 87c7113a046eafcdee5acd39d1f4ef34d530bfa9
 
     <div id="id03" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;background-color:#F2D7D5">
