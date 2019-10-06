@@ -164,6 +164,10 @@ body {
     color:#F1948A;
     font-weight:bold;
 }
+.navpromotion {
+      background-color:#F1948A;
+}
+
 .iconprofile{
     color: #1C2833;
     font-size: 20px;
@@ -230,6 +234,7 @@ a:hover{
 }
 .boxnews{
     margin-left:20%;
+
 }
 .newstimeline{
     padding:30px;
@@ -268,4 +273,24 @@ a:hover{
     text-indent: 50px;
     font-size: 25px;
     color: #1C2833;
+}
+.divgallery {
+    /* border:1px solid black; */
+    width:30%;
+    padding:30px;
+    margin:20px;
+    border-radius:25px;
+    background-color:#f48fb1;
+    display: inline-block;
+}
+.usernamepost {
+    font-size: 20px;
+    color:#1C2833;
+    margin:10px;
+    font-family: 'Dancing Script', cursive;
+
+
+}
+.like{
+    margin-top:10px;
 }

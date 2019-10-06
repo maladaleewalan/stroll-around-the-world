@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Story;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +11,8 @@ class HomeController extends Controller
     }
 
     public function first() {
-        return view('home.first');
+        $stories = Story::orderBy('created_at','desc')->get();    
+        return view('home.first',['stories'=>$stories]);
     }
 
     public function signup() {

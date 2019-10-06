@@ -24,13 +24,13 @@
         </li>
         
       <li class="nav-item">
-        <a class="nav-link Anav" href="{{action('ShowsController@gallery')}}"><i class="fas fa-circle ml-2 mr-1 green"></i><span class="fontnav">Gallery</span></a>
+        <a class="nav-link Anav" href="{{route('posts.index')}}"><i class="fas fa-circle ml-2 mr-1 green"></i><span class="fontnav">Gallery</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link Anav" href="{{action('ShowsController@guide')}}"><i class="fas fa-circle ml-2 mr-1 purple"></i><span class="fontnav">TouristGuide</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link Anav" href=""><i class="fas fa-circle ml-2 mr-1 red"></i><span class="fontnav">News</span></a>
+          <a class="nav-link Anav" href="{{route('stories.index')}}><i class="fas fa-circle ml-2 mr-1 red"></i><span class="fontnav">News</span></a>
       </li></ul>
 
       <!-- right -->

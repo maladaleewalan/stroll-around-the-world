@@ -9,7 +9,7 @@
 @foreach ($stories as $story)
 <div class="boxnews">
 <div data-scroll="1" style="width:80%" class="aboutme-section sec-p100-bg-bs mb-30 clearfix " id="about">
-    <div class="personal-details-area secion-p100 mt-1 color">
+    <div class="personal-details-area secion-p100 mt-1 color" style="background-color:#f48fb1">
             <div class="container">
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -20,7 +20,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="personal-details-right">
                             <div class="mt-1">
-                                <b class="newstitle"><i class="fas fa-newspaper greens mr-2"></i>{{$story->title}}</b>
+                                <b class="newstitle"><i class="fas fa-newspaper mr-2"></i>{{$story->title}}</b>
                             </div>
                                 <p class="news">{{$story->detail}}</p>
                                 <span><i class="far fa-clock"></i> {{$story->created_at->diffForHumans()}}</span> <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $story->id ]) }}'" class="btn btn-info floatright">Read more</button></span>
@@ -34,7 +34,7 @@
         </div>
     </div>
 </div>
-<hr>
+
 @endforeach 
 
     

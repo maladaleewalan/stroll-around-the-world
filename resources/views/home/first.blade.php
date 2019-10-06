@@ -54,7 +54,7 @@
 
       <div class="row mt-5">
               <div class="col-md-4">
-                <div class="card mb-4 shadow-sm"  style="background-color: #8E44AD ">
+                <div class="card mb-4 shadow-sm"  style="background-color: #ec407a ">
                   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/ΠΕΤΡΑ-9.jpg" y="0%" x="0%" width="400px"></image></svg>
                   <div class="card-body">
                           <strong class="d-inline-block mb-2 text-success "><span class="fontnav"><i class="fas fa-flag green"></i><span class="ml-2 "></span>TOURISTGUIDE</span></strong>
@@ -69,7 +69,7 @@
               </div>
               
       <div class="col-md-4">
-              <div class="card mb-4 shadow-sm" style="background-color: #8E44AD ">
+              <div class="card mb-4 shadow-sm" style="background-color: #ec407a ">
                   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/envira-gallery.jpg" y="-5%" x="-8%" width="400px"></image></svg>
                         <div class="card-body">
                               <strong class="d-inline-block mb-2 text-success "><span class="fontnav"><i class="fas fa-images greens"></i><span class="ml-2"></span>GALLERRY</span></strong>
@@ -83,7 +83,7 @@
                       </div>
                     </div>
                     <div class="col-md-4">
-                          <div class="card mb-4 shadow-sm" style="background-color: #8E44AD ">
+                          <div class="card mb-4 shadow-sm" style="background-color: #ec407a ">
                             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect  fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/155.jpg" y="0%" x="-17%" width="460px"></image></svg>
                             <div class="card-body">
                                   <strong class="d-inline-block mb-2 text-success "><span class="fontnav"><i class="fas fa-percentage greens"></i><span class="ml-2"></span>PROMOTION</span></strong>
@@ -97,27 +97,37 @@
                             </div>
                           </div>
                         </div>
+</div> 
+
+
+<!-- NEWS -->
+<div data-scroll="1" class="aboutme-section sec-p100-bg-bs mb-30 clearfix blue " id="about">
+<div class="mt-2 ml-3" style="display:inline">
+      <span class="titlepage">NEWS</span>
+      <button onclick="window.location.href='{{route('stories.index')}}'" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
+</div>
 </div>
 
+@for($i = 0;$i<2;$i++) 
 
-
-<div data-scroll="1" class="aboutme-section sec-p100-bg-bs mb-30 clearfix blue " id="about">
-<div class="titlepage mt-2 ml-3" style="display:inline;background-color:#8E44AD">NEWS</div>
-       <button onclick="" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
-      
-    <div class="personal-details-area secion-p100 mt-1 color">
+<div data-scroll="1" style="" class="aboutme-section sec-p100-bg-bs mb-30 clearfix " id="about">
+    <div class="personal-details-area secion-p100 mt-1 color" style="background-color:#f06292">
             <div class="container">
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img src="gallery/Thai-healthcare.jpg" width="400px" alt="">
+                            <img src="gallery/bangkok-grand-palace.jpg" width="400px" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="personal-details-right">
                             <div class="mt-1">
-                                <b class="newstitle"><i class="fas fa-newspaper greens mr-2"></i>Thailand ranked sixth best in the world for healthcare</div></b>
-                                <p class="news ">Sixth best healthcare system in the world! Well done Thailand. The Kingdom is gaining worldwide recognition for quality healthcare services after placing sixth in a ranking...</p>
+                                <b class="newstitle"><i class="fas fa-newspaper mr-2"></i>{{$stories[$i]->title}}</b>
+                            </div>
+                                <p class="news">{{$stories[$i]->detail}}</p>
+                                <span><i class="far fa-clock"></i> {{$stories[$i]->created_at->diffForHumans()}}</span> 
+                                <!-- <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $stories[$i]->id ]) }}'" class="btn btn-info floatright">Read more</button></span> -->
+                           
                             </div>     
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                                                               
                         </div>
@@ -126,37 +136,13 @@
             </div>
         </div>
     </div>
-    <div data-scroll="1" class="aboutme-section sec-p100-bg-bs mb-30 clearfix blue " id="about">
-        <div class="personal-details-area secion-p100 mt-1 color">
-                <div class="container">
-                    <div class="row round2">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="about_us_image mt-1">
-                                <img src="gallery/IMG_2415-1080x675.jpg" width="400px" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="personal-details-right">
-                                <div class="mt-1">
-                                    <b class="newstitle"><i class="fas fa-newspaper greens mr-2"></i>Phuket social enterprise shop takes the first steps</div></b>
-                                    <p class="news ">PHOTOS:stepswiththeera.com A Bangkok-based social enterprise has made its debut in Phuket as it opened a new zero-waste shop, cafe and vocational training centre in Cherng...</p>
-                                </div>     
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                                                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       <div>
-      
-        </div>
+@endfor
 
 
         
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content w3-card-4">
-        <header class="w3-container w3-teal"> 
+        <header class="w3-container navpromotion"> 
           <span onclick="document.getElementById('id01').style.display='none'" 
           class="w3-button w3-display-topright">&times;</span>
           <h2 class="fontmodal">Promotion</h2>
