@@ -16,10 +16,16 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+<<<<<<< HEAD
             $table->string('detail', 300);
             $table->softDeletes();
             $table->bigInteger('like')->default(0);
 
+=======
+            $table->enum('type', ['place', 'food', 'culture', 'post'])->default('post');
+            $table->string('detail', 3000);
+            $table->softDeletes();
+>>>>>>> 87c7113a046eafcdee5acd39d1f4ef34d530bfa9
         });
     }
 
