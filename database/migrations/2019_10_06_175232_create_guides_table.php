@@ -16,8 +16,10 @@ class CreateGuidesTable extends Migration
         Schema::create('guides', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('detail',3000);
-            $table->enum('type',['food','place','cuture']);
+            $table->string('title',300);
+            $table->string('detail',1000);
+            $table->enum('type',['food','place','culture']);
+            $table->string('picture',100);
         });
     }
 

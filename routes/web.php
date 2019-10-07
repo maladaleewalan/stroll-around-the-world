@@ -35,6 +35,7 @@ Route::get('/master',function() {
 Route::resource('/stories','StoriesController');
 Route::resource('/users','UsersController');
 Route::resource('/posts', 'PostsController');
+Route::resource('/guides', 'GuidesController');
 
 
 

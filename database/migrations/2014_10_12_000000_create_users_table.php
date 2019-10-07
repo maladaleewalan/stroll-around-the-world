@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->bigInteger('point')->default(0);
             $table->string('status',1000)->default("");
             $table->bigInteger('totalpost')->default(0);
+            // $table->string('picture',100);
+
 
         });
     }

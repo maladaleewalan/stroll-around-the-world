@@ -14,7 +14,7 @@
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img src="gallery/bangkok-grand-palace.jpg" width="400px" alt="">
+                            <img src="{{url('gallery/bangkok-grand-palace.jpg')}}" width="400px" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

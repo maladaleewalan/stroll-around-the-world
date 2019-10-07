@@ -174,7 +174,7 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 .navpromotion {
-      background-color:#F1948A;
+      background-color:#f48fb1;
 }
 .iconprofile{
     color: #1C2833;
@@ -319,5 +319,8 @@ a:hover{
     right: 10%;
     color:#e91e63;
     text-shadow:3px 3px black;
-
+}
+.modalguide {
+    margin:20px;
+    font-size:15px;
 }
