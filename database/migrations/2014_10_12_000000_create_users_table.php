@@ -15,19 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username',10);
+            $table->string('username',20);
             $table->string('password',200);
             $table->string('firstname',20);
             $table->string('lastname',20);
-            $table->string('email',200)->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('email',30)->unique();
             $table->enum('role', ['admin', 'user1','user2','user3'])->default('user1');
             $table->bigInteger('point')->default(0);
-            $table->string('status',1000)->default("");
             $table->bigInteger('totalpost')->default(0);
             // $table->string('picture',100);
+            
+            // $table->timestamp('email_verified_at')->nullable();
+            // $table->rememberToken();
+            $table->timestamps();
 
 
         });

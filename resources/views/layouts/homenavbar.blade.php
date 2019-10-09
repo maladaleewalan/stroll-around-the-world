@@ -40,7 +40,7 @@
        
       </li>
       <li class="nav-item">
-          <a class="nav-link Anav" href="{{action('HomeController@signup')}}"><span class="fontnav">Sign up</span></a>
+          <a class="nav-link Anav" href="{{route('users.create')}}"><span class="fontnav">Sign up</span></a>
         </li>
       </ul>
   </div>

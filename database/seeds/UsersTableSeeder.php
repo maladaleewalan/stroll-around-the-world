@@ -31,15 +31,6 @@ class UsersTableSeeder extends Seeder
         $user->role = "admin";
         $user->save();
 
-        $user = new User;
-        $user->username = "somsri555";
-        $user->password = "abcde";
-        $user->firstname = "somsri";
-        $user->lastname = "ja";
-        $user->email = "somsri@hotmail.com";
-        $user->role = "user1";
-        $user->save();
-
        
     }
 }

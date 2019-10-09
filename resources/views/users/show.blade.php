@@ -16,6 +16,8 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <br>
+                <div><a class="editprofile" href="{{route('users.edit', ['user' => $user->id])}}"><i class="fas fa-user-edit"></i>edit</a></div>
                 <div class="personal-details-right">
                     <h1 class="profile mt-5">USERNAME: {{$user->username}}</h1>
 
@@ -32,7 +34,6 @@
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-crown yellow" style="font-size:50px"></i> POINT: {{$user->point}}</h1>
                     <?php  
                     } ?>
-                    <h1 class="profile mt-5">STATUS: {{$user->status}}</h1>
                     <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
                 </div>
             </div>

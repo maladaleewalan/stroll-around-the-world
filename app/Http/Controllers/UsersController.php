@@ -25,7 +25,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'username' => ['required','min:5','max:20'],
+            'password' => ['required','min:5','max:10'],
+            'firstname' => ['required','min:5','max:20'],
+            'lastname' => ['required','min:5','max:20'],
+            'email' => ['required','min:10','max:30']
+        ]);
+        $user = new User;
+        $user->username = $validateData['username'];
+        $user->password = $validateData['password'];
+        $user->firstname = $validateData['firstname'];
+        $user->lastname = $validateData['lastname'];
+        $user->email = $validateData['email'];
+        $user->save();
+
+        return redirect()->route('users.show',['user'=>$user->id]);
+
     }
 
     /**
@@ -58,7 +74,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('users.edit',['user'=>$user]);
     }
 
     /**
@@ -70,7 +86,21 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validateData = $request->validate([
+            'username' => ['required','min:5','max:20'],
+            // 'password' => ['required','min:5','max:10'],
+            'firstname' => ['required','min:5','max:20'],
+            'lastname' => ['required','min:5','max:20'],
+            'email' => ['required','min:10','max:30']
+        ]);
+        $user->username = $validateData['username'];
+        // $user->password = $validateData['password'];
+        $user->firstname = $validateData['firstname'];
+        $user->lastname = $validateData['lastname'];
+        $user->email = $validateData['email'];
+        $user->save();
+
+        return redirect()->route('users.show',['user'=>$user->id]);
     }
 
     /**

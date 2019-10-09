@@ -165,8 +165,9 @@ body {
 .button-welcome {
     font-family: 'Mansalva', cursive;
     font-size:40px;
-    color:#F1948A;
+    color:#455a64;
     font-weight:bold;
+    text-shadow:3px 3px #F1948A;
 }
 .fontnavinfo{
     font-size: 20px;
@@ -235,6 +236,7 @@ body {
 }
 a:hover{
     text-decoration:none;
+    color:#455a64;
 }
 .Anav:hover{
     font-weight:bold;
@@ -323,4 +325,22 @@ a:hover{
 .modalguide {
     margin:20px;
     font-size:15px;
+}
+.editprofile{
+    float:right;
+    font-size:20px;
+    font-family: 'Manjari', sans-serif;
+    text-shadow:3px 3px white;
+
+}
+.editprofile:hover{
+    text-decoration:underline;
+    font-weight:bold;
+    text-shadow:3px 3px white;
+    color:black;
+}
+.alertinputfalse {
+    font-size:20px;
+    color:red;
+    font-weight:bold;
 }
