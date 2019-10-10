@@ -25,7 +25,6 @@ class StoriesController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,7 +35,33 @@ class StoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validateData = $this->validate($request,[
+            'title' => ['required','min:10','max:500'],
+            'detail' => ['required','min:10','max:3000'],
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif'
+        ]);
+        
+        $story = new Story;
+        $story->title = $validateData['title'];
+        $story->detail = $validateData['detail'];
+
+        $ext = pathinfo(basename($_FILES['picture']['name']),PATHINFO_EXTENSION);   //ดึงนามสกุลจากไฟล์ที่โหลดมา
+        $new_image_name = 'img_'. uniqid() . "." . $ext;    //สุ่มชื่อไฟล์ใหม่ เป็นสตริงไม่ซ้ำ
+        $image_path = "image/";      //folder image
+        $upload_path = $image_path . $new_image_name;
+        //uploading
+        $success = move_uploaded_file($_FILES['picture']['tmp_name'],$upload_path);  //เอามาใส่ในupload path
+      
+
+        //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
+        $story->picture = $new_image_name;
+        
+        $story->save();
+
+        return redirect()->route('stories.show',['story'=>$story->id]);
+       
+
     }
 
     /**
@@ -58,7 +83,7 @@ class StoriesController extends Controller
      */
     public function edit(Story $story)
     {
-        //
+        
     }
 
     /**
@@ -70,7 +95,34 @@ class StoriesController extends Controller
      */
     public function update(Request $request, Story $story)
     {
-        //
+        $validateData = $this->validate($request,[
+            'title' => ['required','min:10','max:500'],
+            'detail' => ['required','min:10','max:3000'],
+            'picture' => 'image|mimes:jpeg,png,jpg,gif'
+        ]);
+
+        $story->title = $validateData['title'];
+        $story->detail = $validateData['detail'];
+        if($_FILES['picture']['name'] == null) {
+            $story->picture = $story->picture;
+        } else {
+            $picture = $story->picture;
+            @unlink('image/'. $picture);   //ลบรูปเก่าออกจาก folder
+
+            $ext = pathinfo(basename($_FILES['picture']['name']),PATHINFO_EXTENSION);   //ดึงนามสกุลจากไฟล์ที่โหลดมา
+            $new_image_name = 'img_'. uniqid() . "." . $ext;    //สุ่มชื่อไฟล์ใหม่ เป็นสตริงไม่ซ้ำ
+            $image_path = "image/";      //folder image
+            $upload_path = $image_path . $new_image_name;
+            //uploading
+            $success = move_uploaded_file($_FILES['picture']['tmp_name'],$upload_path);  //เอามาใส่ในupload path
+      
+            //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
+            $story->picture = $new_image_name;
+        }
+        
+        $story->save();
+
+        return redirect()->route('stories.show',['story'=>$story->id]);
     }
 
     /**
@@ -81,6 +133,14 @@ class StoriesController extends Controller
      */
     public function destroy(Story $story)
     {
-        //
+        //ลบรูปออกจาก folder
+        $picture = $story->picture;
+        @unlink('image/'. $picture);
+        
+        $story->delete();
+
+        $stories = Story::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
+        return redirect()->route('stories.index',['stories'=>$stories]);
+    
     }
 }

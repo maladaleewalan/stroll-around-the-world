@@ -276,13 +276,16 @@ a:hover{
 
 }
 .newstitleshow{
+    font-weight:bold;
     font-size: 35px;
     color:#1C2833;
+    font-family: 'Manjari', sans-serif;
 }
 .newscontentshow {
     text-indent: 50px;
     font-size: 25px;
     color: #1C2833;
+    font-family: 'Manjari', sans-serif;
 }
 .divgallery {
     /* border:1px solid black; */

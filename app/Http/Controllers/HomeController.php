@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Story;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,4 +19,5 @@ class HomeController extends Controller
     public function signup() {
         return view('home.signup');
     }
+
 }

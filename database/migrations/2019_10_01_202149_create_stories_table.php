@@ -19,6 +19,7 @@ class CreateStoriesTable extends Migration
             $table->string('detail',3000);
             $table->timestamps(); //created_at , updated_at
             $table->softDeletes();
+            $table->string('picture',100)->default("no-image-icon-15.jpg");
         });
     }
 
