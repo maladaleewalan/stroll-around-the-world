@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('detail', 300);
             $table->softDeletes();
             $table->bigInteger('like')->default(0);
+            $table->string('picture',100)->default("no-image-icon-15.jpg");
         });
     }
 

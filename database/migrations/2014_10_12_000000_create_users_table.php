@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('role', ['admin', 'user1','user2','user3'])->default('user1');
             $table->bigInteger('point')->default(0);
             $table->bigInteger('totalpost')->default(0);
-            // $table->string('picture',100);
+            $table->string('picture',100)->default("no_avatar.jpg");
             
             // $table->timestamp('email_verified_at')->nullable();
             // $table->rememberToken();

@@ -12,7 +12,7 @@
         <div class="row round2">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="about_us_image mt-5">
-                <img class="center image ml-5" src="{{url('gallery/67122170_855965881469505_4040380295556285236_n.jpg')}}" alt="Avatar" style="width:400px">
+                <img  class="center image ml-5" src="/image/{{$user->picture}}" width="400px"> 
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -23,18 +23,22 @@
 
                     <?php if($user->role == 'user1') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
                     <?php    
                     } else if($user->role == 'user2') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
+
                     <?php    
                     } else if($user->role == 'user3') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
+
                     <?php    
                     } else { ?>
-                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-crown yellow" style="font-size:50px"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-crown yellow" style="font-size:50px"></i></h1>
                     <?php  
                     } ?>
-                    <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
                 </div>
             </div>
         </div>

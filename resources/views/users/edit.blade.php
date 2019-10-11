@@ -18,7 +18,7 @@
     @endif
      -->
 
-    <form action="{{route('users.update', ['user'=> $user->id])}}" method="post">
+    <form action="{{route('users.update', ['user'=> $user->id])}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="row">
@@ -78,6 +78,13 @@
                 <input style="width:500px;height:50px;font-size:20px" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{old('password_confirmation')}}">
                 @error('password_confirmation')
                 <div class="alertinputfalse">{{$message}}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <p style="padding-left:18%;text-shadow:3px 3px white">Profile picture</p>
+                <input type="file" name="picture" class="form-control-file">
+                @error('picture')
+                <div class="red">{{$message}}</div>
                 @enderror
             </div>
            
