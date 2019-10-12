@@ -38,4 +38,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+    // user คนนึง โพสได้หลายข่าว 
+    public function stories() {
+        return $this->hasMany(Story::class);
+    }
+
+    // user คนนึง โพสได้หลายโพส(รูปในgallery) 
+    public function posts() {
+        return $this->hasMany(Post::class);
+    }
 }
