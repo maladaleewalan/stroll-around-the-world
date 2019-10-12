@@ -5,10 +5,10 @@
 $next = $post->id - 1;
 $allpost = Post::get();
 if($previous == 0) {
-    $previous = $allpost->count();   //จำนวนข้อมูลในdb
+    $previous = 1;
 }
 if($next == $allpost->count()+1) {
-    $next = 1;
+    $next = $allpost->count();   //จำนวนข้อมูลในdb
 }
 ?>
 

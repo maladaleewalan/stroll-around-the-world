@@ -12,8 +12,36 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        $post = new Post;
+        $post->detail = "Dinosaur";
+        $post->picture = "3-21.jpg";
+        $post->save();
 
-        factory(Post::class,20)->create();  
+        $post = new Post;
+        $post->detail = "The first temple that I visited in Bangkok";
+        $post->picture = "3-1-1.jpg";
+        $post->save();
+
+        $post = new Post;
+        $post->detail = "หมอกจางๆ และ ควัน";
+        $post->picture = "Kew-Mae-Pan.jpg";
+        $post->save();
+
+        $post = new Post;
+        $post->detail = "Good morning";
+        $post->picture = "oqabqeebhFfGVk64248-o.jpg";
+        $post->save();
+
+        $post = new Post;
+        $post->detail = "Train....";
+        $post->picture = "_MG_5418.jpg";
+        $post->save();
+
+
+
+
+
+        // factory(Post::class,20)->create();  
 
       
 

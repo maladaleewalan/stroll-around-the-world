@@ -77,7 +77,7 @@
         <?php if($guide->type == 'food') { ?>
             <p style="font-weight:bold">{{$guide->title}}</p>
             <p>{{$guide->detail}}</p>
-            <img src='gallery/{{$guide->picture}}' width="400px"/>
+            <img src='image/{{$guide->picture}}' width="400px"/>
         <?php } ?>
         </div>
         @endforeach
@@ -101,7 +101,7 @@
         <?php if($guide->type == 'place') { ?>
             <p style="font-weight:bold">{{$guide->title}}</p>
             <p>{{$guide->detail}}</p>
-            <img src='gallery/{{$guide->picture}}' width="400px"/>
+            <img src='image/{{$guide->picture}}' width="400px"/>
         <?php } ?>
         </div>
         @endforeach
@@ -126,7 +126,7 @@
         <?php if($guide->type == 'culture') { ?>
             <p style="font-weight:bold">{{$guide->title}}</p>
             <p>{{$guide->detail}}</p>
-            <img src='gallery/{{$guide->picture}}' width="400px"/>
+            <img src='image/{{$guide->picture}}' width="400px"/>
         <?php } ?>
         </div>
         @endforeach

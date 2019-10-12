@@ -109,6 +109,8 @@
 </div>
 
 @for($i = 0;$i<2;$i++) 
+<?php $cutstr = mb_substr($stories[$i]->detail,0,200,'UTF-8');  //จะโชว์เนื้อหาข่าวแค่บางส่วน
+?>
 
 <div data-scroll="1" style="" class="aboutme-section sec-p100-bg-bs mb-30 clearfix " id="about">
     <div class="personal-details-area secion-p100 mt-1 color" style="background-color:#f48fb1">
@@ -116,7 +118,7 @@
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img src="gallery/bangkok-grand-palace.jpg" width="400px" alt="">
+                            <img src='image/{{$stories[$i]->picture}}' width="400px" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -124,7 +126,7 @@
                             <div class="mt-1">
                                 <b class="newstitle"><i class="fas fa-newspaper mr-2"></i>{{$stories[$i]->title}}</b>
                             </div>
-                                <p class="news">{{$stories[$i]->detail}}</p>
+                                <p class="news">{{$cutstr}} ......</p>
                                 <span><i class="far fa-clock"></i> {{$stories[$i]->created_at->diffForHumans()}}</span> 
                                 <!-- <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $stories[$i]->id ]) }}'" class="btn btn-info floatright">Read more</button></span> -->
                            
