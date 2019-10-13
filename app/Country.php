@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Country extends Model
 {
     use SoftDeletes;
+
+    public function regions(){
+        return $this->hasMany(Region::class);
+    }
 }
+

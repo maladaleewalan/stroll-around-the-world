@@ -1,6 +1,19 @@
 body {
     background-color:#F2D7D5;
 }
+.addguide{
+    font-size:40px;
+    font-family: 'Manjari', sans-serif;
+    text-shadow:3px 3px white;
+}
+.fontmodaltitle{
+    font-size:23px;
+    color:#1C2833(146, 11, 11);
+}
+.fontmodaldetail{
+    font-size:17px;
+    color:#1C2833(146, 11, 11);
+}
 .button {
     /* bottom: 0px;
     position: fixed;

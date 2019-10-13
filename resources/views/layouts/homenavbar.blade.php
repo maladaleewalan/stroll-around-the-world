@@ -18,7 +18,7 @@
             <a class="dropdown-item Anav" href="#">Japan</a>
             <a class="dropdown-item Anav" href="#">Italy</a>
             <a class="dropdown-item Anav" href="#">Scotland</a>
-            <a class="dropdown-item Anav" href="#">Sweden</a>
+            <a class="dropdown-item Anav" href="#">Switzerland</a>
           </div>
         </li>
         
