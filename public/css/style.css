@@ -13,6 +13,8 @@ body {
 .fontmodaldetail{
     font-size:17px;
     color:#1C2833(146, 11, 11);
+    text-indent: 50px;
+
 }
 .button {
     /* bottom: 0px;

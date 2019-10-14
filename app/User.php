@@ -49,4 +49,9 @@ class User extends Authenticatable
     public function posts() {
         return $this->hasMany(Post::class);
     }
+
+    // user คนนึง โพส guide ได้หลายโพส
+    public function guides() {
+        return $this->hasMany(Guide::class);
+    }
 }

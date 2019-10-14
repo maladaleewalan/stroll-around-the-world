@@ -17,7 +17,7 @@
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img src='image/{{$story->picture}}' width="400px"/>
+                            <img src='image/{{$story->picture}}' width="400px" height="250px"/>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -27,7 +27,7 @@
                                 <b class="newstitle"><i class="fas fa-newspaper mr-2"></i>{{$story->title}}</b>
                             </div>
                                 <p class="news">{{$cutstr}} ......</p>
-                                <span><i class="far fa-clock"></i> {{$story->created_at->diffForHumans()}}</span> <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $story->id ]) }}'" class="btn btn-info floatright">Read more</button></span>
+                                <span><i class="far fa-clock"></i> {{$story->created_at->diffForHumans()}}</span> <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $story->id ]) }}'" class="w3-button w3-black floatright">Read more</button></span>
                            
                             </div>     
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                                                               

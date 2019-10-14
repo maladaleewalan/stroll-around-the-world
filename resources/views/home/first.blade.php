@@ -1,55 +1,54 @@
 @extends('layouts.home')
 
 @section('content')
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-    </ol>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
 
-    <div class="carousel-inner">
-    
+  <div class="carousel-inner">
     <div class="carousel-item active">
-        <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
+    <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-5">
               <a href="{{route('guides.index')}}">
               <img style="height: 450px; width:1000px" class="first-slide" src="gallery/maxresdefault.jpg" alt="First slide"></a>
           </div>
         </div>
-      </div>
+    </div>
 
-      <div class="carousel-item">
-        <svg width="100%" height="510"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
+    <div class="carousel-item">
+    <svg width="100%" height="510"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-3">
               <img style="height: 450px; width:1000px" class="first-slide" src="gallery/japan-fuji-mountain-himeji-castle-full-cherry-blossom-h.jpg" alt="First slide">
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
+    </div>
+
+    <div class="carousel-item">
+    <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-5">
               <img style="height: 450px; width:1000px" class="first-slide" src="gallery/Japan--header-image.jpg" alt="First slide">
           </div>
         </div>
-      </div>
-      
-
-      </div>
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>                      
+  </div>
 
-      <span class="sr-only">Next</span>
-    </a>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+
   <div class="container">
 
       <div class="row mt-5">
@@ -72,7 +71,7 @@
               <div class="card mb-4 shadow-sm" style="background-color: #f48fb1">
                   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/envira-gallery.jpg" y="-5%" x="-8%" width="400px"></image></svg>
                         <div class="card-body">
-                              <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-images "></i><span class="ml-2"></span>GALLERRY</span></strong>
+                              <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-images "></i><span class="ml-2"></span>GALLERY</span></strong>
                           <p class="card-text" style="color: black;">This content will gather photos on tourist guides and review image by other user or by admin...</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
@@ -128,8 +127,7 @@
                             </div>
                                 <p class="news">{{$cutstr}} ......</p>
                                 <span><i class="far fa-clock"></i> {{$stories[$i]->created_at->diffForHumans()}}</span> 
-                                <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $stories[$i]->id ]) }}'" class="btn btn-info floatright">Read more</button></span>
-                          
+                                <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $stories[$i]->id ]) }}'" class="w3-button w3-black floatright">Read more</button></span>
                             </div>     
                           
                     </div>
