@@ -3,7 +3,7 @@
 @section('content')
 <div class="center">
     <div class="divsignup">
-        <span class="titlepage center mr-2"><i class="fas fa-plus-square iconsignup"></i>&nbsp;NEWS</span><br>
+        <span class="titlepage center mr-2"><i class="fas fa-edit iconsignup"></i>&nbsp;GUIDE</span><br>
     </div>
 </div>
 
@@ -18,10 +18,23 @@
     @endif
      -->
 
-        <form action="{{route('stories.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('guides.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="divcenter" style="margin-top:20px">
                 <div class="formsignup" style="padding-left:10%">
+                
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Type</label>
+                        </div>
+                        <select name="type" class="custom-select">
+                        <option selected value="food" @if (old('type') == "food") {{ 'selected' }} @endif >Food</option>
+                        <option value="place" @if (old('type') == "place") {{ 'selected' }} @endif >Place</option>
+                        <option value="culture" @if (old('type') == "culture") {{ 'selected' }} @endif >Culture</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label>Title</label>
                     <input style="width:700px;height:50px;font-size:20px" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{old('title')}}">
@@ -50,7 +63,7 @@
      
 <div class="center">
         <button class="btn btn-success buttonsignup floatright" type="submit">Submit</button>
-        <a class="btn btn-danger buttonsignup floatleft" href="{{route('stories.index')}}">Back</a>
+        <a class="btn btn-danger buttonsignup floatleft" href="{{route('guides.index')}}">Back</a>
 </div>
 </form>
 

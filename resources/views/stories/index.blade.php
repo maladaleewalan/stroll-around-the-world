@@ -42,49 +42,6 @@
 @endforeach 
 
     
-    <button onclick="document.getElementById('id03').style.display='block'" class="button ml-5"><span>POST</span></button>
+    <button onclick="window.location.href='{{route('stories.create')}}'" class="button ml-5"><span>POST</span></button>
    
-
-      
-       <div id="id03" class="w3-modal">
-            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;background-color:#F2D7D5">
-            <form class="w3-container" action="{{route('stories.store')}}" method="post" enctype="multipart/form-data">
-                @csrf
-                <div class="w3-section">
-                    <b>Title<label class="nav-item dropdown" ></b>
-                    <input type="text" name="title"  class="form-control @error('title') is-invalid @enderror" value="{{old('title')}}">
-                    @error('title')
-                    <div class="red">{{$message}}</div>
-                    @enderror
-
-                    <br>
-                    <b>Description<label class="nav-item dropdown" ></b>
-                    <textarea class="form-control @error('detail') is-invalid @enderror" name="detail" rows="10">{{old('detail')}}</textarea>
-                    @error('detail')
-                    <div class="red">{{$message}}</div>
-                    @enderror
-                    <br>
-
-                    <label><b>IMAGE</b></label>
-                    <div class="form-group" style="font-size:15px">
-                        <input type="file" name="picture" class="form-control-file">
-                        @error('picture')
-                        <div class="red">{{$message}}</div>
-                        @enderror
-                        <br> 
-                    </div>
-          
-
-                    <button class="btn btn-success" type="submit">POST</button>
-                   
-                </div>
-            </form>
-            
-            <div class="w3-container w3-border-top w3-padding-16" style="background-color:#F2D7D5">
-                <button onclick="document.getElementById('id03').style.display='none'" type="button" class="btn btn-danger">Cancel</button>
-            </div>
-
-        </div>
-  </div>
-
 @endsection

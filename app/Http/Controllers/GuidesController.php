@@ -84,7 +84,8 @@ class GuidesController extends Controller
      */
     public function edit(Guide $guide)
     {
-        //
+        return view('guides.edit',['guide'=>$guide]);
+
     }
 
     /**

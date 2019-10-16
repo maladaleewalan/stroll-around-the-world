@@ -16,7 +16,7 @@
   </div>
 </div>
 
-  <button onclick="document.getElementById('id03').style.display='block'" class="button ml-5"><span>POST</span></button>
+  <button onclick="window.location.href='{{route('posts.create')}}'" class="button ml-5"><span>POST</span></button>
 
 
 <div class="center">

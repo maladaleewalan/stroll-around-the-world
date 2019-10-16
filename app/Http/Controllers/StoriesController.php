@@ -25,6 +25,7 @@ class StoriesController extends Controller
      */
     public function create()
     {
+        return view('stories.create');
     }
 
     /**
@@ -83,7 +84,8 @@ class StoriesController extends Controller
      */
     public function edit(Story $story)
     {
-        
+        return view('stories.edit',['story' => $story]);
+
     }
 
     /**

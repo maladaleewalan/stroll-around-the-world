@@ -2,13 +2,19 @@
 @extends('layouts.home')
 @section('content')
 <?php $previous = $post->id + 1;
-$next = $post->id - 1;
+$next = $post->id - 1;     //nextเป็นลบเพราะตอนแสดงรูปเอารูปrecordสุดท้ายของtableขึ้นก่อน(วันที่โพสล่าสุด)
 $allpost = Post::get();
 if($previous == 0) {
-    $previous = 1;
+    $previous = $allpost->count(); //จำนวนข้อมูลในdb
+}
+if($next == 0) {
+  $next = $allpost->count(); //จำนวนข้อมูลในdb
 }
 if($next == $allpost->count()+1) {
-    $next = $allpost->count();   //จำนวนข้อมูลในdb
+    $next = 1;
+}
+if($previous == $allpost->count()+1) {
+  $previous = 1;
 }
 ?>
 
@@ -18,7 +24,7 @@ if($next == $allpost->count()+1) {
         @method('DELETE')
         <button class="editprofile btn btn-link red" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
     </form>
-    <button class="editprofile btn btn-link" onclick="document.getElementById('id03').style.display='block'">
+    <button class="editprofile btn btn-link" onclick="window.location.href='{{route('posts.edit',['post'=>$post->id])}}'">
         <i class="fas fa-edit"></i>edit
     </button>
 
