@@ -283,6 +283,9 @@ a:hover{
 .floatright {
     float:right;
 }
+.floatleft {
+    float:left;
+}
 .divnewsshow {
     margin: auto;
   width: 50%;
@@ -361,4 +364,17 @@ a:hover{
     font-size:20px;
     color:red;
     font-weight:bold;
+}
+.divguide{
+    margin:5px;
+    border:#e93e80 10px dashed;
+    border-radius:10px;
+    background-color:#ffc5d8;
+    text-align:left;
+}
+.forgotpw {
+    font-size: 18px;
+    color:red;
+    font-family: 'Manjari', sans-serif;
+    text-shadow:3px 3px white;
 }

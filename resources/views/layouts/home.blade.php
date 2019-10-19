@@ -1,11 +1,22 @@
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}" />
+    
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     
+    <!-- <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}" /> -->
     <link rel="stylesheet" href="{{url('css/style.css')}}"/>
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
     crossorigin="anonymous"> 
     <!-- icon -->
@@ -23,6 +34,7 @@
             @yield('content')
       
 <footer>
+<br>
 <br>
 </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

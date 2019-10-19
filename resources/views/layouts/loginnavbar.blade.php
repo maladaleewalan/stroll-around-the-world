@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse navhome" id="navbarNav">
     <ul class="navbar-nav  mr-auto">
     <li class="nav-item">
-        <a class="nav-link Anav" href="{{action('HomeController@first')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
+        <a class="nav-link Anav" href="{{route('home')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
       </li>
    
       <li class="nav-item dropdown">
@@ -36,10 +36,10 @@
       <!-- right -->
       <ul class="navbar-nav  ml-auto">
       <li class="nav-item">
-          <a class="nav-link Anav" href='{{ route('users.show', ['user' => 3 ]) }}'><span class="fontnav">Profile</span></a>
+          <a class="nav-link Anav" href="{{ route('users.show', ['user' => 3 ]) }}"><span class="fontnav">Profile</span></a>
         </li>
       <li class="nav-item">
-          <a class="nav-link Anav" href="{{action('HomeController@first')}}"><span class="fontnav">Logout</span></a>
+          <a class="nav-link Anav" href="{{route('home')}}"><span class="fontnav">Logout</span></a>
         </li>
       </ul>
   </div>

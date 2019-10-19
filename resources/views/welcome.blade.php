@@ -5,7 +5,7 @@
 <p class="textwelcome"> Stroll around the World </p>
 </div>
 <div class="center buttonwelcome">
-<button type="button" class="btn btn-light button-welcome"><a href="{{action('HomeController@first')}}">go to website</a></button>
+<button type="button" class="btn btn-light button-welcome"><a href="{{route('firstpage')}}">go to website</a></button>
 
 </div>
 

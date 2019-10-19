@@ -101,10 +101,10 @@
 
 <!-- NEWS -->
 <div data-scroll="1" class="aboutme-section sec-p100-bg-bs mb-30 clearfix blue " id="about">
-<div class="mt-2 ml-3" style="display:inline">
-      <span class="titlepage">NEWS</span>
-      <button onclick="window.location.href='{{route('stories.index')}}'" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
-</div>
+  <div class="mt-2 ml-3" style="display:inline">
+        <span class="titlepage">NEWS</span>
+        <button onclick="window.location.href='{{route('stories.index')}}'" type="button" class="w3-button w3-black" style="float:right">Read more News</button>
+  </div>
 </div>
 
 @for($i = 0;$i<2;$i++) 
@@ -128,13 +128,13 @@
                                 <p class="news">{{$cutstr}} ......</p>
                                 <span><i class="far fa-clock"></i> {{$stories[$i]->created_at->diffForHumans()}}</span> 
                                 <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $stories[$i]->id ]) }}'" class="w3-button w3-black floatright">Read more</button></span>
-                            </div>     
-                          
+                            </div>       
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 @endfor
 
 

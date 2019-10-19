@@ -1,23 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Story;
-use App\User;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
-        return view('home.index');
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    public function first() {
-        $stories = Story::orderBy('created_at','desc')->get();    
-        return view('home.first',['stories'=>$stories]);
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
-
-    public function signup() {
-        return view('home.signup');
-    }
-
 }

@@ -19,7 +19,7 @@
             <br>
                 <div><a class="editprofile" href="{{route('users.edit', ['user' => $user->id])}}"><i class="fas fa-user-edit"></i>edit</a></div>
                 <div class="personal-details-right">
-                    <h1 class="profile mt-5">USERNAME: {{$user->username}}</h1>
+                    <h1 class="profile mt-5">USERNAME: {{$user->name}}</h1>
 
                     <?php if($user->role == 'user1') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>

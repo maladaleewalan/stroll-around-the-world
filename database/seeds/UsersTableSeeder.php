@@ -15,10 +15,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = new User;
-        $user->username = "gamyuimalada";
         $user->password = Hash::make('gam3542');
-        $user->firstname = "Malada";
-        $user->lastname = "leewalan";
+        $user->name = "Malada";
         $user->email = "gam3542@hotmail.com";
         $user->role = "admin";
         $user->picture = "gam.jpg";
@@ -26,20 +24,16 @@ class UsersTableSeeder extends Seeder
 
 
         $user = new User;
-        $user->username = "MynameisImm";
         $user->password = Hash::make('Immmmmmm');
-        $user->firstname = "Thanapass";
-        $user->lastname = "pungsub";
+        $user->name = "Thanapass";
         $user->email = "thanapass.p@hotmail.com";
         $user->role = "admin";
         $user->picture = "im.jpg";
         $user->save();
 
         $user = new User;
-        $user->username = "userdemo";
         $user->password = Hash::make('userdemo');
-        $user->firstname = "User";
-        $user->lastname = "demo";
+        $user->name = "UserDemo";
         $user->email = "userdemo@hotmail.com";
         $user->picture = "2_2936_0130.jpg";
         $user->save();

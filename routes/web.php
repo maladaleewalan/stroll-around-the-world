@@ -1,5 +1,7 @@
 <?php
 
+use App\Story;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,14 +13,14 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/','HomeController@index');
-Route::get('/home','HomeController@first'); 
-
-
+Route::get('/firstpage',function() {
+    $stories = Story::orderBy('created_at','desc')->get();    
+    return view('firstpage',['stories' => $stories]);
+})->name('firstpage');
 
 
 Route::get('/master',function() {
@@ -31,6 +33,5 @@ Route::resource('/posts', 'PostsController');
 Route::resource('/guides', 'GuidesController');
 
 
-
-
-
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
