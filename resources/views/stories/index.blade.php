@@ -41,7 +41,8 @@
 
 @endforeach 
 
-    
+    @auth
     <button onclick="window.location.href='{{route('stories.create')}}'" class="button ml-5"><span>POST</span></button>
-   
+    @endauth
+    
 @endsection

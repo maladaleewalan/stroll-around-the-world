@@ -5,8 +5,15 @@ namespace App\Http\Controllers;
 use App\Story;
 use Illuminate\Http\Request;
 
+use Auth;
 class StoriesController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth')->except(['index','show']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -84,6 +91,9 @@ class StoriesController extends Controller
      */
     public function edit(Story $story)
     {
+        if(Auth::id() !== $story->user->id || Auth::user()->role !== 'admin') {
+            return redirect()->route('stories.show',['story'=>$story]);
+        }
         return view('stories.edit',['story' => $story]);
 
     }

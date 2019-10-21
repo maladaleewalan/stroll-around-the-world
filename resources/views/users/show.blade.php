@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('layouts.home')
 
 @section('content')
 <div class="center">
@@ -17,22 +17,26 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <br>
-                <div><a class="editprofile" href="{{route('users.edit', ['user' => $user->id])}}"><i class="fas fa-user-edit"></i>edit</a></div>
+
+                <?php $id = Auth::user()->id ?>
+                @auth
+                <div><a class="editprofile" href="{{route('users.edit', ['user' => $id])}}"><i class="fas fa-user-edit"></i>edit</a></div>
+                @endauth
                 <div class="personal-details-right">
-                    <h1 class="profile mt-5">USERNAME: {{$user->name}}</h1>
+                    <h1 class="profile mt-5">NAME: {{Auth::user()->name}}</h1>
 
                     <?php if($user->role == 'user1') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
-                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
+                        <h1 class="profile mt-5">POST: {{Auth::user()->totalpost}}</h1>                                    
                     <?php    
                     } else if($user->role == 'user2') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
-                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
+                        <h1 class="profile mt-5">POST: {{Auth::user()->totalpost}}</h1>                                    
 
                     <?php    
                     } else if($user->role == 'user3') { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
-                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
+                        <h1 class="profile mt-5">POST: {{Auth::user()->totalpost}}</h1>                                    
 
                     <?php    
                     } else { ?>
@@ -57,52 +61,5 @@
     <img src="{{url('gallery/DSC05526-1024x684.jpg')}}"  class="ml-3 mt-2" style="width:30%">
 
   </div>
-  <button onclick="document.getElementById('id03').style.display='block'" class="button ml-5"><span>POST</span></button>
-  <div id="id03" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;background-color:#F2D7D5">
-
-
-      <form class="w3-container" action="/action_page.php">
-        <div class="w3-section">
-        <b>Title<label class="nav-item dropdown" >
-
-          <a class="nav-link dropdown" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>Abroad</b></a>
-<div class="dropdown-menu ">
-            <a class="dropdown-item " href="#">Korea</a>
-            <a class="dropdown-item " href="#">Japan</a>
-            <a class="dropdown-item " href="#">Italy</a>
-            <a class="dropdown-item " href="#">Scotland</a>
-            <a class="dropdown-item " href="#">Sweden</a>
-          </div>
-        </label><label class="nav-item dropdown" >
-          <a class="nav-link dropdown" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>type</b></a>
-<div class="dropdown-menu ">
-            <a class="dropdown-item " href="#">NEWS</a>
-            <a class="dropdown-item " href="#">IMAGE</a>
-          </div>
-        </label></b>
-          <input class="w3-input w3-border w3-margin-bottom" type="text" name="usrname" required>
-
-          <b>Description<label class="nav-item dropdown" ></b>
-          <textarea class="form-control" id="content" name="content" rows="5" required/></textarea>
-          <br>
-          <label><b>IMAGE</b></label>
-          <form>
-            <div class="form-group" style="font-size:15px">
-            <input type="file" class="form-control-file" >
-            <br>
-            <image src=""width="200px" height="200px"/>
-            </div>
-            </form>
-
-            <button class="btn btn-success" type="submit">POST</button>
-            </div>
-
-      <div class="w3-container w3-border-top w3-padding-16" style="max-width:600px;background-color:#F2D7D5">
-        <button onclick="document.getElementById('id03').style.display='none'" type="button" class="btn btn-danger">Cancel</button>
-      </div>
-
-    </div>
-  </div>
-</div>
+  
 @endsection

@@ -18,6 +18,8 @@ if($previous == $allpost->count()+1) {
 }
 ?>
 
+@auth
+@if(Auth::id() === $post->user->id) 
 <div style="text-align: right;margin:80px 370px 0px 0px;" role="group">
     <form action="{{route('posts.destroy', ['post' => $post->id])}}" method="post">
         @csrf
@@ -27,19 +29,22 @@ if($previous == $allpost->count()+1) {
     <button class="editprofile btn btn-link" onclick="window.location.href='{{route('posts.edit',['post'=>$post->id])}}'">
         <i class="fas fa-edit"></i>edit
     </button>
-
 </div>
+@endif
+@endauth
 
 <a href="{{ route('posts.show',['post'=> $previous]) }}"><i class="fas fa-chevron-circle-left buttonleft"></i></a>
 
 <div class="divcenter divgalleryshow">
-  <p class="usernamepost" style="font-size:30px"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>3])}}">USERNAME</a></p>
+  <p class="usernamepost" style="font-size:30px"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$post->user->id])}}">{{$post->user->name}}</a></p>
      <p style="font-size:20px" >{{$post->detail}}</p>
      <div class="center">
    <img src="/image/{{$post->picture}}" width="1000px">
     </div>
     <div class="like">
+    @auth
       <button type="button" class="btn btn-light" style="font-size:20px"><i class="fab fa-gratipay pink" style="font-size:20px"></i> Like</button>
+    @endauth
       &nbsp;<span> <i class="fas fa-thumbs-up blue" style="font-size:25px">: {{$post->like}}</i> </span>
 
       <button type="button" onclick="window.location.href='{{ route('posts.index')}}'" class="btn btn-light" style="font-size:20px;float:right"> <i class="fas fa-images"></i> Back to Gallery</button>

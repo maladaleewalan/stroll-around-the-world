@@ -5,8 +5,16 @@ namespace App\Http\Controllers;
 use App\Guide;
 use Illuminate\Http\Request;
 
+use Auth;
+
 class GuidesController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth')->except(['index','show']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -84,6 +92,10 @@ class GuidesController extends Controller
      */
     public function edit(Guide $guide)
     {
+        if(Auth::user()->role !== 'admin') {   //ถ้าไม่ใช่แอดมิน
+            $guides = Guide::get();
+            return redirect()->route('guides.index',['guides'=>$guides]);
+        }
         return view('guides.edit',['guide'=>$guide]);
 
     }

@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +21,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::get();    
-        return view('users.index',['users'=>$users]);
+        // $users = User::get();    
+        // return view('users.index',['users'=>$users]);
     }
 
     /**
@@ -27,7 +32,6 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
     }
 
     /**
@@ -38,43 +42,6 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $this->validate($request,[
-            'username' => ['required','min:5','max:20'],
-            'password' => ['required','min:5','max:10'],
-            'firstname' => ['required','min:5','max:20'],
-            'lastname' => ['required','min:5','max:20'],
-            'email' => ['required','min:10','max:30'],
-            'picture' => 'image|mimes:jpeg,png,jpg,gif'
-        ]);
-        
-        $user = new User;
-        $user->username = $validateData['username'];
-        $user->password = Hash::make($validateData['password']);
-        $user->firstname = $validateData['firstname'];
-        $user->lastname = $validateData['lastname'];
-        $user->email = $validateData['email'];
-
-        //รูป
-        $ext = pathinfo(basename($_FILES['picture']['name']),PATHINFO_EXTENSION);   //ดึงนามสกุลจากไฟล์ที่โหลดมา
-        $new_image_name = 'img_'. uniqid() . "." . $ext;    //สุ่มชื่อไฟล์ใหม่ เป็นสตริงไม่ซ้ำ
-        $image_path = "image/";      //folder image
-        $upload_path = $image_path . $new_image_name;
-        //uploading
-        $success = move_uploaded_file($_FILES['picture']['tmp_name'],$upload_path);  //เอามาใส่ในupload path
-      
-
-        //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
-        if($_FILES['picture']['name'] != null) {   
-            $user->picture = $new_image_name;
-        }
-        else {
-            $user->picture = "no_avatar.jpg";  //ถ้าไม่ได้อัพรูป ให้เป็นรูปเริ่มต้น
-        }
-        
-
-        $user->save();
-
-        return redirect()->route('users.show',['user'=>$user->id]);
 
     }
 
@@ -110,9 +77,7 @@ class UsersController extends Controller
     public function update(Request $request, User $user)
     {
         $validateData = $this->validate($request,[
-            'username' => ['required','min:5','max:20'],
-            'firstname' => ['required','min:5','max:20'],
-            'lastname' => ['required','min:5','max:20'],
+            'name' => ['required','min:5','max:20'],
             'email' => ['required','min:10','max:30'],
             'password' => ['max:10'],
             'password_confirmation' => ['max:10'],
@@ -141,9 +106,7 @@ class UsersController extends Controller
 
         if($validateData['password'] == null && $validateData['password_confirmation'] == null) {
             //input password , confirm ว่าง = ไม่ได้เปลี่ยนรหัส
-            $user->username = $validateData['username'];
-            $user->firstname = $validateData['firstname'];
-            $user->lastname = $validateData['lastname'];
+            $user->name = $validateData['name'];
             $user->email = $validateData['email'];
 
             $user->password = Hash::make($validateData['password']);

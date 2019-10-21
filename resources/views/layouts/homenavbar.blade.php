@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse navhome" id="navbarNav">
     <ul class="navbar-nav  mr-auto">
     <li class="nav-item">
-        <a class="nav-link Anav" href="{{route('home')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
+        <a class="nav-link Anav" href="{{route('firstpage')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
       </li>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown Anav" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle ml-2 mr-1 yellow"></i><span class="fontnav">Country</span></a>
@@ -34,14 +34,34 @@
 
       <!-- right -->
       <ul class="navbar-nav  ml-auto">
-      <li class="nav-item">
-        <a class="nav-link Anav" href="{{ route('login') }}"><span class="fontnav">Sign in</span></a>
-
-       
-      </li>
-      <li class="nav-item">
-          <a class="nav-link Anav" href="{{ route('register') }}"><span class="fontnav">Sign up</span></a>
+        @guest
+        <li class="nav-item">
+            <a class="nav-link Anav" href="{{ route('login') }}"><span class="fontnav"><i class="fas fa-sign-in-alt"></i>&nbsp;{{ __('Login') }}</span></a>
         </li>
+
+        @if (Route::has('register'))
+          <li class="nav-item">
+              <a class="nav-link Anav" href="{{ route('register') }}"><span class="fontnav"><i class="fas fa-user-plus"></i>&nbsp;{{ __('Register') }}</span></a>
+          </li>
+        @endif
+        @else
+          <li class="nav-item">
+              <?php $id = Auth::user()->id ?>
+              <a class="nav-link Anav" href="{{ route('users.show', ['user' => $id ]) }}"><span class="fontnav"><i class="fas fa-user-circle"></i>&nbsp;{{ Auth::user()->name }}</span></a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link Anav" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <span class="fontnav"><i class="fas fa-sign-out-alt"></i>&nbsp;{{ __('Logout') }}</span></a>
+          
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     @csrf
+              </form>
+          </li>
+
+          @endguest
       </ul>
   </div>
 </nav>

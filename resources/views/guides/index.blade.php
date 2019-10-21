@@ -12,7 +12,9 @@
       <a class="dropdown-item titlenav" href="#">Eastern</a>
       <a class="dropdown-item titlenav" href="#">Southern</a>
     </div>
+    @auth
     <button class=" btn btn-link addguide mt-4" onclick="window.location.href='{{route('guides.create')}}'"><i class="fas fa-plus-square "></i></button>
+    @endauth
   </div>
 
 
@@ -38,6 +40,8 @@
             <div class="modalguide">
             <?php if($guide->type == 'food') { ?>
 
+                @auth
+                @if(Auth::user()->role == 'admin') 
                 <div style="text-align: right;" role="group">
                     <form action="{{route('guides.destroy', ['guide' => $guide->id])}}" method="post">
                         @csrf
@@ -47,10 +51,10 @@
                     
                     <button class="editprofile btn btn-link" onclick="window.location.href='{{route('guides.edit',['guide'=>$guide->id])}}'">
                     <i class="fas fa-edit"></i>edit 
-                    
                     </button>
-                
                 </div>
+                @endif
+                @endauth
 
 
                 <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
@@ -66,6 +70,8 @@
                 <div class="modalguide">
                 <?php if($guide->type == 'place') { ?>
 
+                    @auth
+                    @if(Auth::user()->role == 'admin') 
                     <div style="text-align: right;" role="group">
                         <form action="{{route('guides.destroy', ['guide' => $guide->id])}}" method="post">
                             @csrf
@@ -74,11 +80,11 @@
                         </form>
                         
                         <button class="editprofile btn btn-link" onclick="window.location.href='{{route('guides.edit',['guide'=>$guide->id])}}'">
-                        <i class="fas fa-edit"></i>edit 
-                        
+                        <i class="fas fa-edit"></i>edit    
                         </button>
-                    
                     </div>
+                    @endif
+                    @endauth
 
 
                     <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
@@ -94,6 +100,8 @@
                 <div class="modalguide">
                 <?php if($guide->type == 'culture') { ?>
 
+                    @auth
+                    @if(Auth::user()->role == 'admin') 
                     <div style="text-align: right;" role="group">
                         <form action="{{route('guides.destroy', ['guide' => $guide->id])}}" method="post">
                             @csrf
@@ -102,11 +110,11 @@
                         </form>
                         
                         <button class="editprofile btn btn-link" onclick="window.location.href='{{route('guides.edit',['guide'=>$guide->id])}}'">
-                        <i class="fas fa-edit"></i>edit 
-                        
+                        <i class="fas fa-edit"></i>edit   
                         </button>
-                    
                     </div>
+                    @endif
+                    @endauth
 
 
                     <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>

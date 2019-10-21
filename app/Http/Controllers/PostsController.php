@@ -1,12 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth')->except(['index','show']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -79,6 +85,9 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
+        if(Auth::id() !== $post->user->id) {
+            return redirect()->route('posts.show',['post'=>$post->id]);
+        }
         return view('posts.edit',['post'=>$post]);
     }
 
