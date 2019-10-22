@@ -13,7 +13,7 @@
         <div class="row round2">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="about_us_image mt-5">
-                <img  class="center image ml-5" src="/image/{{$user->picture}}" width="400px"> 
+                <img  class="center image ml-5 shadow" src="/image/{{$user->picture}}" width="400px"> 
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -26,19 +26,20 @@
                 @endif
                 @endauth
                 <div class="personal-details-right">
+                    <br>
                     <h1 class="profile mt-5">NAME: {{$user->name}}</h1>
 
                     <?php if($user->role == 'user1') { ?>
-                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i></h1><h1 class="profile mt-5"> POINT: {{$user->point}}</h1>
                         <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
                     <?php    
                     } else if($user->role == 'user2') { ?>
-                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i></h1><h1 class="profile mt-5">POINT: {{$user->point}}</h1>
                         <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
 
                     <?php    
                     } else if($user->role == 'user3') { ?>
-                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> POINT: {{$user->point}}</h1>
+                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i></h1><h1 class="profile mt-5"> POINT: {{$user->point}}</h1>
                         <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
 
                     <?php    
@@ -53,11 +54,11 @@
 </div>
 </div>
 <h1><i class="fas fa-images iconprofile ml-5"><span class="ml-2">Posts</span></i></h1>
-<div class="center"> 
+<div class="divcenter" style="width:90%"> 
     <?php $posts = Post::orderBy('created_at','desc')->get();?>  
         @foreach($posts as $post) 
         <?php if($post->user->id == $user->id) {?>
-            <img src="/image/{{$post->picture}}" class="ml-5 mt-2" style="width:500px">
+            <img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:500px">
         <?php }?>
         @endforeach
   </div>

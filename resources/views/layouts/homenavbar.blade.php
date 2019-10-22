@@ -1,4 +1,4 @@
-
+<?php use App\Country; ?>
 <nav class="navhome navbar navbar-expand-lg">
   <i class="fas fa-globe-asia icon"></i>
   <span class="fonttitle ml-2">{{config('app.name')}}</span>
@@ -13,12 +13,10 @@
       <li class="nav-item dropdown">
           <a class="nav-link dropdown Anav" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle ml-2 mr-1 yellow"></i><span class="fontnav">Country</span></a>
           <div class="dropdown-menu">
-            <a class="dropdown-item Anav" href="{{route('guides.index')}}">Thailand</a>
-            <a class="dropdown-item Anav" href="#">Korea</a>
-            <a class="dropdown-item Anav" href="#">Japan</a>
-            <a class="dropdown-item Anav" href="#">Italy</a>
-            <a class="dropdown-item Anav" href="#">Scotland</a>
-            <a class="dropdown-item Anav" href="#">Switzerland</a>
+          <?php $countries = Country::get(); ?>
+            @foreach($countries as $country)
+            <a class="dropdown-item Anav" href="{{route('guides.index')}}">{{$country->name}}</a>
+            @endforeach
           </div>
         </li>
         

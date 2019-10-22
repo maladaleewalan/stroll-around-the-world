@@ -62,7 +62,16 @@ class PostsController extends Controller
         $post->picture = $new_image_name;
         $post->user_id = Auth::user()->id;
         Auth::user()->point = Auth::user()->point + 1;   //เพิ่ม point 1 แต้ม
+        Auth::user()->totalpost++;
         $post->save();
+        if(Auth::user()->role != "Admin") {
+            if(Auth::user()->point >= 10) {
+                Auth::user()->role = "user2";
+            }
+            if(Auth::user()->point >= 20) {
+                Auth::user()->role = "user3";
+            }
+        }
         Auth::user()->save();
 
         return redirect()->route('posts.show',['post'=>$post->id]);

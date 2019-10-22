@@ -11,10 +11,6 @@ class Guide extends Model
         return $this->belongsTo(User::class);
     }
 
-    //1 guides มี region เดียว
-    public function region(){
-        return $this->belongsTo(Region::class);
-    }
 
 }
 

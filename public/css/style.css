@@ -378,3 +378,6 @@ a:hover{
     font-family: 'Manjari', sans-serif;
     text-shadow:3px 3px white;
 }
+.shadow{
+    text-shadow:3px 3px black;
+}

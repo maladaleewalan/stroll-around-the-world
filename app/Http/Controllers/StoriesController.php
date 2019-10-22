@@ -64,8 +64,18 @@ class StoriesController extends Controller
 
         //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
         $story->picture = $new_image_name;
-        
+        $story->user_id = Auth::user()->id;
+        Auth::user()->point = Auth::user()->point + 3;
         $story->save();
+        if(Auth::user()->role != "Admin") {
+            if(Auth::user()->point >= 10) {
+                Auth::user()->role = "user2";
+            }
+            if(Auth::user()->point >= 20) {
+                Auth::user()->role = "user3";
+            }
+        }
+        Auth::user()->save();
 
         return redirect()->route('stories.show',['story'=>$story->id]);
        
@@ -91,7 +101,7 @@ class StoriesController extends Controller
      */
     public function edit(Story $story)
     {
-        if(Auth::id() !== $story->user->id || Auth::user()->role !== 'admin') {
+        if(Auth::id() !== $story->user->id && Auth::user()->role !== 'admin') {
             return redirect()->route('stories.show',['story'=>$story]);
         }
         return view('stories.edit',['story' => $story]);
