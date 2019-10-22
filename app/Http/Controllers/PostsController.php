@@ -60,8 +60,10 @@ class PostsController extends Controller
 
         //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
         $post->picture = $new_image_name;
-        
+        $post->user_id = Auth::user()->id;
+        Auth::user()->point = Auth::user()->point + 1;   //เพิ่ม point 1 แต้ม
         $post->save();
+        Auth::user()->save();
 
         return redirect()->route('posts.show',['post'=>$post->id]);
     }

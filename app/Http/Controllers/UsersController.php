@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
 
+use Auth;
+
 class UsersController extends Controller
 {
 
@@ -64,6 +66,9 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        if(Auth::id() !== $user->id) {
+            return redirect()->route('users.show',['user'=>Auth::id()]);
+        }
         return view('users.edit',['user'=>$user]);
     }
 
