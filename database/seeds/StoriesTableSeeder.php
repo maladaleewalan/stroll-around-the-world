@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Story;
 
+use App\Country;
+
+
 class StoriesTableSeeder extends Seeder
 {
     /**
@@ -12,6 +15,31 @@ class StoriesTableSeeder extends Seeder
      */
     public function run()
     {
+
+        $country = new Country;
+        $country->name="Thailand";
+        $country->save();
+
+        $country = new Country;
+        $country->name="Korea";
+        $country->save();
+
+        $country = new Country;
+        $country->name="Japan";
+        $country->save();
+
+        $country = new Country;
+        $country->name="Italy";
+        $country->save();
+        
+        $country = new Country;
+        $country->name="Scotland";
+        $country->save();
+        
+        $country = new Country;
+        $country->name="Switzerland";
+        $country->save();
+        
         $story = new Story;
         $story->title = "ชิม ช้อป ชม ตลาดน้ำน่าเที่ยวเมืองนนทบุรี สัมผัสวิถีของดีเมืองนนท์";
         $story->detail = "สำนักงานการท่องเที่ยวและกีฬาจังหวัดนนทบุรี จัดกิจกรรมการท่องเที่ยวในตลาดน้ำ 6 แห่ง ภายใต้โครงการ “ตลาดน้ำน่าเที่ยวเมืองนนทบุรี สัมผ้สวิถีของดีเมืองนนท์” หวังสร้างเป็นแหล่งท่องเที่ยวเชิงวัฒนธรรมและวิถีชีวิตไทยใกล้กรุงเทพมหานคร รวมถึงเพิ่มมูลค่าเศรษฐกิจการท่องเที่ยวแก่ชุมชน

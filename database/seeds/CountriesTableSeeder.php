@@ -12,28 +12,28 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $country = new Country;
-        $country->name="Thailand";
-        $country->save();
+        // $country = new Country;
+        // $country->name="Thailand";
+        // $country->save();
 
-        $country = new Country;
-        $country->name="Korea";
-        $country->save();
+        // $country = new Country;
+        // $country->name="Korea";
+        // $country->save();
 
-        $country = new Country;
-        $country->name="Japan";
-        $country->save();
+        // $country = new Country;
+        // $country->name="Japan";
+        // $country->save();
 
-        $country = new Country;
-        $country->name="Italy";
-        $country->save();
+        // $country = new Country;
+        // $country->name="Italy";
+        // $country->save();
         
-        $country = new Country;
-        $country->name="Scotland";
-        $country->save();
+        // $country = new Country;
+        // $country->name="Scotland";
+        // $country->save();
         
-        $country = new Country;
-        $country->name="Switzerland";
-        $country->save();
+        // $country = new Country;
+        // $country->name="Switzerland";
+        // $country->save();
     }
 }

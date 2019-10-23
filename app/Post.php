@@ -12,4 +12,9 @@ class Post extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+    //postนึง มี country เดียว
+    public function country() {
+        return $this->belongsTo(Country::class);
+    }
 }
