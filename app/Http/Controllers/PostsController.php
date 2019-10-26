@@ -5,11 +5,13 @@ use Auth;
 use App\Post;
 use Illuminate\Http\Request;
 
+use App\Country;
+
 class PostsController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth')->except(['index','show']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
+        $this->middleware('auth')->except(['index','show','indexPostsCountry']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
     }
 
 
@@ -21,7 +23,15 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at','desc')->get();  //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
-        return view('posts.index', ['posts'=>$posts]);
+        $countries = Country::get();
+        return view('posts.index', ['posts'=>$posts , 'countries'=>$countries]);
+    }
+
+    public function indexPostsCountry($id)
+    {
+        $posts = Post::where('country_id',$id)->orderBy('created_at','desc')->get();  //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
+        $countries = Country::get();
+        return view('posts.indexPostsCountry', ['posts'=>$posts , 'countries'=>$countries]);
     }
 
     /**
@@ -31,7 +41,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $countries = Country::get();
+        return view('posts.create',['countries'=>$countries]);
     }
 
     /**
@@ -49,6 +60,7 @@ class PostsController extends Controller
         
         $post = new Post;
         $post->detail = $validateData['detail'];
+        $post->country_id = $request->input('country');
 
         $ext = pathinfo(basename($_FILES['picture']['name']),PATHINFO_EXTENSION);   //ดึงนามสกุลจากไฟล์ที่โหลดมา
         $new_image_name = 'img_'. uniqid() . "." . $ext;    //สุ่มชื่อไฟล์ใหม่ เป็นสตริงไม่ซ้ำ

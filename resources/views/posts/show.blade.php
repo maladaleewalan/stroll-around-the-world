@@ -37,10 +37,12 @@ if($previous == $allpost->count()+1) {
 
 <div class="divcenter divgalleryshow">
   <p class="usernamepost" style="font-size:30px"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$post->user->id])}}">{{$post->user->name}}</a></p>
+  <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
      <p style="font-size:20px" >{{$post->detail}}</p>
      <div class="center">
    <img src="/image/{{$post->picture}}" width="1000px">
     </div>
+
     <div class="like">
     @auth
       <button type="button" class="btn btn-light" style="font-size:20px"><i class="fab fa-gratipay pink" style="font-size:20px"></i> Like</button>

@@ -7,6 +7,7 @@
     } else {?> 
         &nbsp;{{$stories->first()->country->name}}</span>
     <?php } ?>
+    
   <a class="dropdown choosecountry" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-mouse-pointer"></i>&nbsp;Choose Country</span></a>
     <div class="dropdown-menu ">
         @foreach ($countries as $country)
@@ -27,7 +28,7 @@
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img class="shadow" src="http://127.0.0.1:8000/image/{{$story->picture}}" width="400px" height="250px"/>
+                            <img class="shadow" src="/image/{{$story->picture}}" width="400px" height="250px"/>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -49,7 +50,6 @@
         </div>
     </div>
 </div>
-<hr>
 @endforeach 
 
     @auth

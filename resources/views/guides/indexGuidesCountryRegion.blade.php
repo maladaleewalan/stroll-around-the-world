@@ -2,16 +2,21 @@
 
 @section('content')
 <div class="titlepage mt-2 ml-3">TOURIST GUIDE
-  <i class="fas fa-globe-americas america ml-2"></i><span class="titles ml-2">Thailand</span>
-    <a class="dropdown" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="titles">Region</span></a>
+  <i class="fas fa-globe-americas america ml-2"></i>
+  <?php if($guides->first() == null) {  //ถ้าประเทศนั้นยังไม่มี guide จะnull
+    } else {?> 
+        <span class="titles ml-2">{{$guides->first()->region->name}}</span>
+    <?php } ?>
+
+
+  <a class="dropdown choosecountry" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-mouse-pointer"></i>&nbsp;Choose Region</span></a>
     <div class="dropdown-menu ">
-      <a class="dropdown-item titlenav" href="#">Northern</a>
-      <a class="dropdown-item titlenav" href="#">Northeastern</a>
-      <a class="dropdown-item titlenav" href="#">Western</a>
-      <a class="dropdown-item titlenav" href="#">Central</a>
-      <a class="dropdown-item titlenav" href="#">Eastern</a>
-      <a class="dropdown-item titlenav" href="#">Southern</a>
-    </div>
+        @foreach ($regions as $region)
+          <a class="dropdown-item titlenav" href="">{{$region->name}}</a>
+        @endforeach
+    </div> 
+
+
     @auth
     @if(Auth::user()->role == 'admin') 
     <button class=" btn btn-link addguide mt-4" onclick="window.location.href='{{route('guides.create')}}'"><i class="fas fa-plus-square "></i></button>

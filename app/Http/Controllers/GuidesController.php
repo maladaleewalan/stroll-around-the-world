@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\Country;
+use App\Region;
+
 class GuidesController extends Controller
 {
 
@@ -24,6 +27,20 @@ class GuidesController extends Controller
     {
         $guides = Guide::get();
         return view('guides.index',['guides'=>$guides]);
+    }
+
+    public function indexGuidesCountry($id)
+    {
+        $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
+        $guides = Guide::get();
+        return view('guides.index',['guides'=>$guides, 'regions'=>$regions]);
+    }
+
+    public function indexGuidesCountryRegion($id,$regionid)
+    {
+        $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
+        $guides = Guide::where('region_id',$regionid)->get();
+        return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions]);
     }
 
     /**

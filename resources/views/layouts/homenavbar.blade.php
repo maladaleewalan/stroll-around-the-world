@@ -15,7 +15,7 @@
           <div class="dropdown-menu">
           <?php $countries = Country::get(); ?>
             @foreach($countries as $country)
-            <a class="dropdown-item Anav" href="{{route('guides.index')}}">{{$country->name}}</a>
+            <a class="dropdown-item Anav" href="{{route('guides.indexGuidesCountry',['id'=>$country->id])}}">{{$country->name}}</a>
             @endforeach
           </div>
         </li>

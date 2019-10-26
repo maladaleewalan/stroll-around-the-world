@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="titlepage mt-2 ml-3">GALLERY
-    <i class="fas fa-globe-americas america ml-2" style="font-size:50px"></i>
+    <span class="titles" style="font-size:50px"><i class="fas fa-globe-americas america ml-2" style="font-size:50px"></i>
+    <?php if($posts->first() == null) {  //ถ้าประเทศนั้นยังไม่มีช่าวจะnull
+    } else {?> 
+        &nbsp;{{$posts->first()->country->name}}</span>
+    <?php } ?>
 
     <a class="dropdown choosecountry" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-mouse-pointer"></i>&nbsp;Choose Country</span></a>
     <div class="dropdown-menu ">
@@ -24,6 +28,7 @@
     <!-- <p>{{$post->detail}}</p> -->
 
     <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img class="shadow" src="/image/{{$post->picture}}" width="100%"></a>
+    
     <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
     <div class="like">
       @auth

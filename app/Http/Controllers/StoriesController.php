@@ -78,6 +78,7 @@ class StoriesController extends Controller
         $story->picture = $new_image_name;
         $story->user_id = Auth::user()->id;
         Auth::user()->point = Auth::user()->point + 3;
+        Auth::user()->totalpost++;
         $story->save();
         if(Auth::user()->role != "Admin") {
             if(Auth::user()->point >= 10) {

@@ -15,19 +15,19 @@ class GuidesTableSeeder extends Seeder
     public function run()
     {
         $region = new Region;
-        $region->name = "Northern";  //เหนือ
+        $region->name = "ภาคเหนือ";  //เหนือ
         $region->save();
 
         $region = new Region;
-        $region->name = "Northeastern";  //อีสาน
+        $region->name = "ภาคอีสาน";  //อีสาน
         $region->save();
 
         $region = new Region;
-        $region->name = "Central";  //กลาง
+        $region->name = "ภาคกลาง";  //กลาง
         $region->save();
 
         $region = new Region;
-        $region->name = "Southern";  //ใต้
+        $region->name = "ภาคใต้";  //ใต้
         $region->save();
 
         $guide = new Guide;
@@ -67,7 +67,7 @@ class GuidesTableSeeder extends Seeder
         $guide->title = "ประเพณีตักบาตรดอกไม้";
         $guide->picture = "calendar4.jpg";
         $guide->detail = "ประเพณีตักบาตรดอกไม้ เป็นประเพณีของชาวพุทธโดยมีความเชื่อเรื่องของการทำบุญ พบบางพื้นที่ของประเทศไทย เช่น เป็นประเพณีประจำปีของจังหวัดสระบุรีโดยจัดที่ วัดพระพุทธบาทราชวรมหาวิหาร โดยเมื่อถึงวันเข้าพรรษา หรือวันแรม 1 ค่ำ เดือน 8 ชาว อ.พระพุทธบาท ก็จะพากันไปเก็บดอกเข้าพรรษาที่ขึ้นอยู่ตามไหล่เขาโพธิลังกาหรือเขาสุวรรณบรรพต เทือกเขาวง และเขาพุในเขตมาจัดรวมกับธูปเทียนเพื่อตักบาตรถวายพระ และพระสงฆ์ก็จะนำดอกเข้าพรรษาเหล่านี้ไปสักการะรอยพระพุทธบาท เชื่อกันว่าอานิสงส์นี้จะส่งผลให้ผู้ทำบุญได้ขึ้นสวรรค์ชั้นดาวดึงส์";
-        $guide->region_id = 1;
+        $guide->region_id = 3;
         $guide->save();
     }
 }
