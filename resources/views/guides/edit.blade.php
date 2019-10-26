@@ -25,6 +25,7 @@
                 <div class="formsignup" style="padding-left:10%">
                 
                 <div class="form-group">
+                    <!-- ไม่แก้ไขtype -->
                     <!-- <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Type</label>

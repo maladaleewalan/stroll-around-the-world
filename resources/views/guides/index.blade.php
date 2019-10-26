@@ -13,7 +13,9 @@
       <a class="dropdown-item titlenav" href="#">Southern</a>
     </div>
     @auth
+    @if(Auth::user()->role == 'admin') 
     <button class=" btn btn-link addguide mt-4" onclick="window.location.href='{{route('guides.create')}}'"><i class="fas fa-plus-square "></i></button>
+    @endif
     @endauth
   </div>
 

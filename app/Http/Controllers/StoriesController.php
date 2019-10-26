@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Story;
 use Illuminate\Http\Request;
 
+use App\Country; 
+
 use Auth;
 class StoriesController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth')->except(['index','show']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
+        $this->middleware('auth')->except(['index','show','indexStoriesCountry']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
     }
 
 
@@ -22,7 +24,15 @@ class StoriesController extends Controller
     public function index()
     {
         $stories = Story::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
-        return view('stories.index',['stories'=>$stories]);
+        $countries = Country::get();
+        return view('stories.index',['stories'=>$stories , 'countries'=>$countries]);
+    }
+
+
+    public function indexStoriesCountry($id) {
+        $stories = Story::where('country_id',$id)->orderBy('created_at','desc')->get();
+        $countries = Country::get();
+        return view('stories.indexStoriesCountry',['stories'=>$stories , 'countries'=>$countries]);
     }
 
     /**
@@ -32,7 +42,8 @@ class StoriesController extends Controller
      */
     public function create()
     {
-        return view('stories.create');
+        $countries = Country::get();
+        return view('stories.create',['countries'=>$countries]);
     }
 
     /**
@@ -53,7 +64,8 @@ class StoriesController extends Controller
         $story = new Story;
         $story->title = $validateData['title'];
         $story->detail = $validateData['detail'];
-
+        $story->country_id = $request->input('country');
+        
         $ext = pathinfo(basename($_FILES['picture']['name']),PATHINFO_EXTENSION);   //ดึงนามสกุลจากไฟล์ที่โหลดมา
         $new_image_name = 'img_'. uniqid() . "." . $ext;    //สุ่มชื่อไฟล์ใหม่ เป็นสตริงไม่ซ้ำ
         $image_path = "image/";      //folder image
@@ -165,4 +177,6 @@ class StoriesController extends Controller
         return redirect()->route('stories.index',['stories'=>$stories]);
     
     }
+
+    
 }

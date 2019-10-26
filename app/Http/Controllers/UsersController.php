@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 use Auth;
+use App\Post;
+use App\Story;
 
 class UsersController extends Controller
 {
@@ -55,7 +57,9 @@ class UsersController extends Controller
      */
     public function show(User $user)         // URL: 127.0.0.1:8000/users/{id}
     {
-        return view('users.show',['user' => $user]);   //$user คือ parameter ที่ส่งมา
+        $posts = Post::where('user_id',$user->id)->orderBy('created_at','desc')->get();
+        $stories = Story::where('user_id',$user->id)->orderBy('created_at','desc')->get();
+        return view('users.show',['user' => $user, 'posts'=>$posts, 'stories'=>$stories]);   //$user คือ parameter ที่ส่งมา
     }
 
     /**

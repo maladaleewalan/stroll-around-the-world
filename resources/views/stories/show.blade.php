@@ -22,12 +22,13 @@
 </div>
 <div class="divcenter center">
     
-    <img src="/image/{{$story->picture}}" width="800px"> 
+    <img src="/image/{{$story->picture}}" width="1000px"> 
 </div>
 <div class="divcenter">
     <p class="newscontentshow">{{$story->detail}}</p>
 </div>
 <div class="divcenter">
+<b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$story->country->name}}</b>   <br>
     <span style="font-size:20px">Post by:&nbsp;<a href="{{route('users.show', ['user'=>$story->user->id])}}">{{$story->user->name}}</a></span><br>
     <span><i class="far fa-clock"></i> {{$story->created_at}}</span> 
 </div>

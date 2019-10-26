@@ -23,6 +23,24 @@
             <div class="divcenter" style="margin-top:20px">
                 <div class="formsignup" style="padding-left:10%">
                 <div class="form-group">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Choose Country</label>
+                        </div>
+                        <select name="country" class="custom-select">
+                            @foreach($countries as $country) 
+                                <option value={{$country->id}}
+                                    @if ($country->id == old('country',$country->name))
+                                        selected="selected"
+                                    @endif> {{$country->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
                     <label>Title</label>
                     <input style="width:700px;height:50px;font-size:20px" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{old('title')}}">
                     @error('title')

@@ -1,9 +1,12 @@
 @extends('layouts.home')
 
 @section('content')
-<div class="titlepage mt-2 ml-3">All NEWS 
-  <i class="fas fa-globe-americas america ml-2" style="font-size:50px"></i>
-  
+<div class="titlepage mt-2 ml-3">NEWS 
+    <span class="titles" style="font-size:50px"><i class="fas fa-globe-americas america ml-2" style="font-size:50px"></i>
+    <?php if($stories->first() == null) {  //ถ้าประเทศนั้นยังไม่มีช่าวจะnull
+    } else {?> 
+        &nbsp;{{$stories->first()->country->name}}</span>
+    <?php } ?>
   <a class="dropdown choosecountry" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-mouse-pointer"></i>&nbsp;Choose Country</span></a>
     <div class="dropdown-menu ">
         @foreach ($countries as $country)
@@ -24,13 +27,13 @@
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img class="shadow" src='image/{{$story->picture}}' width="400px" height="250px"/>
+                            <img class="shadow" src="http://127.0.0.1:8000/image/{{$story->picture}}" width="400px" height="250px"/>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="personal-details-right">
                             <div class="mt-1">
-                                <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$story->country->name}}</b>
+                                <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$story->country->name}}</b>   
                                 <br>
                                 <b class="newstitle">{{$story->title}}</b>
                             </div>
@@ -46,7 +49,7 @@
         </div>
     </div>
 </div>
-
+<hr>
 @endforeach 
 
     @auth

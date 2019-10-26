@@ -1,4 +1,3 @@
-<?php use App\Post; ?>
 @extends('layouts.home')
 
 @section('content')
@@ -53,14 +52,55 @@
     </div>
 </div>
 </div>
-<h1><i class="fas fa-images iconprofile ml-5"><span class="ml-2">Posts</span></i></h1>
+
+<i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
 <div class="divcenter" style="width:90%"> 
-    <?php $posts = Post::orderBy('created_at','desc')->get();?>  
         @foreach($posts as $post) 
-        <?php if($post->user->id == $user->id) {?>
-            <img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:500px">
-        <?php }?>
+        <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:500px"></a>
+   
         @endforeach
-  </div>
+</div>
+
+<i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">News</span></i>
+<div class="divcenter" style="width:90%"> 
+@foreach ($stories as $story)
+<?php $cutstr = mb_substr($story->detail,0,200,'UTF-8');  //จะโชว์เนื้อหาข่าวแค่บางส่วน
+?>
+
+<div class="boxnews">
+<div class="aboutme-section sec-p100-bg-bs mb-30 clearfix " id="about">
+    <div class="personal-details-area secion-p100 mt-1 color" style="background-color:#f48fb1">
+            <div class="container">
+                <div class="row round2">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="about_us_image mt-1">
+                            <img class="shadow" src='/image/{{$story->picture}}' width="400px" height="250px"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="personal-details-right">
+                            <div class="mt-1">
+                                <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$story->country->name}}</b>
+                                <br>
+                                <b class="newstitle">{{$story->title}}</b>
+                            </div>
+                                <p class="news">{{$cutstr}} ......</p>
+                                <span><i class="far fa-clock"></i> {{$story->created_at->diffForHumans()}}</span> <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $story->id ]) }}'" class="w3-button w3-black floatright">Read more</button></span>
+                           
+                            </div>     
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                                                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+@endforeach 
+</div>
+
+
   
 @endsection

@@ -1,3 +1,5 @@
+<?php use App\Country; ?>
+
 @extends('layouts.home')
 
 @section('content')
@@ -26,7 +28,7 @@
   <p class="usernamepost"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$post->user->id])}}">{{$post->user->name}}</a></p>
     <!-- <p>{{$post->detail}}</p> -->
 
-    <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" width="100%"></a>
+    <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img class="shadow" src="/image/{{$post->picture}}" width="100%" height="300px"></a>
     <div class="like">
       @auth
       <button type="button" class="btn btn-light"><i class="fab fa-gratipay pink"></i> Like</button>

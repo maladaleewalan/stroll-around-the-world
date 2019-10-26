@@ -24,6 +24,7 @@
                 <div class="formsignup" style="padding-left:10%">
                 
                 <div class="form-group">
+
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Type</label>
@@ -34,6 +35,7 @@
                         <option value="culture" @if (old('type') == "culture") {{ 'selected' }} @endif >Culture</option>
                         </select>
                     </div>
+                    
                 </div>
                 <div class="form-group">
                     <label>Title</label>
