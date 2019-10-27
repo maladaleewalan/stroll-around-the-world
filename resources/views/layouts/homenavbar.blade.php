@@ -11,7 +11,7 @@
         <a class="nav-link Anav" href="{{route('firstpage')}}"><i class="fas fa-circle pink mr-1"></i><span class="fontnav">Home</span><span class="sr-only"></span></a>
       </li>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown Anav" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle ml-2 mr-1 yellow"></i><span class="fontnav">Country</span></a>
+          <a class="nav-link dropdown Anav" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle ml-2 mr-1 yellow"></i><span class="fontnav">TouristGuide</span></a>
           <div class="dropdown-menu">
           <?php $countries = Country::get(); ?>
             @foreach($countries as $country)
@@ -21,11 +21,9 @@
         </li>
         
       <li class="nav-item">
-        <a class="nav-link Anav" href="{{route('posts.index')}}"><i class="fas fa-circle ml-2 mr-1 green"></i><span class="fontnav">Gallery</span></a>
+        <a class="nav-link Anav" href="{{route('posts.index')}}"><i class="fas fa-circle ml-2 mr-1 purple"></i><span class="fontnav">Gallery</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link Anav" href="{{route('guides.index')}}"><i class="fas fa-circle ml-2 mr-1 purple"></i><span class="fontnav">TouristGuide</span></a>
-      </li>
+
       <li class="nav-item">
           <a class="nav-link Anav" href="{{route('stories.index')}}"><i class="fas fa-circle ml-2 mr-1 red"></i><span class="fontnav">News</span></a>
       </li></ul>

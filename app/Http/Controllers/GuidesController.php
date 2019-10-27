@@ -14,7 +14,7 @@ class GuidesController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth')->except(['index','show']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
+        $this->middleware('auth')->except(['index','show','indexGuidesCountryRegion','indexGuidesCountry']);  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้ ยกเว้นหน้า index show
     }
 
 
@@ -25,22 +25,24 @@ class GuidesController extends Controller
      */
     public function index()
     {
-        $guides = Guide::get();
-        return view('guides.index',['guides'=>$guides]);
+        // $guides = Guide::get();
+        // return view('guides.index',['guides'=>$guides]);
     }
 
     public function indexGuidesCountry($id)
     {
+        $country = Country::find($id);
         $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
         $guides = Guide::get();
-        return view('guides.index',['guides'=>$guides, 'regions'=>$regions]);
+        return view('guides.index',['guides'=>$guides, 'regions'=>$regions, 'country'=>$country]);
     }
 
     public function indexGuidesCountryRegion($id,$regionid)
     {
+        $country = Country::find($id);
         $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
         $guides = Guide::where('region_id',$regionid)->get();
-        return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions]);
+        return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions, 'country'=>$country]);
     }
 
     /**

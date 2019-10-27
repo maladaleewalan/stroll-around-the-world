@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="titlepage mt-2 ml-3">TOURIST GUIDE
-  <i class="fas fa-globe-americas america ml-2"></i>
-  <?php if($guides->first() == null) {  //ถ้าประเทศนั้นยังไม่มี guide จะnull
+<span class="titles ml-2" style="font-size:50px"><i class="fas fa-globe-americas america ml-2"></i>&nbsp;{{$country->name}}</span>
+    <?php if($guides->first() == null) {  //ถ้าregionนั้นยังไม่มี guide จะnull
     } else {?> 
-        <span class="titles ml-2">{{$guides->first()->region->name}}</span>
+        <i class="fas fa-caret-right america ml-2"></i>&nbsp;<span class="titles ml-2">{{$guides->first()->region->name}}</span>
     <?php } ?>
 
 
   <a class="dropdown choosecountry" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-mouse-pointer"></i>&nbsp;Choose Region</span></a>
     <div class="dropdown-menu ">
         @foreach ($regions as $region)
-          <a class="dropdown-item titlenav" href="">{{$region->name}}</a>
+          <a class="dropdown-item titlenav" href="{{route('guides.indexGuidesCountryRegion',['id'=>$region->country_id , 'regionid'=>$region->id])}}">{{$region->name}}</a>
         @endforeach
     </div> 
 
@@ -63,11 +63,11 @@
                 @endif
                 @endauth
 
-
+                <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$guide->region->name}}</b>
                 <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
                 <p class="fontmodaldetail">{{$guide->detail}}</p>
                 <div class="center">
-                <img src='/image/{{$guide->picture}}' width="400px"/></div>
+                <img class="shadow" src='/image/{{$guide->picture}}' width="400px"/></div>
             <?php } ?>
             </div>
             @endforeach
@@ -93,15 +93,16 @@
                     @endif
                     @endauth
 
-
+                    <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$guide->region->name}}</b>
                     <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
                     <p class="fontmodaldetail">{{$guide->detail}}</p>
                     <div class="center">
-                    <img src='/image/{{$guide->picture}}' width="400px"/></div>
+                    <img class="shadow" src='/image/{{$guide->picture}}' width="400px"/></div>
                 <?php } ?>
                 </div>
                 @endforeach
     </div>
+
     <div class="col-sm divguide">
         @foreach ($guides as $guide)
                 <div class="modalguide">
@@ -123,11 +124,11 @@
                     @endif
                     @endauth
 
-
+                    <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$guide->region->name}}</b>
                     <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
                     <p class="fontmodaldetail">{{$guide->detail}}</p>
                     <div class="center">
-                    <img src='/image/{{$guide->picture}}' width="400px"/></div>
+                    <img class="shadow" src='/image/{{$guide->picture}}' width="400px"/></div>
                 <?php } ?>
                 </div>
                 @endforeach
