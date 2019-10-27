@@ -25,9 +25,11 @@ class GuidesController extends Controller
      */
     public function index()
     {
+
         // $guides = Guide::get();
         // return view('guides.index',['guides'=>$guides]);
     }
+       
 
     public function indexGuidesCountry($id)
     {
@@ -100,7 +102,12 @@ class GuidesController extends Controller
      */
     public function show(Guide $guide)
     {
-        //
+        
+    }
+
+    public function showByRegion(int $id){
+        $guides = Guide::where("region_id", $id)->get();
+        return view('guides.index',['guides'=>$guides , 'region_id' => $id]);
     }
 
     /**

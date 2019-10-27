@@ -175,7 +175,10 @@ body {
     text-shadow:10px 3px #F1948A;
 }
 .buttonwelcome {
-    padding-top:500px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 250%)
 }
 .button-welcome {
     font-family: 'Mansalva', cursive;

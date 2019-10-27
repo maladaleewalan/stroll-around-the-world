@@ -30,6 +30,11 @@ class GuidesTableSeeder extends Seeder
         $region->name = "ภาคใต้";  //ใต้
         $region->save();
 
+        $region = new Region;
+        $region->name = "คังว็อน";
+        $region->country_id = 2;
+        $region->save();
+
         //Thailand food เหนือ
         $guide = new Guide;
         $guide->type = "food";
@@ -38,8 +43,7 @@ class GuidesTableSeeder extends Seeder
         $guide->detail = "อาจกล่าวได้ว่าเป็นอาหารเหนือที่ขึ้นชื่อที่สุด เส้นข้าวซอยราดแกงกะทิ ใส่น่องไก่ โรยด้วยหมี่กรอบ ทานคู่กับหอมแดงซอย พริกป่นผัดน้ำมัน หรือจะบีบมะนาวเพิ่มความสดชื่นด้วยก็ได้ เป็นอาหารที่ใคร ๆ ก็เข้าถึงได้ และยังมีแบบอิสลามที่ใช้เนื้อวัวหรือแกะแทนน่องไก่อีกด้วย";
         $guide->region_id = 1;
         $guide->save();
-
-        //Thailand food กลาง
+        
         $guide = new Guide;
         $guide->type = "food";
         $guide->title = "ต้มยำกุ้ง";

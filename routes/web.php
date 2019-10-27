@@ -26,7 +26,6 @@ Route::get('/firstpage',function() {
 Route::get('/master',function() {
     return view('layouts.master');
 });
-
 Route::resource('/stories','StoriesController');
 Route::resource('/users','UsersController');
 Route::resource('/posts', 'PostsController');

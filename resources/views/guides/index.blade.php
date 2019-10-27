@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="titlepage mt-2 ml-3">TOURIST GUIDE
+
 <span class="titles ml-2" style="font-size:50px"><i class="fas fa-globe-americas america ml-2"></i>&nbsp;{{$country->name}}</span>
 
   <a class="dropdown choosecountry" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-mouse-pointer"></i>&nbsp;Choose Region</span></a>
@@ -9,7 +10,7 @@
         @foreach ($regions as $region)
           <a class="dropdown-item titlenav" href="{{route('guides.indexGuidesCountryRegion',['id'=>$region->country_id , 'regionid'=>$region->id])}}">{{$region->name}}</a>
         @endforeach
-    </div> 
+    </div>
 
     @auth
     @if(Auth::user()->role == 'admin') 
