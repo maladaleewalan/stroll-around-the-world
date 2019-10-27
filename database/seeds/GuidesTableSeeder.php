@@ -30,6 +30,11 @@ class GuidesTableSeeder extends Seeder
         $region->name = "ภาคใต้";  //ใต้
         $region->save();
 
+        $region = new Region;
+        $region->name = "คังว็อน";
+        $region->country_id = 2;
+        $region->save();
+        
         $guide = new Guide;
         $guide->type = "food";
         $guide->title = "ต้มยำกุ้ง";

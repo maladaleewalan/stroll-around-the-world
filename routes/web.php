@@ -26,7 +26,7 @@ Route::get('/firstpage',function() {
 Route::get('/master',function() {
     return view('layouts.master');
 });
-
+Route::get('/guides/{id}', 'GuidesController@showByRegion'); 
 Route::resource('/stories','StoriesController');
 Route::resource('/users','UsersController');
 Route::resource('/posts', 'PostsController');

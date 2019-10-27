@@ -3,15 +3,37 @@
 @section('content')
 <div class="titlepage mt-2 ml-3">TOURIST GUIDE
   <i class="fas fa-globe-americas america ml-2"></i><span class="titles ml-2">Thailand</span>
-    <a class="dropdown" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="titles">Region</span></a>
+    <a class="dropdown" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="titles">
+        <?php 
+            if ( $region_id == 0 )
+            {
+                echo "All";
+            }
+            else if ( $region_id == 1 )
+            {
+                echo "Northern";
+            }
+            else if ( $region_id == 2 )
+            {
+                echo "Northeastern";
+            }
+            else if ( $region_id == 3 )
+            {
+                echo "Central";
+            }
+            else if ( $region_id == 4 )
+            {
+                echo "Southern";
+            }
+        ?></span></a>
+    
     <div class="dropdown-menu ">
-      <a class="dropdown-item titlenav" href="#">Northern</a>
-      <a class="dropdown-item titlenav" href="#">Northeastern</a>
-      <a class="dropdown-item titlenav" href="#">Western</a>
-      <a class="dropdown-item titlenav" href="#">Central</a>
-      <a class="dropdown-item titlenav" href="#">Eastern</a>
-      <a class="dropdown-item titlenav" href="#">Southern</a>
+      <a class="dropdown-item titlenav" href="{{asset('/guides/1')}}">Northern</a>
+      <a class="dropdown-item titlenav" href="{{asset('/guides/2')}}">Northeastern</a>
+      <a class="dropdown-item titlenav" href="{{asset('/guides/3')}}">Central</a>
+      <a class="dropdown-item titlenav" href="{{asset('/guides/4')}}">Southern</a>
     </div>
+    
     @auth
     @if(Auth::user()->role == 'admin') 
     <button class=" btn btn-link addguide mt-4" onclick="window.location.href='{{route('guides.create')}}'"><i class="fas fa-plus-square "></i></button>
