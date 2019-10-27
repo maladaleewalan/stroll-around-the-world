@@ -39,3 +39,4 @@ Route::get('/stories/country/{id}','StoriesController@indexStoriesCountry')->nam
 Route::get('/posts/country/{id}','PostsController@indexPostsCountry')->name('posts.indexPostsCountry');
 Route::get('/guides/country/{id}','GuidesController@indexGuidesCountry')->name('guides.indexGuidesCountry');
 Route::get('/guides/{id}/{regionid}','GuidesController@indexGuidesCountryRegion')->name('guides.indexGuidesCountryRegion');
+Route::get('/guides/create/country/{id}','GuidesController@createGuidesEachCountry')->name('guides.createGuidesEachCountry');

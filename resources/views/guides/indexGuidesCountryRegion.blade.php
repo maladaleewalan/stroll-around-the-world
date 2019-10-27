@@ -15,13 +15,7 @@
           <a class="dropdown-item titlenav" href="{{route('guides.indexGuidesCountryRegion',['id'=>$region->country_id , 'regionid'=>$region->id])}}">{{$region->name}}</a>
         @endforeach
     </div> 
-
-
-    @auth
-    @if(Auth::user()->role == 'admin') 
-    <button class=" btn btn-link addguide mt-4" onclick="window.location.href='{{route('guides.create')}}'"><i class="fas fa-plus-square "></i></button>
-    @endif
-    @endauth
+    
   </div>
 
 

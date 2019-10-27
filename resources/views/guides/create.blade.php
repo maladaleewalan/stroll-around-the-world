@@ -3,7 +3,11 @@
 @section('content')
 <div class="center">
     <div class="divsignup">
-        <span class="titlepage center mr-2"><i class="fas fa-edit iconsignup"></i>&nbsp;GUIDE</span><br>
+        <span class="titlepage center mr-2"><i class="fas fa-edit iconsignup"></i>&nbsp;GUIDE 
+        <?php if($regions->first() == null) { 
+        } else { ?>
+            {{$country->name}}</span><br>
+        <?php } ?>
     </div>
 </div>
 
@@ -23,6 +27,22 @@
             <div class="divcenter" style="margin-top:20px">
                 <div class="formsignup" style="padding-left:10%">
                 
+                <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Choose Region</label>
+                    </div>
+                    <select name="region" class="custom-select">
+                        @foreach($regions as $region) 
+                            <option value={{$region->id}}
+                                @if ($region->id == old('region',$region->name))
+                                    selected="selected"
+                                @endif> {{$region->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                </div>
+
                 <div class="form-group">
 
                     <div class="input-group mb-3">

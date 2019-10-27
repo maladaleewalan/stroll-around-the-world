@@ -24,7 +24,6 @@
                 <div class="formsignup" style="padding-left:10%">
                 
                 <div class="form-group">
-
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Choose Country</label>
@@ -37,8 +36,7 @@
                                     @endif> {{$country->name}}</option>
                             @endforeach
                         </select>
-                    </div>
-                    
+                    </div> 
                 </div>
                 
                 <div class="form-group">

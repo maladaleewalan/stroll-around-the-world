@@ -1,8 +1,8 @@
 <?php use App\Post; ?>
 @extends('layouts.home')
 @section('content')
-<?php $previous = $post->id + 1;
-$next = $post->id - 1;     //nextเป็นลบเพราะตอนแสดงรูปเอารูปrecordสุดท้ายของtableขึ้นก่อน(วันที่โพสล่าสุด)
+<?php $previous = $post->id - 1;
+$next = $post->id + 1;     //nextเป็นลบเพราะตอนแสดงรูปเอารูปrecordสุดท้ายของtableขึ้นก่อน(วันที่โพสล่าสุด)
 $allpost = Post::get();
 if($previous == 0) {
     $previous = $allpost->count(); //จำนวนข้อมูลในdb

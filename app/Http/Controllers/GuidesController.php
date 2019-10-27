@@ -54,7 +54,14 @@ class GuidesController extends Controller
      */
     public function create()
     {
-        return view('guides.create');
+        // return view('guides.create');
+    }
+
+    public function createGuidesEachCountry($id) {
+        $country = Country::find($id);
+
+        $regions = Region::where('country_id',$id)->get();
+        return view('guides.create',['regions'=>$regions, 'country'=>$country]);
     }
 
     /**
@@ -75,6 +82,7 @@ class GuidesController extends Controller
         $guide->title = $validateData['title'];
         $guide->detail = $validateData['detail'];
         $guide->type = $request->input('type');
+        $guide->region_id = $request->input('region');
         
         $ext = pathinfo(basename($_FILES['picture']['name']),PATHINFO_EXTENSION);   //ดึงนามสกุลจากไฟล์ที่โหลดมา
         $new_image_name = 'img_'. uniqid() . "." . $ext;    //สุ่มชื่อไฟล์ใหม่ เป็นสตริงไม่ซ้ำ
@@ -86,12 +94,16 @@ class GuidesController extends Controller
 
         //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
         $guide->picture = $new_image_name;
-
         
+        $id = $guide->region->country_id;
+        $regionid = $guide->region_id;
         $guide->save();
 
-        $guides = Guide::get();
-        return redirect()->route('guides.index',['guides'=>$guides]);
+        $country = Country::find($id);
+        $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
+        $guides = Guide::where('region_id',$regionid)->get();
+        return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions, 'country'=>$country]);
+
     }
 
     /**
@@ -105,11 +117,6 @@ class GuidesController extends Controller
         
     }
 
-    public function showByRegion(int $id){
-        $guides = Guide::where("region_id", $id)->get();
-        return view('guides.index',['guides'=>$guides , 'region_id' => $id]);
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -119,8 +126,12 @@ class GuidesController extends Controller
     public function edit(Guide $guide)
     {
         if(Auth::user()->role !== 'admin') {   //ถ้าไม่ใช่แอดมิน
-            $guides = Guide::get();
-            return redirect()->route('guides.index',['guides'=>$guides]);
+            $id = $guide->region->country_id;
+            $regionid = $guide->region_id;
+            $country = Country::find($id);
+            $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
+            $guides = Guide::where('region_id',$regionid)->get();
+            return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions, 'country'=>$country]);
         }
         return view('guides.edit',['guide'=>$guide]);
 
@@ -162,8 +173,12 @@ class GuidesController extends Controller
         
         $guide->save();
 
-        $guides = Guide::get();
-        return redirect()->route('guides.index',['guides'=>$guides]);
+        $id = $guide->region->country_id;
+        $regionid = $guide->region_id;
+        $country = Country::find($id);
+        $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
+        $guides = Guide::where('region_id',$regionid)->get();
+        return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions, 'country'=>$country]);
     }
 
     /**
@@ -174,13 +189,18 @@ class GuidesController extends Controller
      */
     public function destroy(Guide $guide)
     {
-         //ลบรูปออกจาก folder
+        $id = $guide->region->country_id;
+        $regionid = $guide->region_id;
+
+        //ลบรูปออกจาก folder
          $picture = $guide->picture;
          @unlink('image/'. $picture);
          
          $guide->delete();
 
-         $guides = Guide::get();
-        return redirect()->route('guides.index',['guides'=>$guides]);
+         $country = Country::find($id);
+         $regions = Region::where('country_id',$id)->orderBy('created_at','desc')->get();
+         $guides = Guide::where('region_id',$regionid)->get();
+        return view('guides.indexGuidesCountryRegion',['guides'=>$guides, 'regions'=>$regions, 'country'=>$country]);
     }
 }

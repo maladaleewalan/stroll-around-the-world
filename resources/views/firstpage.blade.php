@@ -13,7 +13,7 @@
     <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-5">
-              <a href="{{route('guides.index')}}">
+              <a href="{{route('guides.indexGuidesCountry',['id'=>1])}}">
               <img style="height: 450px; width:1000px" class="first-slide" src="gallery/maxresdefault.jpg" alt="First slide"></a>
           </div>
         </div>
@@ -60,7 +60,7 @@
                     <p class="card-text" style="color: black;">This content is crawled on Culture,Recommended foods and the major attraction of this country.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button onclick="window.location.href='{{route('guides.index')}}'" type="button" class="w3-button w3-black">View</button>
+                        <button onclick="window.location.href='{{route('guides.indexGuidesCountry',['id'=>1])}}'" type="button" class="w3-button w3-black">View</button>
                       </div>
                     </div>
                   </div>
