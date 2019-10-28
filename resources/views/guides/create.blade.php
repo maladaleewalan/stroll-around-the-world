@@ -85,7 +85,7 @@
      
 <div class="center">
         <button class="btn btn-success buttonsignup floatright" type="submit">Submit</button>
-        <a class="btn btn-danger buttonsignup floatleft" href="{{route('guides.index')}}">Back</a>
+        <a class="btn btn-danger buttonsignup floatleft" href="{{route('guides.indexGuidesCountry',['id'=>$country->id])}}">Back</a>
 </div>
 </form>
 

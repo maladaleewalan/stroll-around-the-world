@@ -123,6 +123,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="personal-details-right">
                             <div class="mt-1">
+                                <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$stories[$i]->country->name}}</b><br>
                                 <b class="newstitle"><i class="fas fa-newspaper mr-2"></i>{{$stories[$i]->title}}</b>
                             </div>
                                 <p class="news">{{$cutstr}} ......</p>
