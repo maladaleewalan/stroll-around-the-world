@@ -57,6 +57,18 @@
               </form>
           </li>
 
+
+          <?php if(Auth::user()->role == "admin") {?>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a class="nav-link Anav dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fontnav"><i class="fas fa-cog" style="font-size:25px"></i></span></a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item Anav" href="{{route('countries.create')}}">Add Country</a>
+                    <a class="dropdown-item Anav" href="{{route('regions.create')}}">Add Region</a>
+                  </div>
+                </div>
+              </li>
+          <?php } ?>
           @endguest
       </ul>
   </div>
