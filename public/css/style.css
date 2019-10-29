@@ -404,3 +404,12 @@ a:hover{
     color: red;
     font-size:20px;text-shadow:3px 3px black;
 }
+.divusershow {
+    width:30%;
+    padding:30px;
+    margin:10px 20px 20px 10px;
+    border-radius:25px;
+    background-color:#f48fb1;
+    display: inline-block;
+    text-align:left;
+}

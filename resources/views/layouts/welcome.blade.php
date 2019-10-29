@@ -23,7 +23,7 @@
 
         body {
             /* The image used */
-            background-image: url("gallery/Travel.jpg");
+            background-image: url("image/Travel.jpg");
 
             /* Full height */
             height: 100%; 

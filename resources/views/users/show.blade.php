@@ -37,11 +37,6 @@
                         <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
 
                     <?php    
-                    } else if($user->role == 'user3') { ?>
-                        <h1 class="profile mt-5" >LEVEL: <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i></h1><h1 class="profile mt-5"> POINT: {{$user->point}}</h1>
-                        <h1 class="profile mt-5">POST: {{$user->totalpost}}</h1>                                    
-
-                    <?php    
                     } else { ?>
                         <h1 class="profile mt-5" >LEVEL: <i class="fas fa-crown yellow" style="font-size:50px"></i></h1>
                     <?php  

@@ -7,14 +7,14 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-
+  
   <div class="carousel-inner">
     <div class="carousel-item active">
     <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-5">
               <a href="{{route('guides.indexGuidesCountry',['id'=>1])}}">
-              <img style="height: 450px; width:1000px" class="first-slide" src="gallery/maxresdefault.jpg" alt="First slide"></a>
+              <img style="height: 450px; width:1000px" class="first-slide" src="{{url('image/maxresdefaultthai.jpg')}}" alt="First slide"></a>
           </div>
         </div>
     </div>
@@ -23,16 +23,18 @@
     <svg width="100%" height="510"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-3">
-              <img style="height: 450px; width:1000px" class="first-slide" src="gallery/japan-fuji-mountain-himeji-castle-full-cherry-blossom-h.jpg" alt="First slide">
+              <a href="{{route('guides.indexGuidesCountry',['id'=>2])}}">
+              <img style="height: 450px; width:1000px" class="first-slide" src="{{url('image/header-korea.png')}}" alt="First slide"></a>
           </div>
         </div>
     </div>
 
-    <div class="carousel-item">
+  <div class="carousel-item">
     <svg width="100%" height="510px"><rect width="100%" height="100%" fill="#F1948A"></rect></svg>
         <div class="container">
           <div class="carousel-caption center mr-5">
-              <img style="height: 450px; width:1000px" class="first-slide" src="gallery/Japan--header-image.jpg" alt="First slide">
+              <a href="{{route('guides.indexGuidesCountry',['id'=>4])}}">
+              <img style="height: 450px; width:1000px" class="first-slide" src="{{url('image/untitled.jpg')}}" alt="First slide"></a>
           </div>
         </div>
     </div>
@@ -54,7 +56,7 @@
       <div class="row mt-5">
               <div class="col-md-4">
                 <div class="card mb-4 shadow-sm"  style="background-color: #f48fb1">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/ΠΕΤΡΑ-9.jpg" y="0%" x="0%" width="400px"></image></svg>
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="{{url('image/ΠΕΤΡΑ-9.jpg')}}" y="0%" x="0%" width="400px"></image></svg>
                   <div class="card-body">
                           <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-flag "></i><span class="ml-2 "></span>TOURISTGUIDE</span></strong>
                     <p class="card-text" style="color: black;">This content is crawled on Culture,Recommended foods and the major attraction of this country.</p>
@@ -69,7 +71,7 @@
               
       <div class="col-md-4">
               <div class="card mb-4 shadow-sm" style="background-color: #f48fb1">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/envira-gallery.jpg" y="-5%" x="-8%" width="400px"></image></svg>
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="{{url('image/envira-gallery.jpg')}}" y="-5%" x="-8%" width="400px"></image></svg>
                         <div class="card-body">
                               <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-images "></i><span class="ml-2"></span>GALLERY</span></strong>
                           <p class="card-text" style="color: black;">This content will gather photos on tourist guides and review image by other user or by admin...</p>
@@ -83,7 +85,7 @@
                     </div>
                     <div class="col-md-4">
                           <div class="card mb-4 shadow-sm" style="background-color: #f48fb1">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect  fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="gallery/155.jpg" y="0%" x="-17%" width="460px"></image></svg>
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect  fill="#F1948A" width="100%" height="100%"></rect><image xlink:href="{{url('image/155.jpg')}}" y="0%" x="-17%" width="460px"></image></svg>
                             <div class="card-body">
                                   <strong class="d-inline-block mb-2 text-success "><span class="fontnavinfo"><i class="fas fa-percentage"></i><span class="ml-2"></span>PROMOTION</span></strong>
                               <p class="card-text" style="color: black;"> This content will gather information about the promotion of the airline. Or festivals of this country.</p>
@@ -117,7 +119,7 @@
                 <div class="row round2">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="about_us_image mt-1">
-                            <img src='image/{{$stories[$i]->picture}}' width="400px" height="250px" alt="">
+                            <img src='/image/{{$stories[$i]->picture}}' width="400px" height="250px" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -149,18 +151,18 @@
         </header>
         <div class="container center">
             <a class="ml-3" href="https://www.airasiago.com.my/g/dd/dailydeals2?utm_campaign=ablabeltest&utm_medium=referral&utm_source=aahomepage&utm_content=holidaypackage|original"/>
-            <img src="gallery/AirAsiaCom_WhiteBG-650x260.jpg" title="Air Asia" height="80px">
+            <img src="image/AirAsiaCom_WhiteBG-650x260.jpg" title="Air Asia" height="80px">
             </a>
             <a class="ml-3" href="https://www.royalorchidholidays.com/travel/arc.cfm?nav=b2cth">
-            <img src="gallery/Thai-Airways-Logo.jpg" title="Thai Airways" height="80px"/>
+            <img src="image/Thai-Airways-Logo.jpg" title="Thai Airways" height="80px"/>
             </a>
         </div>
         <div class="container center">
         <a  class="ml-3" href="https://www.thaitravelcenter.com/airticket/bangkokairways/?gclid=EAIaIQobChMIk4qv5c_m5AIVVAwrCh17DQd0EAAYASAAEgLXGvD_BwE"/>
-            <img src="gallery/xpg_logo.gif.pagespeed.ic.gnyATXkHWs.png" title="Bangkok Airways" height="80px">
+            <img src="image/xpg_logo.gif.pagespeed.ic.gnyATXkHWs.png" title="Bangkok Airways" height="80px">
             </a>
             <a class="ml-3" href="https://www.tigerairtw.com/en/ready-to-go/special-offers"/>
-            <img src="gallery/1123.jpg" title="tigerair" height="80px">
+            <img src="image/1123.jpg" title="tigerair" height="80px">
             </a>
         </div>
       </div>

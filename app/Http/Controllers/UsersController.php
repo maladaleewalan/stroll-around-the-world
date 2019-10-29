@@ -25,8 +25,12 @@ class UsersController extends Controller
      */
     public function index()
     {
-        // $users = User::get();    
-        // return view('users.index',['users'=>$users]);
+        if(Auth::user()->role !== 'admin') {
+            $stories = Story::orderBy('created_at','desc')->get();    
+            return view('firstpage',['stories' => $stories]);
+        }
+        $users = User::get();    
+        return view('users.index',['users'=>$users]);
     }
 
     /**

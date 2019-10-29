@@ -80,9 +80,6 @@ class PostsController extends Controller
             if(Auth::user()->point >= 10) {
                 Auth::user()->role = "user2";
             }
-            if(Auth::user()->point >= 20) {
-                Auth::user()->role = "user3";
-            }
         }
         Auth::user()->save();
 

@@ -6,9 +6,14 @@ use App\Region;
 use Illuminate\Http\Request;
 
 use App\Country;
+use Auth;
+use App\Story;
 
 class RegionsController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +31,10 @@ class RegionsController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->role !== 'admin') {
+            $stories = Story::orderBy('created_at','desc')->get();    
+            return view('firstpage',['stories' => $stories]);
+        }
         $countries = Country::get();
         return view('regions.create',['countries'=>$countries]);
     }

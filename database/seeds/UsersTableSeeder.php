@@ -28,8 +28,10 @@ class UsersTableSeeder extends Seeder
         $user->password = Hash::make('Immmmmmm');
         $user->name = "Thanapass";
         $user->email = "thanapass.p@hotmail.com";
-        $user->role = "admin";
+        $user->role = "user2";
         $user->picture = "im.jpg";
+        $user->point = 30;
+        $user->totalpost = 16;
         $user->email_verified_at = now();
         $user->save();
 
@@ -41,5 +43,6 @@ class UsersTableSeeder extends Seeder
         $user->role = "user1";
         $user->email_verified_at = now();
         $user->save();
+
     }
 }

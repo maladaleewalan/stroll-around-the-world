@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('password',200);
             $table->string('name',20);
             $table->string('email',30)->unique();
-            $table->enum('role', ['admin', 'user1','user2','user3'])->default('user1');
+            $table->enum('role', ['admin', 'user1','user2'])->default('user1');
             $table->bigInteger('point')->default(0);
             $table->bigInteger('totalpost')->default(0);
             $table->string('picture',100)->default("no_avatar.jpg");

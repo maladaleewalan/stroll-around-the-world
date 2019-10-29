@@ -5,8 +5,15 @@ namespace App\Http\Controllers;
 use App\Country;
 use Illuminate\Http\Request;
 
+use Auth;
+use App\Story;
+
 class CountriesController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');  //ต้อง login แล้ว ถึงจะเข้าทุกหน้าได้
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +31,10 @@ class CountriesController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->role !== 'admin') {
+            $stories = Story::orderBy('created_at','desc')->get();    
+            return view('firstpage',['stories' => $stories]);
+        }
         return view('countries.create');
     }
 
