@@ -24,9 +24,9 @@ if($previous == $allpost->count()+1) {
     <form action="{{route('posts.destroy', ['post' => $post->id])}}" method="post">
         @csrf
         @method('DELETE')
-        <button class="editprofile btn btn-link red" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
+        <button class="editprofile btn btn-link red" style="font-size:20px;" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
     </form>
-    <button class="editprofile btn btn-link" onclick="window.location.href='{{route('posts.edit',['post'=>$post->id])}}'">
+    <button class="editprofile btn btn-link" style="font-size:20px;" onclick="window.location.href='{{route('posts.edit',['post'=>$post->id])}}'">
         <i class="fas fa-edit"></i>edit
     </button>
 </div>
@@ -38,16 +38,16 @@ if($previous == $allpost->count()+1) {
 <div class="divcenter divgalleryshow">
   <p class="usernamepost" style="font-size:30px"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$post->user->id])}}">{{$post->user->name}}</a></p>
   <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
-     <p style="font-size:20px" >{{$post->detail}}</p>
+     <p style="font-size:25px">{{$post->detail}}</p>
      <div class="center">
    <img src="/image/{{$post->picture}}" width="900px">
     </div>
 
     <div class="like">
     @auth
-      <button type="button" class="btn btn-light" style="font-size:20px"><i class="fab fa-gratipay pink" style="font-size:20px"></i> Like</button>
+      <a class="fa fa-heart iconlike" style="font-size:30px" href="{{route('posts.userlikeinpageshow' , ['id' => $post->id]) }}"></a>
     @endauth
-      &nbsp;<span> <i class="fas fa-thumbs-up blue" style="font-size:25px">: {{$post->like}}</i> </span>
+      &nbsp; <span class="titlenav" style="font-size:30px">Likes : {{$post->totallike}}</span>
 
       <button type="button" onclick="window.location.href='{{ route('posts.index')}}'" class="btn btn-light" style="font-size:20px;float:right"> <i class="fas fa-images"></i> Back to Gallery</button>
 

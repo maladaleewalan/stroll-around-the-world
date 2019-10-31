@@ -42,6 +42,12 @@ class PostsController extends Controller
         return redirect()->route('posts.index');
     }
 
+    public function userlikeinpageshow($id)
+    {
+        DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
+        return redirect()->route('posts.show',['post'=> $id]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

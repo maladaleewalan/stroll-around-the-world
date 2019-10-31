@@ -8,13 +8,13 @@
     <div style="margin-top:50px;">
     @foreach( $users as $user ) 
         @if ($user->role != "admin")
-        <div class="divusershow" >
-            <p class="usernamepost"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$user->id])}}">{{$user->name}}</a>
+        <div class="divusershow">
+            <p class="usernamepost"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$user->id])}}">{{$user->name}}</a><br>
             <?php if( $user->role == "user1") { ?>
-                <span><i class="fas fa-star star" style="font-size:30px"></i>&nbsp;
+                <span style="font-size:20px"><i class="fas fa-star star" style="font-size:20px"></i>&nbsp;
                 point: {{$user->point}} &nbsp; post: {{$user->totalpost}}</span>
             <?php } else { ?>
-                <span><i class="fas fa-star star" style="font-size:30px"></i>&nbsp;<i class="fas fa-star star" style="font-size:30px"></i>&nbsp;
+                <span style="font-size:20px"><i class="fas fa-star star" style="font-size:20px"></i>&nbsp;<i class="fas fa-star star" style="font-size:20px"></i>&nbsp;
                 point: {{$user->point}} &nbsp; post: {{$user->totalpost}}</span>
             <?php } ?>
             </p>
