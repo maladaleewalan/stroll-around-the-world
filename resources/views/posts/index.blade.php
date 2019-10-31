@@ -27,9 +27,9 @@
     <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
     <div class="like">
       @auth
-      <button type="button" class="btn btn-light"><i class="fab fa-gratipay pink"></i> Like</button>
+      <a class="fa fa-heart iconlike" href="{{route('posts.userlike' , ['id' => $post->id]) }}"></a>
       @endauth
-      <span> <i class="fas fa-thumbs-up blue" style="font-size:25px">: {{$post->like}}</i> </span>
+      <span class="titlenav" style="font-size:20px">Likes : {{$post->totallike}}</span>
     </div>
   </div>
   @endforeach

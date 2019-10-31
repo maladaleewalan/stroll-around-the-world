@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->string('detail', 300);
             $table->softDeletes();
-            $table->bigInteger('like')->default(0);
+            $table->bigInteger('totallike')->default(0);
             $table->string('picture',100)->default("no-image-icon-15.jpg");
         });
     }
