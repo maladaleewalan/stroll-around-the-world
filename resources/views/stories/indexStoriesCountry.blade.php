@@ -36,7 +36,7 @@
                             <div class="mt-1">
                                 <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$story->country->name}}</b>   
                                 <br>
-                                <b class="newstitle">{{$story->title}}</b>
+                                <b class="newstitleindex">{{$story->title}}</b>
                             </div>
                                 <p class="news">{{$cutstr}} ......</p>
                                 <span><i class="far fa-clock"></i> {{$story->created_at->diffForHumans()}}</span> <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $story->id ]) }}'" class="w3-button w3-black floatright">Read more</button></span>

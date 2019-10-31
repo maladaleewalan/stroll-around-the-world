@@ -16,13 +16,12 @@
 @endif
 @endauth
 
-<div class="divnewsshow center">
-    
+<div class="divnewsshow center" >
     <p class="newstitleshow">{{$story->title}}</p>
 </div>
 <div class="divcenter center">
     
-    <img src="/image/{{$story->picture}}" width="1000px"> 
+    <img  class="shadow" src="/image/{{$story->picture}}" width="900px"> 
 </div>
 <div class="divcenter">
     <p class="newscontentshow">{{$story->detail}}</p>
@@ -36,9 +35,6 @@
 
 <button type="button" onclick="window.location.href='{{route('stories.index')}}'" class="btn btn-success buttonsignup">Back</button>
 
-@auth
-<button type="button" class="btn btn-danger buttonsignup floatright">Report</button>
-@endauth  
 </div>
 
 @endsection

@@ -7,14 +7,14 @@ body {
     text-shadow:3px 3px white;
 }
 .fontmodaltitle{
-    font-size:23px;
+    font-size:18px;
     color:#1C2833(146, 11, 11);
+    font-weight: bold;
 }
 .fontmodaldetail{
     font-size:17px;
     color:#1C2833(146, 11, 11);
     text-indent: 50px;
-
 }
 .button {
     /* bottom: 0px;
@@ -102,6 +102,10 @@ body {
     color: #1C2833;
 }
 .newstitle{
+    font-size: 15px;
+    color:#1C2833;
+}
+.newstitleindex{
     font-size: 20px;
     color:#1C2833;
 }
@@ -188,7 +192,7 @@ body {
     text-shadow:3px 3px #F1948A;
 }
 .fontnavinfo{
-    font-size: 20px;
+    font-size: 25px;
     color: black;
     font-family: 'Dancing Script', cursive;
 }
@@ -242,15 +246,13 @@ body {
 }
 .formsignup {
     width:800px;
-    /* border:1px solid black; */
-    margin-top:30px;
-    margin-left:10%;
+    margin-left:5%;
     font-size: 25px;
     font-family: 'Dancing Script', cursive;
     font-weight:bold;
 }
 .buttonsignup {
-    font-size:20px;
+    font-size:15px;
 }
 a:hover{
     text-decoration:none;
@@ -292,9 +294,9 @@ a:hover{
 }
 .divnewsshow {
     margin: auto;
-  width: 50%;
-  padding: 10px;
+  width: 50%; 
   margin-top: 50px;
+
 
 }
 .newstitleshow{
@@ -353,10 +355,9 @@ a:hover{
 }
 .editprofile{
     float:right;
-    font-size:20px;
+    font-size:15px;
     font-family: 'Manjari', sans-serif;
     text-shadow:3px 3px white;
-
 }
 .editprofile:hover{
     text-decoration:underline;
@@ -375,6 +376,7 @@ a:hover{
     border-radius:10px;
     background-color:#ffc5d8;
     text-align:left;
+    width:30%;
 }
 .forgotpw {
     font-size: 18px;

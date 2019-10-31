@@ -21,10 +21,10 @@
         <form action="{{route('guides.update',['guide'=>$guide->id])}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="divcenter" style="margin-top:20px">
-                <div class="formsignup" style="padding-left:10%">
+            <div class="divcenter" style="margin-top:10px">
+                <div class="formsignup" style="">
                 
-                <div class="form-group">
+                <div class="form-group" style="margin-left:100px">
                     <!-- ไม่แก้ไขtype -->
                     <!-- <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -37,23 +37,23 @@
                         </select>
                     </div> -->
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-left:100px">
                     <label>Title</label>
                     <input style="width:700px;height:50px;font-size:20px" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{old('title',$guide->title)}}">
                     @error('title')
                     <div class="alertinputfalse">{{$message}}</div>
                     @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-left:100px">
                     <label >Detail</label>
-                    <textarea rows="10" style="width:700px;font-size:20px" class="form-control @error('detail') is-invalid @enderror" name="detail">{{old('detail',$guide->detail)}}</textarea>
+                    <textarea rows="5" style="width:700px;font-size:20px" class="form-control @error('detail') is-invalid @enderror" name="detail">{{old('detail',$guide->detail)}}</textarea>
                     @error('detail')
                     <div class="alertinputfalse">{{$message}}</div>
                     @enderror
                 </div>
-                <br>
-                <div class="form-group">
-                        <input type="file" name="picture" class="form-control-file">
+                
+                <div class="form-group" style="margin-left:100px">
+                        <input type="file" name="picture" class="form-control-file" style="width:700px;font-size:20px" >
                         @error('picture')
                         <div class="red">{{$message}}</div>
                         @enderror
@@ -65,7 +65,7 @@
      
 <div class="center">
         <button class="btn btn-success buttonsignup floatright" type="submit">Submit</button>
-        <a class="btn btn-danger buttonsignup floatleft" href="{{route('guides.index')}}">Back</a>
+        <a class="btn btn-danger buttonsignup floatleft" href="{{route('guides.indexGuidesCountryRegion' , ['id'=>$guide->region->country_id , 'regionid'=>$guide->region_id])}}" style="margin-left:60px;">Back</a>
 </div>
 </form>
 

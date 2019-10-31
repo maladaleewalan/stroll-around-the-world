@@ -23,13 +23,13 @@
   <div class="center" style="margin:30px 30px 0px 30px">
   <div class="row">
     <div class="col-sm divguide" style="text-align:center">
-        <h2 class="fontmodal"><strong class="d-inline-block mb-2"><span class="fontnavinfo" style="font-size:30px"><i class="fas fa-utensils"></i><span class="ml-2 ">FOOD</span></strong></h2>
+        <h2 class="fontmodal"><strong class="d-inline-block mb-2"><span class="fontnavinfo"><i class="fas fa-utensils"></i><span class="ml-2 ">FOOD</span></strong></h2>
     </div>
     <div class="col-sm divguide" style="text-align:center">
-        <h2 class="fontmodal"><strong class="d-inline-block mb-2"><span class="fontnavinfo" style="font-size:30px"><i class="fas fa-map-marker-alt"></i><span class="ml-2">PLACE</span></strong></h2>
+        <h2 class="fontmodal"><strong class="d-inline-block mb-2"><span class="fontnavinfo"><i class="fas fa-map-marker-alt"></i><span class="ml-2">PLACE</span></strong></h2>
     </div>
     <div class="col-sm divguide" style="text-align:center">
-        <h2 class="fontmodal"><strong class="d-inline-block mb-2"><span class="fontnavinfo" style="font-size:30px"><i class="fas fa-smile"></i><span class="ml-2">CULTURE</span></strong></h2>
+        <h2 class="fontmodal"><strong class="d-inline-block mb-2"><span class="fontnavinfo"><i class="fas fa-smile"></i><span class="ml-2">CULTURE</span></strong></h2>
     </div>
   </div>
 </div>
@@ -61,7 +61,7 @@
                     @endauth
 
                     <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$guide->region->name}}</b>
-                    <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
+                    <p class="fontmodaltitle">{{$guide->title}}</p>
                     <p class="fontmodaldetail">{{$guide->detail}}</p>
                     <div class="center">
                     <img class="shadow" src='/image/{{$guide->picture}}' width="400px"/></div>
@@ -97,7 +97,8 @@
                     @endauth
 
                     <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$guide->region->name}}</b>
-                    <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
+                    
+                    <p class="fontmodaltitle">{{$guide->title}}</p>
                     <p class="fontmodaldetail">{{$guide->detail}}</p>
                     <div class="center">
                     <img class="shadow" src='/image/{{$guide->picture}}' width="400px"/></div>
@@ -132,7 +133,7 @@
                         @endauth
 
                         <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$guide->region->name}}</b>
-                        <p style="font-weight:bold" class="fontmodaltitle">{{$guide->title}}</p>
+                        <p class="fontmodaltitle">{{$guide->title}}</p>
                         <p class="fontmodaldetail">{{$guide->detail}}</p>
                         <div class="center">
                         <img class="shadow" src='/image/{{$guide->picture}}' width="400px"/></div>

@@ -12,7 +12,7 @@
         <div class="row round2">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="about_us_image mt-5">
-                <img  class="center image ml-5 shadow" src="/image/{{$user->picture}}" width="400px"> 
+                <img  class="center image ml-5 shadow" src="/image/{{$user->picture}}" width="350px"> 
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -21,7 +21,7 @@
                 <?php $id = Auth::user()->id ?>
                 @auth
                 @if(Auth::id() === $user->id)
-                <div><a class="editprofile" href="{{route('users.edit', ['user' => $id])}}"><i class="fas fa-user-edit"></i>edit</a></div>
+                <div><a class="editprofile" style="font-size:20px;" href="{{route('users.edit', ['user' => $id])}}"><i class="fas fa-user-edit"></i>edit</a></div>
                 @endif
                 @endauth
                 <div class="personal-details-right">
@@ -49,15 +49,15 @@
 </div>
 
 <i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
-<div class="divcenter" style="width:90%"> 
+<div class="divcenter" style="width:90%;margin-left:5%"> 
         @foreach($posts as $post) 
-        <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:500px"></a>
+        <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:29%"></a>
    
         @endforeach
 </div>
 
-<i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">News</span></i>
-<div class="divcenter" style="width:90%"> 
+<i class="fas fa-edit iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">News</span></i>
+<div class="divcenter" style="width:100%"> 
 @foreach ($stories as $story)
 <?php $cutstr = mb_substr($story->detail,0,200,'UTF-8');  //จะโชว์เนื้อหาข่าวแค่บางส่วน
 ?>
@@ -77,7 +77,7 @@
                             <div class="mt-1">
                                 <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$story->country->name}}</b>
                                 <br>
-                                <b class="newstitle">{{$story->title}}</b>
+                                <b class="newstitleindex">{{$story->title}}</b>
                             </div>
                                 <p class="news">{{$cutstr}} ......</p>
                                 <span><i class="far fa-clock"></i> {{$story->created_at->diffForHumans()}}</span> <span><button type="button" onclick="window.location.href='{{ route('stories.show', ['story' => $story->id ]) }}'" class="w3-button w3-black floatright">Read more</button></span>

@@ -40,7 +40,7 @@ if($previous == $allpost->count()+1) {
   <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
      <p style="font-size:20px" >{{$post->detail}}</p>
      <div class="center">
-   <img src="/image/{{$post->picture}}" width="1000px">
+   <img src="/image/{{$post->picture}}" width="900px">
     </div>
 
     <div class="like">

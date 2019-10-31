@@ -65,7 +65,7 @@
 
                         <div class="center form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-success buttonsignup">
+                                <button type="submit" class="btn btn-success buttonsignup" style="font-size:20px">
                                     {{ __('Login') }}
                                 </button>
 

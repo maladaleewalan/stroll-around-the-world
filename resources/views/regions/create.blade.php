@@ -11,10 +11,10 @@
             @csrf
             <br><br>
             <div class="divcenter" style="margin-top:20px">
-                <div class="formsignup" style="padding-left:10%">
+                <div class="formsignup">
 
-                <div class="form-group">
-                    <div class="input-group mb-3">
+                <div class="form-group" style="margin-left:100px">
+                    <div class="input-group mb-3" style="width:700px">
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Choose Country</label>
                         </div>
@@ -29,7 +29,7 @@
                     </div> 
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group" style="margin-left:100px">
                     <label>Region name</label>
                     <input style="width:700px;height:50px;font-size:20px" type="text" class="form-control @error('regionname') is-invalid @enderror" name="regionname" value="{{old('regionname')}}">
                     @error('regionname')
@@ -42,7 +42,7 @@
      
 <div class="center">
         <button class="btn btn-success buttonsignup floatright" type="submit">Submit</button>
-        <a class="btn btn-danger buttonsignup floatleft" href="{{route('firstpage')}}">Cancel</a>
+        <a class="btn btn-danger buttonsignup floatleft" href="{{route('firstpage')}}"  style="margin-left:60px;">Cancel</a>
 </div>
 </form>
 @endsection
