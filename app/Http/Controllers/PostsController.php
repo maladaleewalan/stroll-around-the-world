@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Post;
+use DB;
 use Illuminate\Http\Request;
 
 use App\Country;
@@ -32,6 +33,13 @@ class PostsController extends Controller
         $posts = Post::where('country_id',$id)->orderBy('created_at','desc')->get();  //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         $countries = Country::get();
         return view('posts.indexPostsCountry', ['posts'=>$posts , 'countries'=>$countries]);
+    }
+
+    public function userlike($id)
+    {
+        DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
+
+        return redirect()->route('posts.index');
     }
 
     /**

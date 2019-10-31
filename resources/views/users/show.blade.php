@@ -48,6 +48,16 @@
 </div>
 </div>
 
+<!-- ทำ favorite -->
+<!-- <i class="fas fa-heart iconprofile ml-5" style="font-size:30px"></i><span class="ml-2" style="font-size:30px">Favorite</span></i>
+<div class="divcenter" style="width:90%"> 
+        @foreach($posts as $post) 
+        <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:500px"></a>
+   
+        @endforeach
+</div> -->
+<!-- จบตรงนี้ -->
+
 <i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
 <div class="divcenter" style="width:90%;margin-left:5%"> 
         @foreach($posts as $post) 
