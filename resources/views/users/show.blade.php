@@ -57,8 +57,9 @@
         @endforeach
 </div> -->
 <!-- จบตรงนี้ -->
-
-<i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
+@if(count($posts) != 0) 
+    <i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
+@endif
 <div class="divcenter" style="width:90%;margin-left:5%"> 
         @foreach($posts as $post) 
         <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:29%"></a>
@@ -66,7 +67,9 @@
         @endforeach
 </div>
 
-<i class="fas fa-edit iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">News</span></i>
+@if(count($stories) != 0)
+    <i class="fas fa-edit iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">News</span></i>
+@endif
 <div class="divcenter" style="width:100%"> 
 @foreach ($stories as $story)
 <?php $cutstr = mb_substr($story->detail,0,200,'UTF-8');  //จะโชว์เนื้อหาข่าวแค่บางส่วน
