@@ -47,18 +47,20 @@
     </div>
 </div>
 </div>
+<br>
 
-<!-- ทำ favorite -->
-<!-- <i class="fas fa-heart iconprofile ml-5" style="font-size:30px"></i><span class="ml-2" style="font-size:30px">Favorite</span></i>
-<div class="divcenter" style="width:90%"> 
-        @foreach($posts as $post) 
-        <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:500px"></a>
+@if(count($postlikes) != 0) 
+    <i class="fas fa-heart iconprofile ml-5" style="font-size:30px"></i><span class="ml-2" style="font-size:30px">Favorite</span></i>
+@endif
+<div class="divcenter" style="width:90%;margin-left:5%"> 
+        @foreach($postlikes as $post) 
+        <a href="{{route('posts.show' , ['post' => $post->id]) }}"><img src="/image/{{$post->picture}}" class="ml-5 mt-2 shadow" style="width:29%"></a>
    
         @endforeach
-</div> -->
-<!-- จบตรงนี้ -->
+</div>
+
 @if(count($posts) != 0) 
-    <i class="fas fa-images iconprofile ml-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
+    <i class="fas fa-images iconprofile ml-5 mt-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Posts</span></i>
 @endif
 <div class="divcenter" style="width:90%;margin-left:5%"> 
         @foreach($posts as $post) 

@@ -44,6 +44,7 @@ Route::get('/stories/country/{id}','StoriesController@indexStoriesCountry')->nam
 Route::get('/posts/country/{id}','PostsController@indexPostsCountry')->name('posts.indexPostsCountry');
 
 Route::get('/posts/userlike/{id}','PostsController@userlike')->name('posts.userlike');
+Route::get('/posts/userunlike/{id}','PostsController@userunlike')->name('posts.userunlike');
 Route::get('/posts/userlike/show/{id}','PostsController@userlikeinpageshow')->name('posts.userlikeinpageshow');
 
 Route::get('/guides/country/{id}','GuidesController@indexGuidesCountry')->name('guides.indexGuidesCountry');

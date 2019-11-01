@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Post;
+use App\Postlike;
 use DB;
 use Illuminate\Http\Request;
 
@@ -23,9 +24,11 @@ class PostsController extends Controller
      */
     public function index()
     {
+        // $posts = DB::select ( "select posts.*, postlikes.id as postlike_id from posts left outer join postlikes on posts.id = postlikes.post_id and postlikes.user_id = :user_id order by posts.created_at desc", [ "user_id" => Auth::user()->id ] );
         $posts = Post::orderBy('created_at','desc')->get();  //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         $countries = Country::get();
-        return view('posts.index', ['posts'=>$posts , 'countries'=>$countries]);
+        $postlikes = Postlike::where('user_id',Auth::user()->id)->get();
+        return view('posts.index', ['posts'=>$posts , 'countries'=>$countries, 'postlikes'=>$postlikes]);
     }
 
     public function indexPostsCountry($id)
@@ -37,13 +40,35 @@ class PostsController extends Controller
 
     public function userlike($id)
     {
+        Postlike::create([
+            'post_id' => $id,
+            'user_id' => Auth::user()->id,
+        ]);
+
+
         DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
+
+        return redirect()->route('posts.index');
+    }
+
+    public function userunlike($id)
+    {
+        DB::table("postlikes")->where( [ ["post_id", "=", $id], ["user_id", "=", Auth::user()->id] ])->delete();
+
+
+        DB::update ( "update posts set totallike = totallike - 1 where id = ?", [ "$id" ] );
 
         return redirect()->route('posts.index');
     }
 
     public function userlikeinpageshow($id)
     {
+        Postlike::create([
+            'post_id' => $id,
+            'user_id' => Auth::user()->id,
+        ]);
+
+
         DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
         return redirect()->route('posts.show',['post'=> $id]);
     }

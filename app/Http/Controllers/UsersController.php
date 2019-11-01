@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
 
+use DB;
 use Auth;
 use App\Post;
 use App\Story;
@@ -62,8 +63,9 @@ class UsersController extends Controller
     public function show(User $user)         // URL: 127.0.0.1:8000/users/{id}
     {
         $posts = Post::where('user_id',$user->id)->orderBy('created_at','desc')->get();
+        $postlikes = DB::table("posts")->join("postlikes", "posts.id", "=", "postlikes.post_id")->where('postlikes.user_id',Auth::user()->id)->get();
         $stories = Story::where('user_id',$user->id)->orderBy('created_at','desc')->get();
-        return view('users.show',['user' => $user, 'posts'=>$posts, 'stories'=>$stories]);   //$user คือ parameter ที่ส่งมา
+        return view('users.show',['user' => $user, 'posts'=>$posts, 'postlikes'=>$postlikes, 'stories'=>$stories]);   //$user คือ parameter ที่ส่งมา
     }
 
     /**
