@@ -24,10 +24,14 @@ class PostsController extends Controller
      */
     public function index()
     {
+
         // $posts = DB::select ( "select posts.*, postlikes.id as postlike_id from posts left outer join postlikes on posts.id = postlikes.post_id and postlikes.user_id = :user_id order by posts.created_at desc", [ "user_id" => Auth::user()->id ] );
         $posts = Post::orderBy('created_at','desc')->get();  //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         $countries = Country::get();
-        $postlikes = Postlike::where('user_id',Auth::user()->id)->get();
+        $postlikes = null;
+        if (Auth::user()) {
+            $postlikes = Postlike::where('user_id',Auth::user()->id)->get();
+        }
         return view('posts.index', ['posts'=>$posts , 'countries'=>$countries, 'postlikes'=>$postlikes]);
     }
 
@@ -61,18 +65,6 @@ class PostsController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function userlikeinpageshow($id)
-    {
-        Postlike::create([
-            'post_id' => $id,
-            'user_id' => Auth::user()->id,
-        ]);
-
-
-        DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
-        return redirect()->route('posts.show',['post'=> $id]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -96,7 +88,7 @@ class PostsController extends Controller
             'detail' => ['required','min:10','max:300'],
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif'
         ]);
-        
+
         $post = new Post;
         $post->detail = $validateData['detail'];
         $post->country_id = $request->input('country');
@@ -107,10 +99,10 @@ class PostsController extends Controller
         $upload_path = $image_path . $new_image_name;
         //uploading
         $success = move_uploaded_file($_FILES['picture']['tmp_name'],$upload_path);  //เอามาใส่ในupload path
-      
+
 
         //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
-        $post->picture = $new_image_name;
+        $post->​picture = $new_image_name;
         $post->user_id = Auth::user()->id;
         Auth::user()->point = Auth::user()->point + 1;   //เพิ่ม point 1 แต้ม
         Auth::user()->totalpost++;
@@ -177,11 +169,11 @@ class PostsController extends Controller
             $upload_path = $image_path . $new_image_name;
             //uploading
             $success = move_uploaded_file($_FILES['picture']['tmp_name'],$upload_path);  //เอามาใส่ในupload path
-      
+
             //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
             $post->picture = $new_image_name;
         }
-        
+
         $post->save();
 
         return redirect()->route('posts.show',['post'=>$post->id]);
@@ -198,7 +190,7 @@ class PostsController extends Controller
         //ลบรูปออกจาก folder
         $picture = $post->picture;
         @unlink('image/'. $picture);
-        
+
         $post->delete();
 
         $posts = Post::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)

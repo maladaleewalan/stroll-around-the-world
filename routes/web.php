@@ -37,7 +37,11 @@ Route::resource('/regions', 'regionsController');
 
 
 
+
+
 Auth::routes();
+// Route::get('/plan', 'PlanController@index')->name('plans')
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/stories/country/{id}','StoriesController@indexStoriesCountry')->name('stories.indexStoriesCountry');

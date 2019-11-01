@@ -10,7 +10,7 @@
         @foreach ($countries as $country)
           <a class="dropdown-item titlenav" href="{{route('posts.indexPostsCountry',['id'=>$country->id])}}">{{$country->name}}</a>
         @endforeach
-    </div> 
+    </div>
 </div>
 
   @auth
@@ -19,7 +19,7 @@
 
 <div class="center">
   @foreach($posts as $post)
-  <div class="divgallery"> 
+  <div class="divgallery">
   <p class="usernamepost"><i class="fas fa-user"></i> <a href="{{route('users.show',['user'=>$post->user->id])}}">{{$post->user->name}}</a></p>
     <!-- <p>{{$post->detail}}</p> -->
 
@@ -27,32 +27,43 @@
     <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
     <div class="like">
       @auth
-      @php 
+      @php
         $isLiked = 0;
       @endphp
-      @foreach($postlikes as $eachPostLike)
-        @if ($post->id == $eachPostLike->post_id)
-          @php 
-            $isLiked = 1;
-          @endphp
+        @if($postlikes != null)
+                @foreach($postlikes as $eachPostLike)
+                    @if ($post->id == $eachPostLike->post_id)
+                        @php
+                            $isLiked = 1;
+                        @endphp
+                    @endif
+                @endforeach
         @endif
-      @endforeach
+
 
       @if ($isLiked == 0)
         <a class="fa fa-heart iconlike" href="{{route('posts.userlike' , ['id' => $post->id]) }}"></a>
-      @else 
+      @else
         <a class="fa fa-heart iconlike" style="color: #000000;" href="{{route('posts.userunlike' , ['id' => $post->id]) }}"></a>
       @endif
-      
+
       @endauth
       <span class="titlenav" style="font-size:20px">Likes : {{$post->totallike}}</span>
     </div>
   </div>
   @endforeach
+
+    <button class="btn btn-success" id="click_api">Test Api</button>
   </div>
 
 
 
+@endsection
 
-   
+
+@section('script')
+    <script>
+
+
+    </script>
 @endsection

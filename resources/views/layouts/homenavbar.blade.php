@@ -57,7 +57,6 @@
               </form>
           </li>
 
-
           <?php if(Auth::user()->role == "admin") {?>
               <li class="nav-item">
                 <div class="dropdown">
