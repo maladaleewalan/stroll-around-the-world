@@ -13,7 +13,7 @@ class CreatePostlikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Postlike', function (Blueprint $table) {
+        Schema::create('Postlikes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->bigInteger('post_id');
@@ -28,6 +28,6 @@ class CreatePostlikesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Postlike');
+        Schema::dropIfExists('Postlikes');
     }
 }

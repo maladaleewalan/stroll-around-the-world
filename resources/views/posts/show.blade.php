@@ -44,10 +44,29 @@ if($previous == $allpost->count()+1) {
     </div>
 
     <div class="like">
-    @auth
-      <a class="fa fa-heart iconlike" style="font-size:30px" href="{{route('posts.userlikeinpageshow' , ['id' => $post->id]) }}"></a>
-    @endauth
-      &nbsp; <span class="titlenav" style="font-size:30px">Likes : {{$post->totallike}}</span>
+      @auth
+        @php
+          $isLiked = 0;
+        @endphp
+          @if($postlikes != null)
+                  @foreach($postlikes as $eachPostLike)
+                      @if ($post->id == $eachPostLike->post_id)
+                          @php
+                              $isLiked = 1;
+                          @endphp
+                      @endif
+                  @endforeach
+          @endif
+
+
+          @if ($isLiked == 0)
+            <a class="fa fa-heart iconlike" style="font-size:30px" href="{{route('posts.userlikeinshow' , ['id' => $post->id]) }}"></a>
+          @else
+            <a class="fa fa-heart iconlike" style="font-size:30px;color: #000000;" href="{{route('posts.userunlikeinshow' , ['id' => $post->id]) }}"></a>
+          @endif
+
+          @endauth
+          <span class="titlenav" style="font-size:30px">Likes : {{$post->totallike}}</span>
 
       <button type="button" onclick="window.location.href='{{ route('posts.index')}}'" class="btn btn-light" style="font-size:20px;float:right"> <i class="fas fa-images"></i> Back to Gallery</button>
 

@@ -32,14 +32,33 @@
     <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$post->country->name}}</b>
     <div class="like">
       @auth
-      <button type="button" class="btn btn-light"><i class="fab fa-gratipay pink"></i> Like</button>
-      @endauth
-      <span> <i class="fas fa-thumbs-up blue" style="font-size:25px">: {{$post->like}}</i> </span>
-    </div>
-  </div>
-  @endforeach
-  </div>
+        @php
+          $isLiked = 0;
+        @endphp
+          @if($postlikes != null)
+                  @foreach($postlikes as $eachPostLike)
+                      @if ($post->id == $eachPostLike->post_id)
+                          @php
+                              $isLiked = 1;
+                          @endphp
+                      @endif
+                  @endforeach
+          @endif
 
+
+          @if ($isLiked == 0)
+            <a class="fa fa-heart iconlike" href="{{route('posts.userlikeinindexcountry' , ['id' => $post->id]) }}"></a>
+          @else
+            <a class="fa fa-heart iconlike" style="color: #000000;" href="{{route('posts.userunlikeinindexcountry' , ['id' => $post->id]) }}"></a>
+          @endif
+
+          @endauth
+          <span class="titlenav" style="font-size:20px">Likes : {{$post->totallike}}</span>
+        </div>
+      </div>
+      @endforeach
+
+      </div>
 
 
 

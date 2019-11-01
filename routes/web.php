@@ -49,7 +49,11 @@ Route::get('/posts/country/{id}','PostsController@indexPostsCountry')->name('pos
 
 Route::get('/posts/userlike/{id}','PostsController@userlike')->name('posts.userlike');
 Route::get('/posts/userunlike/{id}','PostsController@userunlike')->name('posts.userunlike');
-Route::get('/posts/userlike/show/{id}','PostsController@userlikeinpageshow')->name('posts.userlikeinpageshow');
+
+Route::get('/posts/country/userlike/{id}','PostsController@userlikeinindexcountry')->name('posts.userlikeinindexcountry');
+Route::get('/posts/country/userunlike/{id}','PostsController@userunlikeinindexcountry')->name('posts.userunlikeinindexcountry');
+Route::get('/posts/show/userlike/{id}','PostsController@userlikeinshow')->name('posts.userlikeinshow');
+Route::get('/posts/show/userunlike/{id}','PostsController@userunlikeinshow')->name('posts.userunlikeinshow');
 
 Route::get('/guides/country/{id}','GuidesController@indexGuidesCountry')->name('guides.indexGuidesCountry');
 Route::get('/guides/{id}/{regionid}','GuidesController@indexGuidesCountryRegion')->name('guides.indexGuidesCountryRegion');

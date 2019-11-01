@@ -53,7 +53,7 @@
   </div>
   @endforeach
 
-    <button class="btn btn-success" id="click_api">Test Api</button>
+    <!-- <button class="btn btn-success" id="click_api">Test Api</button> -->
   </div>
 
 
