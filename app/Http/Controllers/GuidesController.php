@@ -73,8 +73,8 @@ class GuidesController extends Controller
     public function store(Request $request)
     {
         $validateData = $this->validate($request,[
-            'title' => ['required','min:10','max:300'],
-            'detail' => ['required','min:10','max:1000'],
+            'title' => ['required','min:5','max:50'],
+            'detail' => ['required','min:10','max:350'],
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif'
         ]);
         
@@ -147,8 +147,8 @@ class GuidesController extends Controller
     public function update(Request $request, Guide $guide)
     {
         $validateData = $this->validate($request,[
-            'title' => ['required','min:10','max:500'],
-            'detail' => ['required','min:10','max:3000'],
+            'title' => ['required','min:5','max:50'],
+            'detail' => ['required','min:10','max:350'],
             'picture' => 'image|mimes:jpeg,png,jpg,gif'
         ]);
 

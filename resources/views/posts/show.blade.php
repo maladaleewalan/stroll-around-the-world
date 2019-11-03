@@ -24,7 +24,7 @@ if($previous == $allpost->count()+1) {
     <form action="{{route('posts.destroy', ['post' => $post->id])}}" method="post">
         @csrf
         @method('DELETE')
-        <button class="editprofile btn btn-link red" style="font-size:20px;" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
+        <button onclick="return confirm('Are You Sure to delete this?')" class="editprofile btn btn-link red" style="font-size:20px;" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
     </form>
     <button class="editprofile btn btn-link" style="font-size:20px;" onclick="window.location.href='{{route('posts.edit',['post'=>$post->id])}}'">
         <i class="fas fa-edit"></i>edit

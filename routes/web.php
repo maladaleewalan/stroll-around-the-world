@@ -61,7 +61,7 @@ Route::get('/guides/{id}/{regionid}','GuidesController@indexGuidesCountryRegion'
 Route::get('/guides/create/country/{id}','GuidesController@createGuidesEachCountry')->name('guides.createGuidesEachCountry');
 
 Route::get('/bynewuser',function() {
-    if(Auth::user()->role !== 'admin') {
+    if(Auth::user() == null||Auth::user()->role !== 'admin') {
         $stories = Story::orderBy('created_at','desc')->get();    
         return view('firstpage',['stories' => $stories]);
     }

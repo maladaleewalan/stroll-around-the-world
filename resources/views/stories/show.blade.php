@@ -7,7 +7,7 @@
     <form action="{{route('stories.destroy', ['story' => $story->id])}}" method="post">
         @csrf
         @method('DELETE')
-        <button class="editprofile btn btn-link red" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
+        <button onclick="return confirm('Are You Sure to delete this?')" class="editprofile btn btn-link red" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
     </form>
     <button class="editprofile btn btn-link" onclick="window.location.href='{{route('stories.edit',['story'=>$story->id])}}'">
         <i class="fas fa-edit"></i>edit
