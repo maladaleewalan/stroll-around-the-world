@@ -1,6 +1,7 @@
 <?php
 
 use App\Story;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,12 @@ Route::get('/posts/show/userunlike/{id}','PostsController@userunlikeinshow')->na
 Route::get('/guides/country/{id}','GuidesController@indexGuidesCountry')->name('guides.indexGuidesCountry');
 Route::get('/guides/{id}/{regionid}','GuidesController@indexGuidesCountryRegion')->name('guides.indexGuidesCountryRegion');
 Route::get('/guides/create/country/{id}','GuidesController@createGuidesEachCountry')->name('guides.createGuidesEachCountry');
+
+Route::get('/bynewuser',function() {
+    if(Auth::user()->role !== 'admin') {
+        $stories = Story::orderBy('created_at','desc')->get();    
+        return view('firstpage',['stories' => $stories]);
+    }
+    $users = User::orderBy('created_at','desc')->get();    
+    return view('users.indexbynewuser',['users'=>$users]);
+})->name('bynewuser');

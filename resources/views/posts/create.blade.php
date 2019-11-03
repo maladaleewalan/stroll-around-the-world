@@ -41,7 +41,7 @@
                 
                 <div class="form-group" style="margin-left:100px">
                     <label >Caption</label>
-                    <textarea rows="10" style="width:700px;font-size:20px" class="form-control @error('detail') is-invalid @enderror" name="detail">{{old('detail')}}</textarea>
+                    <textarea rows="5" style="width:700px;font-size:20px" class="form-control @error('detail') is-invalid @enderror" name="detail">{{old('detail')}}</textarea>
                     @error('detail')
                     <div class="alertinputfalse">{{$message}}</div>
                     @enderror

@@ -32,8 +32,8 @@
 - ข้อมูลที่เตรียมไว้ให้ สามารถ นำ email, password ไป login ได้เลย
     ```
     admin
-    E-Mail Address : gam3542@hotmail.com
-    password : gam3542
+    E-Mail Address : admin123@hotmail.com
+    password : admin123
     ```
     มี user 2 ระดับ แต่ละระดับมีสิทธิการใช้งานต่างกัน 
     ```
@@ -44,7 +44,7 @@
 
     ```
     user ระดับ 1
-    E-Mail Address : userdemo@hotmail.com
-    password : userdemo
+    E-Mail Address : gam3542@hotmail.com
+    password : gam3542
     ```
 - มีรูปเตรียมไว้ให้เพิ่ม อยู่ในโฟลเดอร์ "picture test"

@@ -16,7 +16,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "sun shine";
         $post->picture = "singapore part02 1608-26.jpg";
-        $post->user_id = 1;
+        $post->user_id = 8;
         $post->country_id = 4;
         $post->save();
 
@@ -24,7 +24,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "love keys";
         $post->picture = "tPOOLba.jpg";
-        $post->user_id = 1;
+        $post->user_id = 4;
         $post->country_id = 2;
         $post->save();
 
@@ -32,14 +32,14 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "Dinosaur";
         $post->picture = "3-21.jpg";
-        $post->user_id = 1;
+        $post->user_id = 3;
         $post->save();
 
         //Japan
         $post = new Post;
         $post->detail = "Micky and friends";
         $post->picture = "Tokyo-Disneyland.jpg";
-        $post->user_id = 1;
+        $post->user_id = 3;
         $post->country_id = 3;
         $post->save();
 
@@ -63,7 +63,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "แฮดง ยงกุงซา";
         $post->picture = "วัดแฮดง-ยงกุงซา-เมืองปูซานเกาหลีใต้_800x464.jpg";
-        $post->user_id = 1;
+        $post->user_id = 6;
         $post->country_id = 2;
         $post->save();
 
@@ -71,7 +71,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "สวยยยย";
         $post->picture = "changi-airport-rain-vortex.jpg";
-        $post->user_id = 1;
+        $post->user_id = 3;
         $post->country_id = 4;
         $post->save();
 
@@ -79,7 +79,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "ใบไม้ผลิใบ ที่เกาะนามิ";
         $post->picture = "1.nami-1.jpg";
-        $post->user_id = 2;
+        $post->user_id = 8;
         $post->country_id = 2;
         $post->save();
 
@@ -95,7 +95,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "Wonder Full Light and Water Show in Singapore";
         $post->picture = "Wonder-Full-Light-and-Water-Show-Singapore.jpg";
-        $post->user_id = 1;
+        $post->user_id = 7;
         $post->country_id = 4;
         $post->save();
 
@@ -103,7 +103,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "ฮอกไกโด :)";
         $post->picture = "hokkaido.jpg";
-        $post->user_id = 1;
+        $post->user_id = 6;
         $post->country_id = 3;
         $post->save();
 
@@ -119,7 +119,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "The first temple that I visited in Bangkok";
         $post->picture = "3-1-1.jpg";
-        $post->user_id = 1;
+        $post->user_id = 7;
         $post->save();
 
         //Korea
@@ -134,7 +134,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "street food at Myeong-Dong";
         $post->picture = "koreanstreetfood55.jpg";
-        $post->user_id = 1;
+        $post->user_id = 8;
         $post->country_id = 2;
         $post->save();
 
@@ -149,7 +149,7 @@ class PostsTableSeeder extends Seeder
         $post = new Post;
         $post->detail = "ชิงช้าต้นไม้ ชมวิวเนินมะปราง";
         $post->picture = "12190875_952803564765345_6344948201399877447_n.jpg";
-        $post->user_id = 1;
+        $post->user_id = 7;
         $post->save();
 
         //Singapore

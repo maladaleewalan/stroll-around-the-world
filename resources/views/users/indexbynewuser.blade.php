@@ -13,8 +13,8 @@
                         <label class="input-group-text" for="inputGroupSelect01">Order by</label>
                         </div>
                         <select name="" class="custom-select" onchange="location = this.value;">
-                                <option value="{{route('users.index')}}">point</option>
-                                <option value="{{route('bynewuser')}}">new user</option>    
+                                <option value="{{route('bynewuser')}}">new user</option>  
+                                <option value="{{route('users.index')}}">point</option>  
                         </select>
                     </div> 
     </div>

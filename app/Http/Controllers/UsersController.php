@@ -30,7 +30,7 @@ class UsersController extends Controller
             $stories = Story::orderBy('created_at','desc')->get();    
             return view('firstpage',['stories' => $stories]);
         }
-        $users = User::get();    
+        $users = User::orderBy('point','desc')->get();    
         return view('users.index',['users'=>$users]);
     }
 
