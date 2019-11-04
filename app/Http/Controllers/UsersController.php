@@ -64,7 +64,7 @@ class UsersController extends Controller
     {
         $posts = Post::where('user_id',$user->id)->orderBy('created_at','desc')->get();
         $postlikes = DB::table("posts")->join("postlikes", "posts.id", "=", "postlikes.post_id")->where('postlikes.user_id',Auth::user()->id)->get();
-        $stories = Story::where('user_id',$user->id)->orderBy('created_at','desc')->get();
+        $stories = Story::where('user_id',$user->id)->where('status','pass')->orderBy('created_at','desc')->get();
         return view('users.show',['user' => $user, 'posts'=>$posts, 'postlikes'=>$postlikes, 'stories'=>$stories]);   //$user คือ parameter ที่ส่งมา
     }
 

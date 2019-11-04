@@ -23,7 +23,7 @@ class StoriesController extends Controller
      */
     public function index()
     {
-        $stories = Story::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
+        $stories = Story::where('status','pass')->orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         $countries = Country::get();
         return view('stories.index',['stories'=>$stories , 'countries'=>$countries]);
     }
@@ -77,22 +77,50 @@ class StoriesController extends Controller
         //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
         $story->picture = $new_image_name;
         $story->user_id = Auth::user()->id;
+        if(Auth::user()->role == 'user2') {
+            $story->status = 'pass';
+            Auth::user()->point = Auth::user()->point + 3;
+            Auth::user()->totalpost++;
+        }
+        $story->save();
+
+        if($story->user_id != "Admin") {
+            if(Auth::user()->point >= 10) {
+                Auth::user()->role = "user2";
+            }
+        }
+        Auth::user()->save();
+
+        return redirect()->route('stories.show',['story'=>$story->id]); 
+    }
+
+    public function Newspass($id) {
+        $story = Story::find($id);
+        $story->status = "pass";
+        $story->save();
+
         Auth::user()->point = Auth::user()->point + 3;
         Auth::user()->totalpost++;
-        $story->save();
         if(Auth::user()->role != "Admin") {
             if(Auth::user()->point >= 10) {
                 Auth::user()->role = "user2";
             }
-
         }
         Auth::user()->save();
 
-        return redirect()->route('stories.show',['story'=>$story->id]);
-       
-
+        return redirect()->route('checkNews');
     }
 
+    public function Newsnotpass($id) {
+        $story = Story::find($id);
+        //ลบรูปออกจาก folder
+        $picture = $story->picture;
+        @unlink('image/'. $picture);
+
+    
+        $story->delete();
+        return redirect()->route('checkNews');
+    }
     /**
      * Display the specified resource.
      *
@@ -101,6 +129,9 @@ class StoriesController extends Controller
      */
     public function show(Story $story)     // URL: 127.0.0.1:8000/stories/{id}
     {
+        if($story->status == "notpass" && Auth::id() !== $story->user->id) {   //ถ้าstatus ยังไม่ผ่าน จะมีแค่คนโพสกับ admin ที่เข้าไปดูdetailข่าวได้
+            return redirect()->route('stories.index');
+        }
         return view('stories.show',['story' => $story]);   //$story คือ parameter ที่ส่งมา
     }
 
@@ -112,7 +143,7 @@ class StoriesController extends Controller
      */
     public function edit(Story $story)
     {
-        if(Auth::id() !== $story->user->id && Auth::user()->role !== 'admin') {
+        if(Auth::id() !== $story->user->id) {
             return redirect()->route('stories.show',['story'=>$story]);
         }
         return view('stories.edit',['story' => $story]);
@@ -172,6 +203,9 @@ class StoriesController extends Controller
         
         $story->delete();
 
+        Auth::user()->totalpost--;
+        Auth::user()->save();
+        
         $stories = Story::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         return redirect()->route('stories.index',['stories'=>$stories]);
     

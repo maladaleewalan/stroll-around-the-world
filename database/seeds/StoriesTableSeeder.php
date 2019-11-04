@@ -45,6 +45,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="38033480_2147519288797415_6736228515227631616_n_1533029869.jpg";
         $story->user_id = 3;
         $story->country_id=3;
+        $story->status = "pass";
         $story->save();
 
         //Singapore
@@ -56,6 +57,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="cats-1.jpg";
         $story->user_id = 4;
         $story->country_id=4;
+        $story->status = "pass";
         $story->save();
 
         //Thailand
@@ -66,6 +68,7 @@ class StoriesTableSeeder extends Seeder
         โดยระบุว่า “เป็นเรื่องที่น่ายินดีที่นิตยสารโว้ก ฝรั่งเศส ได้นำเสนออุทยานแห่งชาติเขาสก จังหวัดสุราษฎร์ธานีของไทย เป็นอุทยานแห่งชาติที่มีความงดงามระดับโลก ร่วมกับอุทยานแห่งชาติที่มีชื่อเสียงรวม 8 แห่ง เช่น อุทยานแห่งชาติเยลโล่สโตน สหรัฐอเมริกา อุทยานแห่งชาติกุ้ยหลินของจีน อุทยานแห่งชาติกาลาปากอสของเอกวาดอร์ เป็นต้น ขอบคุณเจ้าหน้าที่อุทยานแห่งชาติและนักท่องเที่ยวทุกท่านที่ร่วมกันดูแลรักษาอุทยานแห่งชาติแห่งนี้…”";
         $story->picture="0071f38f5a659bacfade2c1e5d7f2082_1555822672.jpg";
         $story->user_id = 2;
+        $story->status = "notpass";
         $story->save();
 
         //Korea
@@ -78,6 +81,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="jeongdongjin-station-sunset.jpg";
         $story->country_id=2;
         $story->user_id = 2;
+        $story->status = "pass";
         $story->save();
 
         //Thailand
@@ -94,6 +98,7 @@ class StoriesTableSeeder extends Seeder
         ทุกตลาดเปิดเวลา 09.00 – 15.00 น. ยกเว้น ตลาดบัวขวัญ เปิด 10.00 – 21.00 น.";
         $story->picture="w644.jpg";
         $story->user_id = 2;
+        $story->status = "pass";
         $story->save();
 
         //Singapore
@@ -105,6 +110,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="future-world-art.jpg";
         $story->country_id=4;
         $story->user_id = 5;
+        $story->status = "pass";
         $story->save();
 
         //Thailand
@@ -114,6 +120,7 @@ class StoriesTableSeeder extends Seeder
         ภายใต้บรรยากาศสบายๆเบื้องหน้าท้องฟ้าสีคราม คลอเสียงคลื่นริมหาดหัวหิน โรงแรมเซ็นทาราแกรนด์บีชรีสอร์ทและวิลลา หัวหิน ร่วมกับ โรงแรมอินเตอร์คอนติเนนตัล หัวหิน รีสอร์ท และ โรงแรม หัวหิน แมริออท รีสอร์ท ภายใต้การสนับสนุนของ การท่องเที่ยวแห่งประเทศไทย ขอต้อนรับลมหนาวในเดือนตุลาคมและพฤศจิกายน ด้วยประสบการณ์รับประทานอาหารครั้งพิเศษ \"หัวหิน เชฟเทเบิล\" (Hua Hin Chef's Table 2019) ที่นำเสนอจินตนาการของสุดยอดเชฟมากฝีมือ 3 ท่านจากทั้ง 3 โรงแรมดัง แต่งแต้มด้วยประสบการณ์และความหลงใหลในการปรุงอาหาร เพื่อถ่ายทอดเป็นรสชาติและรสสัมผัสที่ลงตัวและมอบอรรถรสที่ดีที่สุดแห่งฤดูกาลให้ทุกท่านได้ลิ้มลอง";
         $story->picture="iq1b562b334f4dd29034e245a45dceb1b9.jpg";
         $story->user_id = 6;
+        $story->status = "pass";
         $story->save();
 
         //Singapore
@@ -123,6 +130,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="iq6f2c19b44f949fcb09584d647a4fc9e3.jpg";
         $story->country_id=4;
         $story->user_id = 7;
+        $story->status = "pass";
         $story->save();
 
         //Japan
@@ -132,6 +140,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="iqc6f12ea730e740fb5440c70d759c831c.jpg";
         $story->country_id=3;
         $story->user_id = 2;
+        $story->status = "pass";
         $story->save();
 
         //Korea
@@ -154,6 +163,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="korea.jpg";
         $story->country_id=2;
         $story->user_id = 3;
+        $story->status = "pass";
         $story->save();
 
         //Thailand
@@ -163,6 +173,7 @@ class StoriesTableSeeder extends Seeder
         ขณะที่ บรรยากาศการเดินทางขึ้นมายอดดอยอินทนนท์ของนักท่องเที่ยวคึกคักตลอดทั้งปี แต่จะเริ่มหนาแน่นหลังจากวันนี้เป็นต้นไป เนื่องจากเข้าสู่ฤดูกาลการท่องเที่ยว อีกทั้งทางอุทยานแห่งชาติดอยอินทนนท์ เตรียมจะเปิดพื้นที่กิ่วแม่ปานในเดือนพฤศจิกายน 2562 หลังจากที่ปิดฟื้นฟูสภาพป่าไปเมื่อเดือนพฤศจิกายน 2561";
         $story->picture="129327.jpg";
         $story->user_id = 8;
+        $story->status = "pass";
         $story->save();
 
          //Korea
@@ -175,6 +186,7 @@ class StoriesTableSeeder extends Seeder
          $story->picture="kpop.png";
          $story->country_id=2;
          $story->user_id = 2;
+         $story->status = "pass";
          $story->save();
 
         //Korea
@@ -184,7 +196,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="a12ea43836167538f804e6ae878fc582.jpg";
         $story->country_id=4;
         $story->user_id = 6;
-
+        $story->status = "pass";
         $story->save();
 
         //Japan
@@ -195,6 +207,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="Screen-Shot-2562-10-19-at-16.14.04.png";
         $story->country_id=3;
         $story->user_id = 5;
+        $story->status = "pass";
         $story->save();
         
         //Thailand
@@ -210,6 +223,7 @@ class StoriesTableSeeder extends Seeder
         $story->picture="aHR0cHM6Ly9zLmlzYW5vb2suY29tL25zLzAvdWQvMTU2MC83ODAyMjg2LzFjdmVld3EuanBn.jpg";
         $story->user_id = 2;
         $story->user_id = 6;
+        $story->status = "pass";
         $story->save();
 
         // factory(Story::class,20)->create();   //เพิ่มใน tinker -> $story = factory(App\Story::class,20)->create()

@@ -2,6 +2,7 @@
 
 use App\Story;
 use App\User;
+use App\Country;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,3 +69,20 @@ Route::get('/bynewuser',function() {
     $users = User::orderBy('created_at','desc')->get();    
     return view('users.indexbynewuser',['users'=>$users]);
 })->name('bynewuser');
+
+Route::get('/checkNews',function() {
+    if(Auth::user() == null||Auth::user()->role !== 'admin') {
+        $stories = Story::orderBy('created_at','desc')->get();    
+        return view('firstpage',['stories' => $stories]);
+    }
+    $stories = Story::where('status','notpass')->orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
+    $countries = Country::get();
+    return view('stories.checkNews',['stories'=>$stories , 'countries'=>$countries]);
+})->name('checkNews');
+
+Route::get('/stories/Newspass/{id}','StoriesController@Newspass')->name('stories.Newspass');
+Route::get('/stories/Newsnotpass/{id}','StoriesController@Newsnotpass')->name('stories.Newsnotpass');
+
+
+
+

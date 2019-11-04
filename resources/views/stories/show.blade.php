@@ -2,14 +2,14 @@
 @section('content')
 
 @auth
-@if(Auth::id() === $story->user->id || Auth::user()->role == 'admin') 
+@if(Auth::id() === $story->user->id ) 
 <div style="text-align: right;margin:80px 370px 0px 0px;" role="group">
     <form action="{{route('stories.destroy', ['story' => $story->id])}}" method="post">
         @csrf
         @method('DELETE')
-        <button onclick="return confirm('Are You Sure to delete this?')" class="editprofile btn btn-link red" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
+        <button onclick="return confirm('Are You Sure to delete this?')" class="editprofile btn btn-link red" style="font-size:20px;" type="submit"><i class="fas fa-trash-alt"></i>delete</button>
     </form>
-    <button class="editprofile btn btn-link" onclick="window.location.href='{{route('stories.edit',['story'=>$story->id])}}'">
+    <button class="editprofile btn btn-link" style="font-size:20px;" onclick="window.location.href='{{route('stories.edit',['story'=>$story->id])}}'">
         <i class="fas fa-edit"></i>edit
     </button>
 </div>

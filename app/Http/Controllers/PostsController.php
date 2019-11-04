@@ -253,6 +253,8 @@ class PostsController extends Controller
         @unlink('image/'. $picture);
 
         $post->delete();
+        Auth::user()->totalpost--;
+        Auth::user()->save();
 
         $posts = Post::orderBy('created_at','desc')->get();    //เรียงจากวันที่โพสล่าสุดขึ้นก่อน (desc มากไปน้อย วันที่มากขึ้นก่อน)
         return redirect()->route('posts.index',['posts'=>$posts]);
