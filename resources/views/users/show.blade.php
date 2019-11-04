@@ -50,7 +50,7 @@
 <br>
 
 @if(count($postlikes) != 0) 
-    <i class="fas fa-heart iconprofile ml-5" style="font-size:30px"></i><span class="ml-2" style="font-size:30px">Favorite</span></i>
+<i class="fas fa-heart iconprofile ml-5 mt-5" style="font-size:30px"><span class="ml-2" style="font-size:30px">Favorite</span></i>
 @endif
 <div class="divcenter" style="width:90%;margin-left:5%"> 
         @foreach($postlikes as $post) 

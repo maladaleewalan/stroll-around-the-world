@@ -78,7 +78,7 @@ class StoriesController extends Controller
         //เพิ่มชื่อรูปภาพใหม่ลงฐานข้อมูล
         $story->picture = $new_image_name;
         $story->user_id = Auth::user()->id;
-        if(Auth::user()->role == 'user2') {
+        if(Auth::user()->role == 'user2' || Auth::user()->role == 'admin') {
             $story->status = 'pass';
             Auth::user()->point = Auth::user()->point + 3;
             Auth::user()->totalpost++;
