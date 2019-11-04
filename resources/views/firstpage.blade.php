@@ -126,7 +126,7 @@
                         <div class="personal-details-right">
                             <div class="mt-1">
                                 <br> <b class="newstitle showcountryname" ><i class="fas fa-map-marker-alt iconshowcountryname"></i>&nbsp;{{$stories[$i]->country->name}}</b><br>
-                                <b class="newstitleindex"><i class="fas fa-newspaper mr-2"></i>{{$stories[$i]->title}}</b>
+                                <b class="newstitleindex">{{$stories[$i]->title}}</b>
                             </div>
                                 <p class="news">{{$cutstr}} ......</p>
                                 <span><i class="far fa-clock"></i> {{$stories[$i]->created_at->diffForHumans()}}</span> 

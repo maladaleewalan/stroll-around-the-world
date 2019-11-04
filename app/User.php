@@ -54,4 +54,9 @@ class User extends Authenticatable
     public function guides() {
         return $this->hasMany(Guide::class);
     }
+
+    //user 1 คน มีการแจ้งเตือนได้หลายการแจ้งเตือน
+    public function notifications() {
+        return $this->hasMany(Notification::class);
+    }
 }

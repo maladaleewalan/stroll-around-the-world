@@ -3,6 +3,7 @@
 use App\Story;
 use App\User;
 use App\Country;
+use App\Notification;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::resource('/posts', 'PostsController');
 Route::resource('/guides', 'GuidesController');
 Route::resource('/countries', 'countriesController');
 Route::resource('/regions', 'regionsController');
+// Route::resource('/notifications', 'notificationsController');
 
 
 
@@ -83,6 +85,15 @@ Route::get('/checkNews',function() {
 Route::get('/stories/Newspass/{id}','StoriesController@Newspass')->name('stories.Newspass');
 Route::get('/stories/Newsnotpass/{id}','StoriesController@Newsnotpass')->name('stories.Newsnotpass');
 
+Route::get('/notifications/{id}',function($id) {
+        if(Auth::user() == null || Auth::id() != $id) {
+            $stories = Story::orderBy('created_at','desc')->get();    
+            return view('firstpage',['stories' => $stories]);
+        }
+
+        $notifications = Notification::where('user_id',$id)->orderBy('created_at','desc')->get();
+        return view('notifications.show',['notifications'=>$notifications]);
+})->name('notifications');
 
 
 

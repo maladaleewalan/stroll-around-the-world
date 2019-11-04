@@ -6,6 +6,7 @@ use App\Story;
 use Illuminate\Http\Request;
 
 use App\Country; 
+use App\Notification;
 
 use Auth;
 class StoriesController extends Controller
@@ -99,14 +100,19 @@ class StoriesController extends Controller
         $story->status = "pass";
         $story->save();
 
-        Auth::user()->point = Auth::user()->point + 3;
-        Auth::user()->totalpost++;
-        if(Auth::user()->role != "Admin") {
-            if(Auth::user()->point >= 10) {
-                Auth::user()->role = "user2";
+        $story->user->point = $story->user->point + 3;
+        $story->user->totalpost++;
+        if($story->user->role != "Admin") {
+            if($story->user->point >= 10) {
+                $story->user->role = "user2";
             }
         }
-        Auth::user()->save();
+        $story->user->save();
+
+        $notification = new Notification;
+        $notification->detail = "ข่าว " . $story->title . "ได้รับการอนุมัติจากผู้ดูแลระบบแล้ว";
+        $notification->user_id = $story->user_id;
+        $notification->save();
 
         return redirect()->route('checkNews');
     }
@@ -119,6 +125,11 @@ class StoriesController extends Controller
 
     
         $story->delete();
+
+        $notification = new Notification;
+        $notification->detail = "ข่าว " . $story->title . "ไม่!ได้รับการอนุมัติจากผู้ดูแลระบบ!!!";
+        $notification->user_id = $story->user_id;
+        $notification->save();
         return redirect()->route('checkNews');
     }
     /**

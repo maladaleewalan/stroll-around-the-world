@@ -8,6 +8,7 @@ use DB;
 use Illuminate\Http\Request;
 
 use App\Country;
+use App\Notification;
 
 class PostsController extends Controller
 {
@@ -54,6 +55,12 @@ class PostsController extends Controller
 
 
         DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
+
+        $notification = new Notification;
+        $notification->detail = Auth::user()->name . " ได้มา กด like รูปของคุณ!";
+        $post = Post::find($id);
+        $notification->user_id = $post->user_id;
+        $notification->save();
 
         return redirect()->route('posts.index');
     }

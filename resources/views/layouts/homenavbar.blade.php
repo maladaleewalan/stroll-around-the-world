@@ -70,6 +70,13 @@
                 </div>
               </li>
           <?php } ?>
+
+          <?php if(Auth::user()->role != "admin") {?>
+            <li class="nav-item">
+              <a class="nav-link Anav" href="{{route('notifications',['id'=>Auth::id()])}}"><span class="fontnav"><i class="fas fa-bell"></i>&nbsp;</span></a>
+            </li>
+          <?php } ?>
+
           @endguest
       </ul>
   </div>
