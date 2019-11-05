@@ -29,6 +29,18 @@
     - ใน terminal : php artisan migrate
     - php artisan migrate:refresh --seed
 
+- ใน AuthenticatesUsers.php (stroll-around-the-world\vendor\laravel\framework\src\Illuminate\Foundation\Auth\AuthenticatesUsers.php) แก้ตรง method logout ให้ redirect ไปที่หน้า Home (เนื่องจาก โฟลเดอร์ vendor ไม่ได้ push ลง git)
+```
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('/firstpage');
+    }
+```
+
 - ข้อมูลที่เตรียมไว้ให้ สามารถ นำ email, password ไป login ได้เลย
     ```
     admin
