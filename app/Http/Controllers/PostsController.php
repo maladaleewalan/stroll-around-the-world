@@ -85,6 +85,12 @@ class PostsController extends Controller
 
         DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
 
+        $notification = new Notification;
+        $notification->detail = Auth::user()->name . " ได้มา กด like รูปของคุณ!";
+        $post = Post::find($id);
+        $notification->user_id = $post->user_id;
+        $notification->save();
+
         $post = Post::find($id);
         $countryid = $post->country_id;
     
@@ -114,6 +120,12 @@ class PostsController extends Controller
 
         DB::update ( "update posts set totallike = totallike + 1 where id = ?", [ "$id" ] );
 
+        $notification = new Notification;
+        $notification->detail = Auth::user()->name . " ได้มา กด like รูปของคุณ!";
+        $post = Post::find($id);
+        $notification->user_id = $post->user_id;
+        $notification->save();
+        
         $post = Post::find($id);
         return redirect()->route('posts.show',['post'=>$post]);
     }
