@@ -46,7 +46,7 @@
               <a class="nav-link Anav" href="{{ route('users.show', ['user' => $id ]) }}"><span class="fontnav"><i class="fas fa-user-circle"></i>&nbsp;{{ Auth::user()->name }}</span></a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
               <a class="nav-link Anav" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -55,27 +55,41 @@
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                      @csrf
               </form>
-          </li>
+          </li> -->
 
-          <?php if(Auth::user()->role == "admin") {?>
+          <?php if(Auth::user()->role != "admin") {?>
+            <li class="nav-item">
+              <a class="nav-link Anav" href="{{route('notifications',['id'=>Auth::id()])}}"><span class="fontnav" ><i class="fas fa-bell"></i>&nbsp;</span></a>
+            </li>
+          <?php } ?>
+
+  
               <li class="nav-item">
                 <div class="dropdown">
                   <a class="nav-link Anav dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fontnav"><i class="fas fa-cog" style="font-size:25px"></i></span></a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <?php if(Auth::user()->role == "admin") {?>
                     <a class="dropdown-item Anav" href="{{route('users.index')}}">View User</a>
                     <a class="dropdown-item Anav" href="{{route('checkNews')}}">Check News</a>
                     <a class="dropdown-item Anav" href="{{route('countries.create')}}">Add Country</a>
                     <a class="dropdown-item Anav" href="{{route('regions.create')}}">Add Region</a>
+
+                  <?php } ?>
+
+                    <a class="dropdown-item Anav" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <i class="fas fa-sign-out-alt"></i>&nbsp;{{ __('Logout') }}</a>
+          
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                    </form>
+
+
                   </div>
                 </div>
               </li>
-          <?php } ?>
-
-          <?php if(Auth::user()->role != "admin") {?>
-            <li class="nav-item">
-              <a class="nav-link Anav" href="{{route('notifications',['id'=>Auth::id()])}}"><span class="fontnav"><i class="fas fa-bell"></i>&nbsp;</span></a>
-            </li>
-          <?php } ?>
+       
 
           @endguest
       </ul>
